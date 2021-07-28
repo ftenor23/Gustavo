@@ -15,6 +15,7 @@ public class Machinery implements Serializable {
         this.features = features;
     }
 
+
     public String getId() {
         return id;
     }

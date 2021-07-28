@@ -4,8 +4,6 @@ import Entity.Client;
 import Entity.Machinery;
 import Manager.ClientManager;
 
-
-
 public abstract class MachineryGraphics {
     public static void printActualStatus(Machinery machinery){
         System.out.println("El estado actual es " + machinery.getStatus());
@@ -34,7 +32,7 @@ public abstract class MachineryGraphics {
     }
 
     public static void printStatus(Machinery machinery){
-        System.out.println("Estado de la maquinaria:");
+        System.out.print("Estado de la maquinaria: ");
         switch (machinery.getStatus()){
             case 1:
                 System.out.println("Se encuentra en casa central");

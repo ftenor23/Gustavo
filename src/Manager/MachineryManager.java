@@ -53,4 +53,8 @@ public class MachineryManager {
             System.out.println(" ");
         }
     }
+
+    public void sortMachines(List<Machinery> list){
+        //ordenar por algun criterio
+    }
 }

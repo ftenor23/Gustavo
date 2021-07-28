@@ -1,6 +1,7 @@
 package BinArchive;
 
 import EnterData.EnterData;
+import Entity.Client;
 import Entity.Machinery;
 import Manager.MachineryManager;
 
@@ -62,16 +63,15 @@ public class Bin {
 
     public void writeMachineryInDisc(){
         try {
-
-            int counter = getNumberOfMachines();
+            //hacer una copia de seguridad en otra carpeta cada vez que guardo el archivo
+            int newMachineNumber = getNumberOfMachines()+1; //numero de maquinas registradas + 1 por la posicion de la nueva
             RandomAccessFile file = new RandomAccessFile(this.file_location,"rw");
 
-            
             seekEndOfFile(file);
             boolean saveMoreObjets =true;
 
             while(saveMoreObjets){
-                System.out.println("Maquina numero " + counter);
+                System.out.println("Maquina numero " + newMachineNumber);
                 Machinery machinery = MachineryManager.enterData();
                 saveMachineInArchive(machinery,file); //se escribe objeto en archivo
                 System.out.println("Quiere guardar mas maquinaria en el archivo? S/N");
@@ -79,7 +79,7 @@ public class Bin {
                 if(answer.equalsIgnoreCase("N")){
                     saveMoreObjets=false;
                 }
-                counter++;
+                newMachineNumber++;
             }
 
             //se cierra archivo
@@ -101,6 +101,8 @@ public class Bin {
             file.writeBytes(machinery.getStatus() + ";");
             file.writeBytes(machinery.getClient().getName() + ";");
             file.writeBytes(machinery.getClient().getZone() + "\n");
+        }catch (IOException e){
+            System.out.println("Exception: " + e);
         }catch (Exception e){
             System.out.println("Exception: " + e);
         }
@@ -109,72 +111,61 @@ public class Bin {
 
     private int getNumberOfMachines(){
         int counter=0;
+        try {
+            RandomAccessFile file = new RandomAccessFile(this.file_location, "r");
+            String line = file.readLine();
+            while(line!=null) {
+                counter++;
+                line = file.readLine();
+            }
 
+            file.close();
+        }catch(Exception e){
+            System.out.println(e);
+        }
         return counter;
     }
 
-    /*public void read()
-    {
-        try {
-            //Stream para leer archivo
-            ObjectInputStream file = new ObjectInputStream(new FileInputStream( this.file_location));
-            //Se lee el objeto de archivo y este debe convertirse al tipo de clase que corresponde
-            Machinery clase = (Machinery) file.readObject();
-            //se cierra archivo
-            file.close();
-            //Se utilizan metodos de la clase asi como variables guardados en el objeto
-            System.out.println("Status:" +  clase.getStatus() );
-            System.out.println("Id:" + clase.getId());
-            System.out.println("Features:" + clase.getFeatures());
-            System.out.println("Client Name: " + clase.getClient().getName());
-        } catch (ClassNotFoundException ex) {
-            System.out.println(ex);
-        }catch(FileNotFoundException ex){
-            System.out.println(ex);
-        }
-        catch (IOException ex) {
-            System.out.println(ex);
-        }
-    }*/
 
     public List<Machinery> readObjetsAndAddToList(){
         List<Machinery> listOfMachinery = new ArrayList<>();
-
         try{
-            //ObjectInputStream ois = new ObjectInputStream(new FileInputStream( this.file_location));
-            FileInputStream fileInputStream = new FileInputStream(this.file_location);
-            ObjectInputStream ois = new ObjectInputStream(fileInputStream);
+            RandomAccessFile file = new RandomAccessFile(this.file_location,"r");
+            file.seek(0);
 
-
-            Machinery aux = (Machinery) ois.readObject();
-            // Se lee el primer objeto
-
-// Mientras haya objetos
-            while (aux!=null)
-            {
-                if (aux instanceof Machinery) {
-                    listOfMachinery.add(aux);
-                }// Se agrega objeto a lista
-                    aux = (Machinery) ois.readObject();
-
+            String line = file.readLine();
+            while(line!=null) {
+                listOfMachinery.add(getMachinery(line));
+                line = file.readLine();
             }
-
-            ois.close();
-            fileInputStream.close();
-        } catch (ClassNotFoundException ex) {
-            System.out.println(ex);
-        }catch (EOFException ex){
-            System.out.println("Se llego al final del archivo.");
-        }
-        catch(FileNotFoundException ex){
-            System.out.println(ex);
-        }
-        catch (IOException ex) {
-            System.out.println(ex);
-        }finally {
-            return listOfMachinery;
+            file.close();
+        }catch(IOException e){
+            System.out.println(e);
+        }catch(Exception e){
+            System.out.println(e);
         }
 
+        return listOfMachinery;
+
+
+    }
+
+    private Machinery getMachinery(String line){
+
+        //1234;Televisor 23pulgadas ;1;facundo tenor;1
+        String[] parts = line.split(";");
+        System.out.println(parts[0] + parts[4]);
+
+        String id = parts[0];
+
+        String features = parts[1];
+
+        int status = Integer.parseInt(parts[2]);
+        int clientZone = Integer.parseInt(parts[4]);
+        String clientName = parts[3];
+        Client client=new Client(clientName,clientZone);
+
+        return new Machinery(id,status,client,features);
     }
 
 

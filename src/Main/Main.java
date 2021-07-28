@@ -17,6 +17,8 @@ public class Main {
         MachineryManager.printList(list);
 */
         bin.writeMachineryInDisc();
+        List<Machinery> list = bin.readObjetsAndAddToList();
+        MachineryManager.printList(list);
 
     }
 

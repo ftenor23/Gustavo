@@ -10,7 +10,7 @@ public class ClientGraphics {
     }
 
     public static void printZone(Client client){
-        System.out.println("Ubicacion:");
+        System.out.print("Ubicacion: ");
         switch (client.getZone()){
             case 1:
                 System.out.println("Zona norte");

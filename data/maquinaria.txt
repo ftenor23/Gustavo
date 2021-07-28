@@ -4,3 +4,5 @@
 asdfgr321;Huawei celular;2;gustavo rodriguez;4
 github345;Heladera Philcollins;2;Robert Fripp;4
 90125;Compact Disc;3;Jon Anderson;2
+rick737;Rick and Morty;3;Rick Sanchez;4
+RSPeña1830;Casa grande;2;Claudia Martelli;1
