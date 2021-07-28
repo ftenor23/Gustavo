@@ -13,13 +13,11 @@ public class Main {
         //Machinery machinery = new Machinery("124",1,new Client("Juan", 2), "Maquinaria pesada");
         Bin bin = new Bin();
         //bin.writeMachineryInDisc(); //sobreescribe el archi REVISAR
-        List<Machinery> list = bin.readObjetsAndAddToList();
+        /*List<Machinery> list = bin.readObjetsAndAddToList();
         MachineryManager.printList(list);
-
+*/
         bin.writeMachineryInDisc();
-        list.clear();
-        list = bin.readObjetsAndAddToList();
-        MachineryManager.printList(list);
+
     }
 
 }

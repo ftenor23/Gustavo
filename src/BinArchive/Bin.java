@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Bin {
 
-    private String file_location = "C:/Users/Facundo/IdeaProjects/Gustavo/data/maquinaria.dat";
+    private String file_location = "C:/Users/Facundo/IdeaProjects/Gustavo/data/maquinaria.txt";
 
     /*public void write(Machinery machinery)
     {
@@ -29,7 +29,7 @@ public class Bin {
         }
     }*/
 
-    public void writeMachineryInDisc(){
+   /* public void writeMachineryInDisc(){
         try {
             //Objeto a guardar en archivo *.DAT
             //Se crea un Stream para guardar archivo
@@ -58,35 +58,58 @@ public class Bin {
         } catch (IOException ex) {
             System.out.println(ex);
         }
+    }*/
+
+    public void writeMachineryInDisc(){
+        try {
+
+            int counter = getNumberOfMachines();
+            RandomAccessFile file = new RandomAccessFile(this.file_location,"rw");
+
+            
+            seekEndOfFile(file);
+            boolean saveMoreObjets =true;
+
+            while(saveMoreObjets){
+                System.out.println("Maquina numero " + counter);
+                Machinery machinery = MachineryManager.enterData();
+                saveMachineInArchive(machinery,file); //se escribe objeto en archivo
+                System.out.println("Quiere guardar mas maquinaria en el archivo? S/N");
+                String answer= EnterData.nextLine();
+                if(answer.equalsIgnoreCase("N")){
+                    saveMoreObjets=false;
+                }
+                counter++;
+            }
+
+            //se cierra archivo
+            file.close();
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+    }
+
+    private void seekEndOfFile(RandomAccessFile file) throws IOException{
+        long fileLenght = file.length();
+        file.seek(fileLenght);
+    }
+
+    private void saveMachineInArchive(Machinery machinery, RandomAccessFile file){
+        try {
+            file.writeBytes(machinery.getId() + ";");
+            file.writeBytes(machinery.getFeatures() + ";");
+            file.writeBytes(machinery.getStatus() + ";");
+            file.writeBytes(machinery.getClient().getName() + ";");
+            file.writeBytes(machinery.getClient().getZone() + "\n");
+        }catch (Exception e){
+            System.out.println("Exception: " + e);
+        }
+
     }
 
     private int getNumberOfMachines(){
         int counter=0;
-        try{
-            FileInputStream fileInputStream=new FileInputStream(this.file_location);
-            ObjectInputStream ois = new ObjectInputStream(fileInputStream);
-            Machinery aux = (Machinery) ois.readObject();
-            // Se lee el primer objeto
 
-// Mientras haya objetos
-            while (aux!=null)
-            {
-                if (aux instanceof Machinery) {
-                    counter++;
-                }
-                aux = (Machinery) ois.readObject();
-
-            }
-            ois.reset();
-            ois.close();
-            fileInputStream.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
         return counter;
     }
 

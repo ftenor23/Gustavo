@@ -1,0 +1,6 @@
+1234;Televisor 23pulgadas ;1;facundo tenor;1
+4567y;parlantes philco;2;ramon valdez;4
+789654;Computadora all in one;3;sofia morbiducci;4
+asdfgr321;Huawei celular;2;gustavo rodriguez;4
+github345;Heladera Philcollins;2;Robert Fripp;4
+90125;Compact Disc;3;Jon Anderson;2
