@@ -1,8 +1,8 @@
-1234;Televisor 23pulgadas ;1;facundo tenor;1
-4567y;parlantes philco;2;ramon valdez;4
-789654;Computadora all in one;3;sofia morbiducci;4
-asdfgr321;Huawei celular;2;gustavo rodriguez;4
-github345;Heladera Philcollins;2;Robert Fripp;4
-90125;Compact Disc;3;Jon Anderson;2
-rick737;Rick and Morty;3;Rick Sanchez;4
-RSPeña1830;Casa grande;2;Claudia Martelli;1
+{"id":"111111111","status":1,"client":{"name":"ceva","zone":2,"isAssigned":false},"features":"cebolla"}
+{"id":"124FullHD","status":1,"client":{"name":"Facundo Tenor","zone":1,"isAssigned":false},"features":"Televisor Philco Led"}
+{"id":"321548","status":1,"client":{"name":"fernando corpore","zone":2,"isAssigned":false},"features":"ekkonatural"}
+{"id":"987642","status":2,"client":{"name":"fernando","zone":3,"isAssigned":false},"features":"Palmito"}
+{"id":"AsusE-Green","status":2,"client":{"name":"sofia morbiducci","zone":1,"isAssigned":false},"features":"pc 16gb de ram"}
+{"id":"Notebook","status":1,"client":{"name":"cecilo","zone":3,"isAssigned":false},"features":"laptop"}
+{"id":"acdc","status":2,"client":{"name":"gustavo rodriguez","zone":2,"isAssigned":false},"features":"monitor"}
+{"id":"ipsylon234","status":1,"client":{"name":"joao conde","zone":3,"isAssigned":false},"features":"guitarra,bajo y bateria"}

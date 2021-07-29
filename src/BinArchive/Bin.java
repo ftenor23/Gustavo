@@ -4,6 +4,7 @@ import EnterData.EnterData;
 import Entity.Client;
 import Entity.Machinery;
 import Manager.MachineryManager;
+import com.google.gson.Gson;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -11,61 +12,14 @@ import java.util.List;
 
 public class Bin {
 
-    private String file_location = "C:/Users/Facundo/IdeaProjects/Gustavo/data/maquinaria.txt";
-
-    /*public void write(Machinery machinery)
-    {
-        try {
-            //Objeto a guardar en archivo *.DAT
-            //Se crea un Stream para guardar archivo
-
-            ObjectOutputStream file = new ObjectOutputStream(new FileOutputStream(this.file_location, true));
-
-            //Se escribe el objeto en archivo
-            file.writeObject(machinery);
-            //se cierra archivo
-            file.close();
-        } catch (IOException ex) {
-            System.out.println(ex);
-        }
-    }*/
-
-   /* public void writeMachineryInDisc(){
-        try {
-            //Objeto a guardar en archivo *.DAT
-            //Se crea un Stream para guardar archivo
-            FileOutputStream fileOutputStream=new FileOutputStream(this.file_location,true);
-            ObjectOutputStream file = new ObjectOutputStream(fileOutputStream);
+    private static final String FILE_LOCATION = "C:/Users/Facundo/IdeaProjects/Gustavo/data/maquinaria.txt";
 
 
-            boolean saveMoreObjets =true;
-            //int counter = getNumberOfMachines();
-            int counter = 0;
-            while(saveMoreObjets){
-                System.out.println("Maquina numero " + counter);
-                Machinery machinery = MachineryManager.enterData();
-                file.writeObject(machinery); //se escribe objeto en archivo
-                System.out.println("Quiere guardar mas maquinaria en el archivo? S/N");
-                String answer= EnterData.nextLine();
-                if(answer.equalsIgnoreCase("N")){
-                    saveMoreObjets=false;
-                }
-                counter++;
-            }
-
-            //se cierra archivo
-            file.reset();
-            file.close();
-        } catch (IOException ex) {
-            System.out.println(ex);
-        }
-    }*/
-
-    public void writeMachineryInDisc(){
+    public static void writeMachineryInDisc(){
         try {
             //hacer una copia de seguridad en otra carpeta cada vez que guardo el archivo
             int newMachineNumber = getNumberOfMachines()+1; //numero de maquinas registradas + 1 por la posicion de la nueva
-            RandomAccessFile file = new RandomAccessFile(this.file_location,"rw");
+            RandomAccessFile file = new RandomAccessFile(FILE_LOCATION,"rw");
 
             seekEndOfFile(file);
             boolean saveMoreObjets =true;
@@ -89,18 +43,16 @@ public class Bin {
         }
     }
 
-    private void seekEndOfFile(RandomAccessFile file) throws IOException{
+    private static void seekEndOfFile(RandomAccessFile file) throws IOException{
         long fileLenght = file.length();
         file.seek(fileLenght);
     }
 
-    private void saveMachineInArchive(Machinery machinery, RandomAccessFile file){
+    private static void saveMachineInArchive(Machinery machinery, RandomAccessFile file){
+        Gson gson=new Gson();
         try {
-            file.writeBytes(machinery.getId() + ";");
-            file.writeBytes(machinery.getFeatures() + ";");
-            file.writeBytes(machinery.getStatus() + ";");
-            file.writeBytes(machinery.getClient().getName() + ";");
-            file.writeBytes(machinery.getClient().getZone() + "\n");
+            String line = gson.toJson(machinery);
+            file.writeBytes(line + "\n");
         }catch (IOException e){
             System.out.println("Exception: " + e);
         }catch (Exception e){
@@ -109,10 +61,10 @@ public class Bin {
 
     }
 
-    private int getNumberOfMachines(){
+    private static int getNumberOfMachines(){
         int counter=0;
         try {
-            RandomAccessFile file = new RandomAccessFile(this.file_location, "r");
+            RandomAccessFile file = new RandomAccessFile(FILE_LOCATION, "r");
             String line = file.readLine();
             while(line!=null) {
                 counter++;
@@ -127,10 +79,10 @@ public class Bin {
     }
 
 
-    public List<Machinery> readObjetsAndAddToList(){
+    public static List<Machinery> readObjetsAndAddToList(){
         List<Machinery> listOfMachinery = new ArrayList<>();
         try{
-            RandomAccessFile file = new RandomAccessFile(this.file_location,"r");
+            RandomAccessFile file = new RandomAccessFile(FILE_LOCATION,"r");
             file.seek(0);
 
             String line = file.readLine();
@@ -144,29 +96,29 @@ public class Bin {
         }catch(Exception e){
             System.out.println(e);
         }
-
         return listOfMachinery;
-
-
     }
 
-    private Machinery getMachinery(String line){
-
-        //1234;Televisor 23pulgadas ;1;facundo tenor;1
-        String[] parts = line.split(";");
-        System.out.println(parts[0] + parts[4]);
-
-        String id = parts[0];
-
-        String features = parts[1];
-
-        int status = Integer.parseInt(parts[2]);
-        int clientZone = Integer.parseInt(parts[4]);
-        String clientName = parts[3];
-        Client client=new Client(clientName,clientZone);
-
-        return new Machinery(id,status,client,features);
+    private static Machinery getMachinery(String line){
+        Gson gson=new Gson();
+        return gson.fromJson(line,Machinery.class);
     }
 
-
+    public static void overwriteArchive(List<Machinery> list){
+        Gson gson=new Gson();
+        try{
+            RandomAccessFile file = new RandomAccessFile(FILE_LOCATION,"rw");
+            file.seek(0);
+            String line;
+            for(int i=0;i<list.size();i++){
+                line = gson.toJson(list.get(i));
+                file.writeBytes(line + "\n");
+            }
+        file.close();
+        }catch(IOException e){
+            System.out.println(e);
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
 }

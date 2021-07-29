@@ -1,11 +1,13 @@
 package Manager;
 
+import BinArchive.Bin;
 import EnterData.EnterData;
 import Entity.Client;
 import Entity.Machinery;
 import Graphics.MachineryGraphics;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class MachineryManager {
@@ -46,6 +48,7 @@ public class MachineryManager {
     }
 
     public static void printList(List<Machinery> list){
+        sortMachinesById(list);
         for(int i=0; i<list.size();i++){
             int number=i+1;
             System.out.println("Maquinaria " + number + ":");
@@ -54,7 +57,13 @@ public class MachineryManager {
         }
     }
 
-    public void sortMachines(List<Machinery> list){
+    public static void sortMachinesById(List<Machinery> list){
         //ordenar por algun criterio
+        list.sort(Comparator.comparing(Machinery::getId));
+    }
+
+    public static void saveMachinesInOrder(List<Machinery> list){
+        sortMachinesById(list);
+        Bin.overwriteArchive(list);
     }
 }

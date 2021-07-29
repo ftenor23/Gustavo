@@ -5,6 +5,7 @@ import Entity.Client;
 import Entity.Machinery;
 import Manager.MachineryManager;
 
+import javax.crypto.Mac;
 import java.util.List;
 
 public class Main {
@@ -18,7 +19,10 @@ public class Main {
 */
         bin.writeMachineryInDisc();
         List<Machinery> list = bin.readObjetsAndAddToList();
-        MachineryManager.printList(list);
+        MachineryManager.saveMachinesInOrder(list);
+
+
+
 
     }
 
