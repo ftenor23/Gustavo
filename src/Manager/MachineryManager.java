@@ -66,4 +66,8 @@ public class MachineryManager {
         sortMachinesById(list);
         Bin.overwriteArchive(list);
     }
+
+    public void busquedaBinaria(){
+        //buscar maquinaria para modificar
+    }
 }

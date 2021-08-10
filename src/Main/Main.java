@@ -17,9 +17,11 @@ public class Main {
         /*List<Machinery> list = bin.readObjetsAndAddToList();
         MachineryManager.printList(list);
 */
-        bin.writeMachineryInDisc();
+        //bin.writeMachineryInDisc();
         List<Machinery> list = bin.readObjetsAndAddToList();
         MachineryManager.saveMachinesInOrder(list);
+        list = bin.readObjetsAndAddToList();
+        MachineryManager.printList(list);
 
 
 
