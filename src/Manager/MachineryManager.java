@@ -44,7 +44,9 @@ public class MachineryManager {
         System.out.println("Ingrese la descripcion de la maquinaria: ");
         String features=EnterData.nextLine();
         Client client = ClientManager.enterData();
-        return new Machinery(id,status,client,features);
+        System.out.println("Ingrese las horas de uso:");
+        int hoursOfUse = EnterData.nextInt();
+        return new Machinery(id,status,client,features, hoursOfUse);
     }
 
     public static void printList(List<Machinery> list){
@@ -60,6 +62,7 @@ public class MachineryManager {
     public static void sortMachinesById(List<Machinery> list){
         //ordenar por algun criterio
         list.sort(Comparator.comparing(Machinery::getId));
+
     }
 
     public static void saveMachinesInOrder(List<Machinery> list){

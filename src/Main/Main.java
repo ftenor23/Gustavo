@@ -3,6 +3,7 @@ package Main;
 import BinArchive.Bin;
 import Entity.Client;
 import Entity.Machinery;
+import Graphics.MachineryGraphics;
 import Manager.MachineryManager;
 
 import javax.crypto.Mac;
@@ -17,11 +18,13 @@ public class Main {
         /*List<Machinery> list = bin.readObjetsAndAddToList();
         MachineryManager.printList(list);
 */
-        //bin.writeMachineryInDisc();
+        bin.writeMachineryInDisc();
         List<Machinery> list = bin.readObjetsAndAddToList();
         MachineryManager.saveMachinesInOrder(list);
         list = bin.readObjetsAndAddToList();
-        MachineryManager.printList(list);
+
+
+        MachineryGraphics.showMachinery(bin.readObjetsAndAddToList());
 
 
 

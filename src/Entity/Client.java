@@ -5,8 +5,9 @@ import java.io.Serializable;
 public class Client implements Serializable {
     private String name;
     private int zone; //1)norte, 2)oeste, 3)sur, 4)capital
+    //agregar barrio
     private boolean isAssigned;
-
+    //opcional, agregar distancia del cliente para ordenar por ese criterio
     public Client(String name, int zone) {
         this.name = name;
         this.zone = zone;

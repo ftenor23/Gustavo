@@ -1,8 +1,11 @@
 package Graphics;
 
+import EnterData.EnterData;
 import Entity.Client;
 import Entity.Machinery;
 import Manager.ClientManager;
+
+import java.util.List;
 
 public abstract class MachineryGraphics {
     public static void printActualStatus(Machinery machinery){
@@ -56,5 +59,30 @@ public abstract class MachineryGraphics {
     public static void printClientInfo(Client client){
         ClientGraphics.printName(client);
         ClientGraphics.printZone(client);
+    }
+
+    public static void showMachinery(List<Machinery> list){
+        int counter=0;
+        int limit=3;
+        boolean exit=false;
+        while(!exit){
+            for(int i=0;i<limit;i++){
+                if(i+counter<list.size()) {
+                    printMachineryData(list.get(i + counter));
+                }
+            }
+
+
+            try{
+                Thread.sleep(3000);
+            }catch(Exception e){
+
+            }
+            counter+=limit;
+            if(counter> list.size()){
+                counter=0;
+            }
+            Graphics.cleanConsole();
+        }
     }
 }
