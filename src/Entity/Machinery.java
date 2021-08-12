@@ -9,6 +9,7 @@ public class Machinery implements Serializable {
     private String features;
     private String pending;
     private int hoursOfUse;
+    //agregar variable que indique si se le hicieron los service cada 250 horas
     //caracteristicas
 
     public String getPending() {

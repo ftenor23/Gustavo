@@ -1,6 +1,8 @@
 package Graphics;
 
 import Entity.Machinery;
+import Manager.StatusManager;
+import Manager.ZoneManager;
 
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
@@ -75,11 +77,13 @@ public class TMMachinery implements TableModel {
             case 0:
                 return machinery.getId();
             case 1:
-                return machinery.getStatus();
+                int status = machinery.getStatus();
+                return StatusManager.getStatus(status);
             case 2:
                 return machinery.getClient().getName();
             case 3:
-                return machinery.getClient().getZone();
+                int zone = machinery.getClient().getZone();
+                return ZoneManager.getZone(zone);
             case 4:
                 return machinery.getFeatures();
             case 5:

@@ -6,7 +6,10 @@ import Entity.Client;
 import Entity.Machinery;
 import Graphics.MachineryGraphics;
 
+import javax.crypto.Mac;
+import java.sql.Struct;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -65,8 +68,30 @@ public class MachineryManager {
 
     }
 
-    public static void saveMachinesInOrder(List<Machinery> list){
-        sortMachinesById(list);
+    public static void sortMachines(List<Machinery> list, String sortBy){
+        final String ID = "ID";
+        final String ZONE = "ZONE";
+        final String HOURS_OF_USE = "HOURS OF USE";
+
+        switch (sortBy){
+            case ID:
+                list.sort(Comparator.comparing(Machinery::getId));
+                break;
+            case ZONE:
+                list.sort(Comparator.comparing(Machinery::getStatus));
+                break;
+            case HOURS_OF_USE:
+                list.sort(Comparator.comparing(Machinery::getHoursOfUse));
+                Collections.reverse(list);
+                break;
+
+        }
+    }
+
+
+    public static void saveMachinesInOrder(List<Machinery> list, String sortBy){
+        sortMachines(list, sortBy); //SIEMPRE SE TINENE QUE GUARDAR POR ID. A LA HORA DE MOSTRARLAS EN PANTALLA
+        //SE PUEDEN ORDENAR POR ALGUN CRITERIO A ALECCION DEL USUARIO
         Bin.overwriteArchive(list);
     }
 
