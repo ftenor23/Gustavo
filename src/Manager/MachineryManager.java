@@ -5,6 +5,7 @@ import EnterData.EnterData;
 import Entity.Client;
 import Entity.Machinery;
 import Graphics.MachineryGraphics;
+import com.sun.xml.internal.bind.v2.model.core.ID;
 
 import javax.crypto.Mac;
 import java.sql.Struct;
@@ -76,15 +77,14 @@ public class MachineryManager {
         switch (sortBy){
             case ID:
                 list.sort(Comparator.comparing(Machinery::getId));
-                break;
+                return;
             case ZONE:
                 list.sort(Comparator.comparing(Machinery::getStatus));
-                break;
+                return;
             case HOURS_OF_USE:
                 list.sort(Comparator.comparing(Machinery::getHoursOfUse));
                 Collections.reverse(list);
-                break;
-
+                return;
         }
     }
 
@@ -95,6 +95,12 @@ public class MachineryManager {
         Bin.overwriteArchive(list);
     }
 
+    public static void saveNewMachine(Machinery machinery){
+        List<Machinery> list = Bin.readObjetsAndAddToList();
+        list.add(machinery);
+        saveMachinesInOrder(list, "ID");
+    }
+
 
 //funciona no tocar
     public static int binarySearch(List<Machinery> list, String idToSearch) {
@@ -103,11 +109,11 @@ public class MachineryManager {
             int pos;
             while (inicio <= fin) {
                 pos = (inicio+fin) / 2;
-                if (list.get(pos).getId().compareTo(idToSearch) == 0) {
+                if (list.get(pos).getId().equalsIgnoreCase(idToSearch)) {
                     return pos;
                 }else if (list.get(pos).getId().compareTo(idToSearch) < 0 ) {
                     inicio = pos+1;
-                } else {
+                } else if (list.get(pos).getId().compareTo(idToSearch) > 0 ) {
                     fin = pos-1;
                 }
             }
@@ -123,5 +129,45 @@ public class MachineryManager {
             return Bin.readObjetsAndAddToList().get(pos);
         } return null;
 
+    }
+
+    private static void replaceMachine(Machinery machinery){
+        List<Machinery> machineryList = Bin.readObjetsAndAddToList();
+        machineryList.remove(binarySearch(machineryList, machinery.getId()));
+        machineryList.add(machinery);
+        saveMachinesInOrder(machineryList,"ID");
+    }
+
+    public static void changeFeatures(Machinery machinery, String line){
+        machinery.setFeatures(line);
+        replaceMachine(machinery);
+    }
+
+    public static void changeClient(Machinery machinery, String name, int zone){
+        machinery.getClient().setName(name);
+        machinery.getClient().setZone(zone);
+        replaceMachine(machinery);
+    }
+
+    public static void changePending(Machinery machinery, String line){
+        machinery.setPending(line);
+        replaceMachine(machinery);
+    }
+
+    public static void changeHours(Machinery machinery, int hours){
+        machinery.setHoursOfUse(machinery.getHoursOfUse() + hours);
+        //preguntar a gus si quiere que cuando nos pasamos de 1000 lo cambiemos automatico
+        replaceMachine(machinery);
+    }
+
+    public static boolean deleteMachine(String id){
+        List<Machinery> machineryList = Bin.readObjetsAndAddToList();
+        int pos = binarySearch(machineryList,id);
+        if(pos>-1){
+            machineryList.remove(pos);
+            saveMachinesInOrder(machineryList,"ID");
+            return true;
+        }
+        return false;
     }
 }

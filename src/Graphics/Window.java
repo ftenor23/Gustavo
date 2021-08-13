@@ -14,14 +14,18 @@ public class Window extends JFrame implements ActionListener {
     private JMenu menu1, menu2, menu3;
     private JMenuItem menuItem21, menuItem22, menuItem31, menuItem32;
     private final static String MACHINERY = "Maquinaria";
+    private JTable table;
+    private static boolean update;
 
-    public Window(){
+
+    public void run(){
+        update=false;
         setTitle(MACHINERY);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         menuBar = new Menu();
         setJMenuBar(menuBar);
-        JTable table = Table.getTable();
+        table = Table.getTable();
         setLayout(new GridLayout(0, 1));
         setSize(1500, 1000);
         setLocationRelativeTo(null);
@@ -29,11 +33,43 @@ public class Window extends JFrame implements ActionListener {
 
         ScrollPane.setScrollPane(this,ScrollPane.getScrollPane(table));
         setVisible(true);
+        while(!update);
+        dispose();
+        return;
+
+    }
+
+    public boolean isUpdate() {
+        return update;
+    }
+
+    public static void setUpdate(boolean up) {
+        update = up;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if(e.getSource().equals(menuBar.getSearchMachinery())){
+            String id = Graphics.showMessage("Ingrese el ID de la maquinaria a buscar");
+            MachineryGraphics.showInfo(MachineryManager.search(id));
+            return;
+        }
+        if(e.getSource().equals(menuBar.getAddMachinery())){
+            AddMachinery.enterData();
+            return;
+        }
+        if(e.getSource().equals(menuBar.getEditMachinery())){
+            EditMachinery.edit();
+            return;
+        }
+        if(e.getSource().equals(menuBar.getDeleteMachinery())){
+            DeleteMachinery.delete();
+            return;
+        }
+        if(e.getSource().equals(menuBar.getShowDevInfo())){
+            ShowInfo.showData();
+            return;
+        }
     }
 
 

@@ -1,4 +1,8 @@
-{"id":"A123","status":1,"client":{"name":"Facundo","zone":1,"isAssigned":false},"features":"Celular","pending":" ","hoursOfUse":100}
-{"id":"AF45342","status":1,"client":{"name":"Romualdo","zone":1,"isAssigned":false},"features":"Salvaje","pending":" ","hoursOfUse":369}
-{"id":"E342232","status":3,"client":{"name":"Roman","zone":3,"isAssigned":false},"features":"Rock","pending":" ","hoursOfUse":1300}
-{"id":"j43333","status":1,"client":{"name":"geremias","zone":4,"isAssigned":false},"features":"facundo","pending":" ","hoursOfUse":1500}
+{"id":"A123","status":1,"client":{"name":"Facundo","zone":1,"isAssigned":false},"features":"Event","pending":" ","hoursOfUse":144}
+{"id":"A12334","status":1,"client":{"name":"Roman","zone":2,"isAssigned":false},"features":"Tenor","pending":" ","hoursOfUse":656}
+{"id":"E32323","status":1,"client":{"name":"GERMAN","zone":4,"isAssigned":false},"features":"FFFF","pending":" ","hoursOfUse":45}
+{"id":"R56432","status":3,"client":{"name":"Ricardes","zone":1,"isAssigned":false},"features":"No sabemos osososososooooooooooooooooooooooooooooooooooooooooooooooooo","pending":" ","hoursOfUse":12}
+{"id":"a23333","status":1,"client":{"name":"rick","zone":1,"isAssigned":false},"features":"fa","pending":" ","hoursOfUse":12}
+{"id":"a3432342","status":1,"client":{"name":"Julian Jarazo","zone":1,"isAssigned":false},"features":"Romanovich","pending":" ","hoursOfUse":24}
+{"id":"g45643","status":3,"client":{"name":"Termopilas","zone":1,"isAssigned":false},"features":"soda con terma","pending":" ","hoursOfUse":45}
+{"id":"w334242","status":1,"client":{"name":"Jose","zone":1,"isAssigned":false},"features":"Robusc","pending":" ","hoursOfUse":1888}

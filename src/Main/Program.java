@@ -16,6 +16,9 @@ public class Program {
     public static void main(String[] args) {
         MachineryManager.saveMachinesInOrder(Bin.readObjetsAndAddToList(),"ID");
         Window window = new Window(); //agregar barrra de menu
+        window.run();
+        window.run(); //verifdicar porque se carga dos veces la tabla
+
 
     }
 }

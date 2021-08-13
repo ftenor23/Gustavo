@@ -13,30 +13,46 @@ public class Menu extends JMenuBar implements ActionListener{
     private JMenuItem editMachinery;
     private JMenuItem deleteMachinery;
     private JMenuItem addMachinery;
+    private JMenuItem showDevInfo;
+    private JMenuItem update;
 
     public Menu() {
 
-        JMenu menuArchivo = new JMenu("Editar maquinaria");
-        JMenu menuEditar = new JMenu("Informacion");
-        add(menuArchivo);
-        add(menuEditar);
+        JMenu menuEdicion = new JMenu("Editar maquinaria");
+        JMenu menuInformacion = new JMenu("Informacion");
+        add(menuEdicion);
+        add(menuInformacion);
 
         searchMachinery = new JMenuItem("Buscar por id");
        editMachinery = new JMenuItem("Editar");
         deleteMachinery = new JMenuItem("Eliminar");
         addMachinery = new JMenuItem("Agregar");
+        showDevInfo = new JMenuItem("Acerca de");
+        update = new JMenuItem("Actualizar pantalla");
 
         searchMachinery.addActionListener((ActionListener) this);
         editMachinery.addActionListener((ActionListener) this);
         deleteMachinery.addActionListener((ActionListener) this);
         addMachinery.addActionListener((ActionListener) this);
+        showDevInfo.addActionListener((ActionListener) this);
+        update.addActionListener((ActionListener) this);
 
-        menuArchivo.add(addMachinery);
-        menuArchivo.add(editMachinery);
-        menuArchivo.add(searchMachinery);
-        menuArchivo.add(new JSeparator());
-        menuArchivo.add(deleteMachinery);
+        menuEdicion.add(addMachinery);
+        menuEdicion.add(editMachinery);
+        menuEdicion.add(searchMachinery);
+        menuEdicion.add(new JSeparator());
+        menuEdicion.add(deleteMachinery);
+        menuEdicion.add(update);
+        menuInformacion.add(showDevInfo);
 
+    }
+
+    public JMenuItem getShowDevInfo() {
+        return showDevInfo;
+    }
+
+    public void setShowDevInfo(JMenuItem showDevInfo) {
+        this.showDevInfo = showDevInfo;
     }
 
     public JMenuItem getSearchMachinery() {
@@ -53,6 +69,14 @@ public class Menu extends JMenuBar implements ActionListener{
 
     public void setEditMachinery(JMenuItem editMachinery) {
         this.editMachinery = editMachinery;
+    }
+
+    public JMenuItem getUpdate() {
+        return update;
+    }
+
+    public void setUpdate(JMenuItem update) {
+        this.update = update;
     }
 
     public JMenuItem getDeleteMachinery() {
@@ -76,6 +100,27 @@ public class Menu extends JMenuBar implements ActionListener{
         if(e.getSource().equals(getSearchMachinery())){
             String id = Graphics.showMessage("Ingrese el ID de la maquinaria a buscar");
             MachineryGraphics.showInfo(MachineryManager.search(id));
+            return;
+        }
+        if(e.getSource().equals(getAddMachinery())){
+            AddMachinery.enterData();
+            return;
+        }
+        if(e.getSource().equals(getEditMachinery())){
+            EditMachinery.edit();
+            return;
+        }
+        if(e.getSource().equals(getDeleteMachinery())){
+            DeleteMachinery.delete();
+            return;
+        }
+        if(e.getSource().equals(getShowDevInfo())){
+            ShowInfo.showData();
+            return;
+        }
+        if(e.getSource().equals(getUpdate())){
+            Window.setUpdate(true);
+            return;
         }
     }
 }

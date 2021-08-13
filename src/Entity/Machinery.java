@@ -12,6 +12,9 @@ public class Machinery implements Serializable {
     //agregar variable que indique si se le hicieron los service cada 250 horas
     //caracteristicas
 
+    public Machinery() {
+    }
+
     public String getPending() {
         return pending;
     }

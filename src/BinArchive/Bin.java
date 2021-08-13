@@ -15,7 +15,7 @@ public class Bin {
     private static final String FILE_LOCATION = "C:/Users/Facundo/IdeaProjects/Gustavo/data/maquinaria.txt";
 
 
-    public static void writeMachineryInDisc(){
+    /*public static void writeMachineryInDisc(){
         try {
             //hacer una copia de seguridad en otra carpeta cada vez que guardo el archivo
             int newMachineNumber = getNumberOfMachines()+1; //numero de maquinas registradas + 1 por la posicion de la nueva
@@ -35,6 +35,23 @@ public class Bin {
                 }
                 newMachineNumber++;
             }
+
+            //se cierra archivo
+            file.close();
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+    }*/
+
+    public static void addNewMachinery(Machinery machinery){
+        try {
+            //hacer una copia de seguridad en otra carpeta cada vez que guardo el archivo
+            int newMachineNumber = getNumberOfMachines()+1; //numero de maquinas registradas + 1 por la posicion de la nueva
+            RandomAccessFile file = new RandomAccessFile(FILE_LOCATION,"rw");
+
+            seekEndOfFile(file);
+
+            saveMachineInArchive(machinery,file); //se escribe objeto en archivo
 
             //se cierra archivo
             file.close();
