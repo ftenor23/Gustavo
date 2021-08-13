@@ -5,28 +5,30 @@ import Entity.Client;
 
 
 public class ClientGraphics {
-    public static void printName(Client client){
-        System.out.println("Nombre del cliente: " + client.getName());
+    public static String printName(Client client){
+        return "Nombre del cliente: " + client.getName() + "\n";
     }
 
-    public static void printZone(Client client){
-        System.out.print("Ubicacion: ");
+    public static String printZone(Client client){
+        String response = "Ubicacion: ";
+
         switch (client.getZone()){
             case 1:
-                System.out.println("Zona norte");
+                response+="Zona norte";
                 break;
             case 2:
-                System.out.println("Zona oeste");
+                response+="Zona oeste";
                 break;
             case 3:
-                System.out.println("Zona sur");
+                response+="Zona sur";
                 break;
             case 4:
-                System.out.println("Capital federal");
+                response+="Capital federal";
                 break;
             default:
-                System.out.println("Zona no registrada");
+                response+="Zona no registrada";
                 break;
         }
+        return response + "\n";
     }
 }

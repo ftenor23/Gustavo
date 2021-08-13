@@ -5,6 +5,7 @@ import Entity.Client;
 import Entity.Machinery;
 import Manager.ClientManager;
 
+import javax.swing.*;
 import java.util.List;
 
 public abstract class MachineryGraphics {
@@ -23,42 +24,42 @@ public abstract class MachineryGraphics {
         System.out.println("Seleccione el numero de cliente a asignar: ");
     }
 
-    public static void printMachineryData(Machinery machinery){
-        printId(machinery);
-        printStatus(machinery);
-        printFeatures(machinery);
+    public static String printMachineryData(Machinery machinery){
+        return printId(machinery)+
+        printStatus(machinery)+
+        printFeatures(machinery)+
         printClientInfo(machinery.getClient());
     }
 
-    public static void printId(Machinery machinery){
-        System.out.println("Id: " + machinery.getId());
+    private static String printId(Machinery machinery){
+        return "Id: " + machinery.getId() + "\n";
     }
 
-    public static void printStatus(Machinery machinery){
-        System.out.print("Estado de la maquinaria: ");
+    public static String printStatus(Machinery machinery){
+        String response = "Estado de la maquinaria: ";
         switch (machinery.getStatus()){
             case 1:
-                System.out.println("Se encuentra en casa central");
+                response+="Se encuentra en casa central";
                 break;
             case 2:
-                System.out.println("Se encuentra en viaje");
+                response+="Se encuentra en viaje";
                 break;
             case 3:
-                System.out.println("Se encuentra en comercio");
+                response+="Se encuentra en comercio";
                 break;
             default:
-                System.out.println("Error en el estado");
+                response+="Error en el estado";
                 break;
         }
+        return response + "\n";
     }
 
-    public static void printFeatures(Machinery machinery){
-        System.out.println("Descripcion: " + machinery.getFeatures());
+    public static String printFeatures(Machinery machinery){
+        return "Descripcion: " + machinery.getFeatures() + "\n";
     }
 
-    public static void printClientInfo(Client client){
-        ClientGraphics.printName(client);
-        ClientGraphics.printZone(client);
+    public static String printClientInfo(Client client){
+        return ClientGraphics.printName(client)+ ClientGraphics.printZone(client);
     }
 
     public static void showMachinery(List<Machinery> list){
@@ -83,6 +84,14 @@ public abstract class MachineryGraphics {
                 counter=0;
             }
             Graphics.cleanConsole();
+        }
+    }
+
+    public static void showInfo(Machinery machinery){
+        if(machinery!=null) {
+            JOptionPane.showMessageDialog(null, printMachineryData(machinery));
+        }else{
+            JOptionPane.showMessageDialog(null,"Maquinaria no encontrada en la base de datos");
         }
     }
 }

@@ -1,5 +1,7 @@
 package Graphics;
 
+import javax.swing.*;
+
 public abstract class Graphics {
 
     public static void enterAValidNumber(){
@@ -12,5 +14,10 @@ public abstract class Graphics {
         } catch (Exception e) {
             System.out.println(e);;
         }
+    }
+
+    public static String showMessage(String message){
+        String dataIn = JOptionPane.showInputDialog(message);
+        return dataIn;
     }
 }

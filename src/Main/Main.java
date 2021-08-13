@@ -1,13 +1,7 @@
 package Main;
 
 import BinArchive.Bin;
-import Entity.Client;
-import Entity.Machinery;
-import Graphics.MachineryGraphics;
 import Manager.MachineryManager;
-
-import javax.crypto.Mac;
-import java.util.List;
 
 public class Main {
     //deberia leer el archivo de maquinaria y tenerlo siempre en memoria
@@ -23,10 +17,7 @@ public class Main {
         MachineryManager.printList(list);
 */
 
-        List<Machinery> list = bin.readObjetsAndAddToList();
-        /*MachineryManager.saveMachinesInOrder(list);
-        list = bin.readObjetsAndAddToList();*/
-        MachineryManager.saveMachinesInOrder(list, ID);
+        //MachineryManager.search();
 
 
 

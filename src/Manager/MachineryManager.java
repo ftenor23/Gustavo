@@ -95,7 +95,33 @@ public class MachineryManager {
         Bin.overwriteArchive(list);
     }
 
-    public void busquedaBinaria(){
-        //buscar maquinaria para modificar
+
+//funciona no tocar
+    public static int binarySearch(List<Machinery> list, String idToSearch) {
+            int inicio = 0;
+            int fin = list.size()-1;
+            int pos;
+            while (inicio <= fin) {
+                pos = (inicio+fin) / 2;
+                if (list.get(pos).getId().compareTo(idToSearch) == 0) {
+                    return pos;
+                }else if (list.get(pos).getId().compareTo(idToSearch) < 0 ) {
+                    inicio = pos+1;
+                } else {
+                    fin = pos-1;
+                }
+            }
+            return -1;
+        }
+
+
+
+
+    public static Machinery search(String id){
+        int pos = binarySearch(Bin.readObjetsAndAddToList(),id);
+        if(pos>-1) {
+            return Bin.readObjetsAndAddToList().get(pos);
+        } return null;
+
     }
 }
