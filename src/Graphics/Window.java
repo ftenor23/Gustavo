@@ -1,8 +1,10 @@
 package Graphics;
 
+import BinArchive.Bin;
 import Manager.MachineryManager;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,12 +16,12 @@ public class Window extends JFrame implements ActionListener {
     private JMenu menu1, menu2, menu3;
     private JMenuItem menuItem21, menuItem22, menuItem31, menuItem32;
     private final static String MACHINERY = "Maquinaria";
-    private JTable table;
+    private DTable table;
     private static boolean update;
 
 
     public void run(){
-        update=false;
+        update=true;
         setTitle(MACHINERY);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -31,12 +33,26 @@ public class Window extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         add(table);
 
-        ScrollPane.setScrollPane(this,ScrollPane.getScrollPane(table));
+        ScrollPane.setScrollPane(this, ScrollPane.getScrollPane(table));
         setVisible(true);
-        while(!update);
-        dispose();
-        return;
+        refreshPage();
 
+
+
+
+    }
+
+    private void refreshPage(){
+        while(update) {
+
+            update=false;
+            while (!update) ;
+            table.setModel(new TMMachinery(Bin.readObjetsAndAddToList()));
+        }
+    }
+
+    public void setTable(DTable t) {
+        this.table = t;
     }
 
     public boolean isUpdate() {
@@ -68,6 +84,14 @@ public class Window extends JFrame implements ActionListener {
         }
         if(e.getSource().equals(menuBar.getShowDevInfo())){
             ShowInfo.showData();
+            return;
+        }
+        if(e.getSource().equals(menuBar.getUpdate())){
+            Window.setUpdate(true);
+            TMMachinery model = new TMMachinery(Bin.readObjetsAndAddToList());
+            table.setModel(model);
+
+            // Window.setTable(Table.getTable());
             return;
         }
     }

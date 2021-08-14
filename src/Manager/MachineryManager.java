@@ -131,6 +131,11 @@ public class MachineryManager {
 
     }
 
+    public static int getMachineryPosition(String id){
+        return binarySearch(Bin.readObjetsAndAddToList(),id);
+    }
+
+
     private static void replaceMachine(Machinery machinery){
         List<Machinery> machineryList = Bin.readObjetsAndAddToList();
         machineryList.remove(binarySearch(machineryList, machinery.getId()));
@@ -143,9 +148,8 @@ public class MachineryManager {
         replaceMachine(machinery);
     }
 
-    public static void changeClient(Machinery machinery, String name, int zone){
-        machinery.getClient().setName(name);
-        machinery.getClient().setZone(zone);
+    public static void changeClient(Machinery machinery, Client client){
+        machinery.setClient(client);
         replaceMachine(machinery);
     }
 

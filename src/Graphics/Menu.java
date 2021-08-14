@@ -1,8 +1,10 @@
 package Graphics;
 
+import BinArchive.Bin;
 import Manager.MachineryManager;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,6 +17,7 @@ public class Menu extends JMenuBar implements ActionListener{
     private JMenuItem addMachinery;
     private JMenuItem showDevInfo;
     private JMenuItem update;
+    private TMMachinery model;
 
     public Menu() {
 
@@ -24,25 +27,25 @@ public class Menu extends JMenuBar implements ActionListener{
         add(menuInformacion);
 
         searchMachinery = new JMenuItem("Buscar por id");
-       editMachinery = new JMenuItem("Editar");
+        editMachinery = new JMenuItem("Editar");
         deleteMachinery = new JMenuItem("Eliminar");
         addMachinery = new JMenuItem("Agregar");
         showDevInfo = new JMenuItem("Acerca de");
-        update = new JMenuItem("Actualizar pantalla");
+
 
         searchMachinery.addActionListener((ActionListener) this);
         editMachinery.addActionListener((ActionListener) this);
         deleteMachinery.addActionListener((ActionListener) this);
         addMachinery.addActionListener((ActionListener) this);
         showDevInfo.addActionListener((ActionListener) this);
-        update.addActionListener((ActionListener) this);
+
 
         menuEdicion.add(addMachinery);
         menuEdicion.add(editMachinery);
         menuEdicion.add(searchMachinery);
         menuEdicion.add(new JSeparator());
         menuEdicion.add(deleteMachinery);
-        menuEdicion.add(update);
+
         menuInformacion.add(showDevInfo);
 
     }
@@ -100,27 +103,42 @@ public class Menu extends JMenuBar implements ActionListener{
         if(e.getSource().equals(getSearchMachinery())){
             String id = Graphics.showMessage("Ingrese el ID de la maquinaria a buscar");
             MachineryGraphics.showInfo(MachineryManager.search(id));
+            Window.setUpdate(true);
             return;
         }
         if(e.getSource().equals(getAddMachinery())){
             AddMachinery.enterData();
+            Window.setUpdate(true);
             return;
         }
         if(e.getSource().equals(getEditMachinery())){
             EditMachinery.edit();
+            Window.setUpdate(true);
             return;
         }
         if(e.getSource().equals(getDeleteMachinery())){
             DeleteMachinery.delete();
+            Window.setUpdate(true);
             return;
         }
         if(e.getSource().equals(getShowDevInfo())){
             ShowInfo.showData();
+            Window.setUpdate(true);
             return;
         }
         if(e.getSource().equals(getUpdate())){
             Window.setUpdate(true);
+
+
+
+           // Window.setTable(Table.getTable());
             return;
         }
     }
+
+    public TMMachinery getModel() {
+        return model;
+    }
+
+
 }

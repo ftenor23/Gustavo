@@ -12,7 +12,7 @@ public abstract class Table {
     private TMMachinery model;
 
 
-    public static JTable getTable(){
+    public static DTable getTable(){
 
         DTable table = new DTable();
         TMMachinery model = new TMMachinery(Bin.readObjetsAndAddToList());

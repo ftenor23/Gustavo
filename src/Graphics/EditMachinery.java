@@ -2,12 +2,14 @@ package Graphics;
 
 import Entity.Machinery;
 import Manager.MachineryManager;
+import Validator.IntValidator;
 
 import javax.crypto.Mac;
 import javax.swing.*;
 
 public abstract class EditMachinery {
-    private final static String OPTIONS = "1) Editar caracteristicas\n2)Cambiar de cliente\n3)Modificar pendientes\n4)Sumar horas de uso";
+    private final static String SELECT_OPTION = "Elija la opcion a realizar:";
+    private final static String[] OPTIONS = {"Editar caracteristicas","Cambiar de cliente","Modificar pendientes", "Actualizar horas de uso"};
     private final static String ENTER_ID="Ingrese el ID de la maquinaria a editar";
     private final static String ENTER_NEW_FEATURES = "Ingrese las nuevas caracteristicas:";
     private final static String ENTER_NEW_CLIENT_NAME = "Ingrese el nombre del nuevo cliente";
@@ -33,7 +35,7 @@ public abstract class EditMachinery {
     }
 
     private static void showOption(Machinery machinery){
-        int option = Integer.parseInt(JOptionPane.showInputDialog(OPTIONS));
+        int option = JOptionPane.showOptionDialog(null, SELECT_OPTION, "Seleccion", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE,null,OPTIONS,OPTIONS[0]) + 1;
         while(option<1 || option>4){
             option= Integer.parseInt(JOptionPane.showInputDialog(INVALID_OPTION+OPTIONS));
         }
@@ -44,16 +46,16 @@ public abstract class EditMachinery {
                 MachineryManager.changeFeatures(machinery,newFeatures);
                 return;
             case 2:
-                String newClientName = JOptionPane.showInputDialog(ENTER_NEW_CLIENT_NAME);
-                int zone = Integer.parseInt(JOptionPane.showInputDialog(ENTER_NEW_CLIENT_ZONE));
-                MachineryManager.changeClient(machinery,newClientName,zone);
+
+
+                MachineryManager.changeClient(machinery,AddClient.enterData(false));
                 return;
             case 3:
                 String newPending = JOptionPane.showInputDialog(ENTER_NEW_PENDING);
                 MachineryManager.changePending(machinery,newPending);
                 return;
             case 4:
-                int hoursToAdd = Integer.parseInt(JOptionPane.showInputDialog(ADD_HOURS));
+                int hoursToAdd = IntValidator.nextInt(ADD_HOURS);
                 MachineryManager.changeHours(machinery,hoursToAdd);
                 return;
         }

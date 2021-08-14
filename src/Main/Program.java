@@ -1,23 +1,29 @@
 package Main;
 
-import javax.swing.*;
-import java.awt.*;
-import java.util.List;
-
 import BinArchive.Bin;
 import Entity.Machinery;
-import Graphics.TMMachinery;
 import Graphics.Window;
+import Manager.MachineryCounter;
 import Manager.MachineryManager;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Program {
+    private final static int MACHINES_PER_PAGE = 5;
 
 
     public static void main(String[] args) {
-        MachineryManager.saveMachinesInOrder(Bin.readObjetsAndAddToList(),"ID");
-        Window window = new Window(); //agregar barrra de menu
+        List<Machinery> machineryList = Bin.readObjetsAndAddToList();
+        MachineryManager.saveMachinesInOrder(machineryList,"ID");
+        int machinesNumber = MachineryCounter.getNumberOfMachines();
+
+        int numberOfLists = machinesNumber/MACHINES_PER_PAGE;
+
+
+
+        Window window = new Window();
         window.run();
-        window.run(); //verifdicar porque se carga dos veces la tabla
 
 
     }

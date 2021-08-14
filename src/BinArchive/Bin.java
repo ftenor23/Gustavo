@@ -78,7 +78,7 @@ public class Bin {
 
     }
 
-    private static int getNumberOfMachines(){
+    public static int getNumberOfMachines(){
         int counter=0;
         try {
             RandomAccessFile file = new RandomAccessFile(FILE_LOCATION, "r");
@@ -124,6 +124,7 @@ public class Bin {
     public static void overwriteArchive(List<Machinery> list){
         Gson gson=new Gson();
         try{
+            eraseArchive();
             RandomAccessFile file = new RandomAccessFile(FILE_LOCATION,"rw");
             file.seek(0);
             String line;
@@ -134,6 +135,16 @@ public class Bin {
         file.close();
         }catch(IOException e){
             System.out.println(e);
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+
+    private static void eraseArchive(){
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_LOCATION));
+            bw.write("");
+            bw.close();
         }catch(Exception e){
             System.out.println(e);
         }
