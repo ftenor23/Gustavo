@@ -69,23 +69,25 @@ public class MachineryManager {
 
     }
 
-    public static void sortMachines(List<Machinery> list, String sortBy){
+    public static List<Machinery> sortMachines(List<Machinery> list, String sortBy){
         final String ID = "ID";
-        final String ZONE = "ZONE";
+        final String STATUS = "STATUS";
         final String HOURS_OF_USE = "HOURS OF USE";
+        final String CLIENT = "CLIENT";
 
         switch (sortBy){
             case ID:
                 list.sort(Comparator.comparing(Machinery::getId));
-                return;
-            case ZONE:
+                break;
+            case STATUS:
                 list.sort(Comparator.comparing(Machinery::getStatus));
-                return;
+                break;
             case HOURS_OF_USE:
                 list.sort(Comparator.comparing(Machinery::getHoursOfUse));
                 Collections.reverse(list);
-                return;
+                break;
         }
+        return list;
     }
 
 

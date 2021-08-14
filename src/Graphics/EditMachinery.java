@@ -18,7 +18,8 @@ public abstract class EditMachinery {
     private final static String ADD_HOURS = "Ingrese la cantidad de horas de uso (se sumaran a las acumuladas):";
     private final static String INVALID_OPTION = "Opcion invalida. Vuelva a intentar\n";
     private final static String CHANGES_SAVED = "Se guardaron todos los cambios. Presione actualizar.";
-
+    private final static String DO_YOU_WANT_TO_CHANGE_SOMETHING_ELSE = "¿Quiere realizar algun cambio mas sobre la misma maquinaria?";
+    private final static String[] YES_NO_OPTIONS = {"Si", "No"};
     public static void edit(){
         String id = JOptionPane.showInputDialog(ENTER_ID);
         Machinery machinery = MachineryManager.search(id);
@@ -44,20 +45,24 @@ public abstract class EditMachinery {
             case 1:
                 String newFeatures = JOptionPane.showInputDialog(ENTER_NEW_FEATURES);
                 MachineryManager.changeFeatures(machinery,newFeatures);
-                return;
+                break;
             case 2:
-
-
                 MachineryManager.changeClient(machinery,AddClient.enterData(false));
-                return;
+                break;
             case 3:
                 String newPending = JOptionPane.showInputDialog(ENTER_NEW_PENDING);
                 MachineryManager.changePending(machinery,newPending);
-                return;
+                break;
             case 4:
                 int hoursToAdd = IntValidator.nextInt(ADD_HOURS);
                 MachineryManager.changeHours(machinery,hoursToAdd);
-                return;
+                break;
+        }
+
+        option = JOptionPane.showOptionDialog(null,DO_YOU_WANT_TO_CHANGE_SOMETHING_ELSE,"Seleccion",JOptionPane.DEFAULT_OPTION,JOptionPane.INFORMATION_MESSAGE,null,YES_NO_OPTIONS,YES_NO_OPTIONS[0]);
+
+        if(option==0){ //si = 0
+            showOption(machinery);
         }
     }
 }

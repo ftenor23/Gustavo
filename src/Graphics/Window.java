@@ -1,13 +1,16 @@
 package Graphics;
 
 import BinArchive.Bin;
+import Entity.Machinery;
 import Manager.MachineryManager;
 
+import javax.crypto.Mac;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class Window extends JFrame implements ActionListener {
     /*private JFrame frame;
@@ -18,12 +21,28 @@ public class Window extends JFrame implements ActionListener {
     private final static String MACHINERY = "Maquinaria";
     private DTable table;
     private static boolean update;
+    private static int sortMode=-1;
+    private final static String HOURS = "HOURS OF USE";
+    private final static String STATUS = "STATUS";
 
+    public static int getSortMode() {
+        return sortMode;
+    }
+
+    public static void setSortMode(int sortMode) {
+        Window.sortMode = sortMode;
+    }
 
     public void run(){
         update=true;
+        setWindow();
+        refreshPage();
+    }
+
+    private void setWindow(){
         setTitle(MACHINERY);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
 
         menuBar = new Menu();
         setJMenuBar(menuBar);
@@ -35,22 +54,39 @@ public class Window extends JFrame implements ActionListener {
 
         ScrollPane.setScrollPane(this, ScrollPane.getScrollPane(table));
         setVisible(true);
-        refreshPage();
-
-
-
-
     }
-
     private void refreshPage(){
         while(update) {
 
             update=false;
             while (!update) ;
-            table.setModel(new TMMachinery(Bin.readObjetsAndAddToList()));
+            switch (sortMode){
+                case 1:
+                    sortByStatus();
+                    break;
+                case 2:
+                    sortByHours();
+                    break;
+                default:
+                    sortById();
+                    break;
+            }
+            sortMode=-1;
         }
     }
 
+    private void sortByHours(){
+        List<Machinery> list = MachineryManager.sortMachines(Bin.readObjetsAndAddToList(),HOURS);
+        table.setModel(new TMMachinery(list));
+    }
+
+    private void sortById(){
+        table.setModel(new TMMachinery(Bin.readObjetsAndAddToList()));
+    }
+    private void sortByStatus(){
+        List<Machinery> list = MachineryManager.sortMachines(Bin.readObjetsAndAddToList(),STATUS);
+        table.setModel(new TMMachinery(list));
+    }
     public void setTable(DTable t) {
         this.table = t;
     }

@@ -17,6 +17,7 @@ public abstract class Table {
         DTable table = new DTable();
         TMMachinery model = new TMMachinery(Bin.readObjetsAndAddToList());
         table.setModel(model);
+        //table.setFont(new Font("Arial",Font.PLAIN,16));
         //table.setBackground(new Color(192,192,192));
         return table;
     }

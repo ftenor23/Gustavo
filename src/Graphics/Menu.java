@@ -17,20 +17,34 @@ public class Menu extends JMenuBar implements ActionListener{
     private JMenuItem addMachinery;
     private JMenuItem showDevInfo;
     private JMenuItem update;
+    private JMenuItem sortByStatus;
+    private JMenuItem sortByClient;
+    private JMenuItem sortByHours;
     private TMMachinery model;
 
     public Menu() {
 
         JMenu menuEdicion = new JMenu("Editar maquinaria");
         JMenu menuInformacion = new JMenu("Informacion");
+        JMenu menuTabla = new JMenu("Tabla");
         add(menuEdicion);
+        add(menuTabla);
         add(menuInformacion);
 
+        addItems(menuEdicion,menuInformacion,menuTabla);
+
+
+
+    }
+
+    private void addItems(JMenu menuEdicion, JMenu menuInformacion, JMenu menuTabla){
         searchMachinery = new JMenuItem("Buscar por id");
         editMachinery = new JMenuItem("Editar");
         deleteMachinery = new JMenuItem("Eliminar");
         addMachinery = new JMenuItem("Agregar");
         showDevInfo = new JMenuItem("Acerca de");
+        sortByHours = new JMenuItem("Ordenar por cantidad de horas sin mantenimiento");
+        sortByStatus = new JMenuItem("Ordenar por estado");
 
 
         searchMachinery.addActionListener((ActionListener) this);
@@ -38,6 +52,8 @@ public class Menu extends JMenuBar implements ActionListener{
         deleteMachinery.addActionListener((ActionListener) this);
         addMachinery.addActionListener((ActionListener) this);
         showDevInfo.addActionListener((ActionListener) this);
+        sortByStatus.addActionListener((ActionListener) this);
+        sortByHours.addActionListener((ActionListener) this);
 
 
         menuEdicion.add(addMachinery);
@@ -45,9 +61,10 @@ public class Menu extends JMenuBar implements ActionListener{
         menuEdicion.add(searchMachinery);
         menuEdicion.add(new JSeparator());
         menuEdicion.add(deleteMachinery);
+        menuTabla.add(sortByHours);
+        menuTabla.add(sortByStatus);
 
         menuInformacion.add(showDevInfo);
-
     }
 
     public JMenuItem getShowDevInfo() {
@@ -128,10 +145,17 @@ public class Menu extends JMenuBar implements ActionListener{
         }
         if(e.getSource().equals(getUpdate())){
             Window.setUpdate(true);
-
-
-
            // Window.setTable(Table.getTable());
+            return;
+        }
+        if(e.getSource().equals(sortByStatus)){
+            Window.setSortMode(1);
+            Window.setUpdate(true);
+            return;
+        }
+        if(e.getSource().equals(sortByHours)){
+            Window.setSortMode(2);
+            Window.setUpdate(true);
             return;
         }
     }

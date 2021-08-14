@@ -1,10 +1,11 @@
 {"id":"000000000000","status":3,"client":{"name":"Gero","zone":1,"isAssigned":false},"features":"Huawet","pending":" ","hoursOfUse":56}
 {"id":"111111","status":2,"client":{"name":"Romina","zone":1,"isAssigned":false},"features":"Rustico","pending":" ","hoursOfUse":4}
+{"id":"111111","status":3,"client":{"zone":0,"isAssigned":false},"pending":" ","hoursOfUse":0}
 {"id":"1254871","status":1,"client":{"name":"Ric","zone":2,"isAssigned":false},"features":"Ro","pending":" ","hoursOfUse":12}
 {"id":"1254887","status":3,"client":{"name":"roman","zone":2,"isAssigned":false},"features":"gatienzo","pending":" ","hoursOfUse":34}
 {"id":"44444444","status":3,"client":{"name":"Susana","zone":2,"isAssigned":false},"features":"Romano","pending":" ","hoursOfUse":4}
 {"id":"454548","status":1,"client":{"name":"4","zone":1,"isAssigned":false},"features":"5","pending":" ","hoursOfUse":122}
-{"id":"A123","status":1,"client":{"name":"El bananero SAPEEEEEEEE","zone":2,"isAssigned":false},"features":"Rattata","pending":" ","hoursOfUse":12}
+{"id":"A123","status":1,"client":{"name":"Kelsi Monroe","zone":2,"isAssigned":false},"features":"Birome Bic","pending":"Realizar cambio de aceite el 23/08","hoursOfUse":2209}
 {"id":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA","status":1,"client":{"name":"Jesus","zone":4,"isAssigned":false},"features":"Jesucristo","pending":" ","hoursOfUse":567}
 {"id":"E32323","status":1,"client":{"name":"GERMAN","zone":4,"isAssigned":false},"features":"FFFF","pending":" ","hoursOfUse":45}
 {"id":"G78757","status":1,"client":{"name":"Kokumo","zone":1,"isAssigned":false},"features":"32342","pending":" ","hoursOfUse":12}
@@ -12,6 +13,6 @@
 {"id":"R56432","status":3,"client":{"name":"Ricardes","zone":1,"isAssigned":false},"features":"No sabemos osososososooooooooooooooooooooooooooooooooooooooooooooooooo","pending":" ","hoursOfUse":12}
 {"id":"ZZZZZZZZZZZZZZZ","status":2,"client":{"name":"terminator","zone":1,"isAssigned":false},"features":"Gigante","pending":" ","hoursOfUse":56}
 {"id":"a3432342","status":1,"client":{"name":"Julian Jarazo","zone":1,"isAssigned":false},"features":"Romanovich","pending":" ","hoursOfUse":24}
-{"id":"s2345","status":3,"client":{"name":"Federico","zone":4,"isAssigned":false},"features":"Vegan","pending":" ","hoursOfUse":1432}
+{"id":"s2345","status":3,"client":{"name":"Federico","zone":4,"isAssigned":false},"features":"Mickey y wendy son perros quilomberos","pending":" ","hoursOfUse":1432}
 {"id":"w334242","status":1,"client":{"name":"Jose","zone":1,"isAssigned":false},"features":"Robusc","pending":" ","hoursOfUse":1888}
 {"id":"z133333333","status":1,"client":{"name":"gustavo","zone":1,"isAssigned":false},"features":"gustavo","pending":" ","hoursOfUse":12}
