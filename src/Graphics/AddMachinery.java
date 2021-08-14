@@ -16,7 +16,7 @@ public abstract class AddMachinery {
     private final static String ENTER_STATUS = "Ingrese el estado de la maquinaria\n1:en casa central\n2:en viaje\n3: en comercio";
     private final static String ENTER_FEATURES = "Ingrese la descripcion de la maquinaria:";
     private final static String ENTER_HOURS = "Ingrese las horas de uso hasta el momento. Recuerde que cada 250 se debe realizar un service.";
-    private final static String NEW_MACHINE_SAVED = "Se guardo la nueva maquinaria. Presione actualizar.";
+    private final static String NEW_MACHINE_SAVED = "Se guardo la nueva maquinaria correctamente.";
     private final static String[] OPTIONS = {"Casa central", "En viaje", "En comercio"};
 
     public static void enterData(){

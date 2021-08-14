@@ -32,9 +32,6 @@ public class Menu extends JMenuBar implements ActionListener{
         add(menuInformacion);
 
         addItems(menuEdicion,menuInformacion,menuTabla);
-
-
-
     }
 
     private void addItems(JMenu menuEdicion, JMenu menuInformacion, JMenu menuTabla){
@@ -118,14 +115,23 @@ public class Menu extends JMenuBar implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource().equals(getSearchMachinery())){
-            String id = Graphics.showMessage("Ingrese el ID de la maquinaria a buscar");
-            MachineryGraphics.showInfo(MachineryManager.search(id));
-            Window.setUpdate(true);
+            try{
+                String id = Graphics.showMessage("Ingrese el ID de la maquinaria a buscar");
+                MachineryGraphics.showInfo(MachineryManager.search(id));
+                Window.setUpdate(true);
+            }catch(Exception ex){
+                //esta seguro de que desea cancelar?
+            }
+
             return;
         }
         if(e.getSource().equals(getAddMachinery())){
-            AddMachinery.enterData();
-            Window.setUpdate(true);
+            try {
+                AddMachinery.enterData();
+                Window.setUpdate(true);
+            }catch(Exception ex){
+
+            }
             return;
         }
         if(e.getSource().equals(getEditMachinery())){
