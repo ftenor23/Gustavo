@@ -1,5 +1,6 @@
 package Graphics;
 
+import Constants.SORT_CONSTANTS;
 import EnterData.EnterData;
 import Entity.Client;
 
@@ -18,7 +19,22 @@ public abstract class AddClient {
         }else{
             message=CHANGE_CLIENT_NAME;
         }
-        String clientName = JOptionPane.showInputDialog(message);
+
+        return validateData(message);
+    }
+
+    private static Client validateData(String message){
+        String clientName = null;
+        final int EXIT=0;
+
+        while(clientName==null){
+            clientName=JOptionPane.showInputDialog(message);
+            if(clientName==null){
+                if(AddMachinery.exit()==EXIT){
+                    return null;
+                }
+            }
+        }
         int clientZone = JOptionPane.showOptionDialog(null, ENTER_CLIENT_ZONE, "Zona", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE,null,OPTIONS,OPTIONS[0]) + 1;
 
         return new Client(clientName,clientZone);

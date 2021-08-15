@@ -9,14 +9,46 @@ public class Machinery implements Serializable {
     private String features;
     private String pending;
     private int hoursOfUse;
+    private boolean service_250;
+    private boolean service_1000;
     //agregar variable que indique si se le hicieron los service cada 250 horas
     //caracteristicas
 
     public Machinery() {
+        service_250=false;
+        service_1000=false;
     }
 
     public String getPending() {
         return pending;
+    }
+
+    public String getClientName(){
+        String name = getClient().getName();
+        if(name==null){
+            return " ";
+        }
+        return name;
+    }
+
+    public boolean isService_250() {
+        return service_250;
+    }
+
+    public void setService_250(boolean service_250) {
+        this.service_250 = service_250;
+    }
+
+    public boolean isService_1000() {
+        return service_1000;
+    }
+
+    public void setService_1000(boolean service_1000) {
+        this.service_1000 = service_1000;
+    }
+
+    public int getClientZone(){
+        return getClient().getZone();
     }
 
     public void setPending(String pending) {

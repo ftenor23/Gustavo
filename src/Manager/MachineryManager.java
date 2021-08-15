@@ -1,6 +1,7 @@
 package Manager;
 
 import BinArchive.Bin;
+import Constants.SORT_CONSTANTS;
 import EnterData.EnterData;
 import Entity.Client;
 import Entity.Machinery;
@@ -54,7 +55,7 @@ public class MachineryManager {
     }
 
     public static void printList(List<Machinery> list){
-        sortMachinesById(list);
+        Sort.sortMachinesById(list);
         for(int i=0; i<list.size();i++){
             int number=i+1;
             System.out.println("Maquinaria " + number + ":");
@@ -63,36 +64,10 @@ public class MachineryManager {
         }
     }
 
-    public static void sortMachinesById(List<Machinery> list){
-        //ordenar por algun criterio
-        list.sort(Comparator.comparing(Machinery::getId));
-
-    }
-
-    public static List<Machinery> sortMachines(List<Machinery> list, String sortBy){
-        final String ID = "ID";
-        final String STATUS = "STATUS";
-        final String HOURS_OF_USE = "HOURS OF USE";
-        final String CLIENT = "CLIENT";
-
-        switch (sortBy){
-            case ID:
-                list.sort(Comparator.comparing(Machinery::getId));
-                break;
-            case STATUS:
-                list.sort(Comparator.comparing(Machinery::getStatus));
-                break;
-            case HOURS_OF_USE:
-                list.sort(Comparator.comparing(Machinery::getHoursOfUse));
-                Collections.reverse(list);
-                break;
-        }
-        return list;
-    }
 
 
     public static void saveMachinesInOrder(List<Machinery> list, String sortBy){
-        sortMachines(list, sortBy); //SIEMPRE SE TINENE QUE GUARDAR POR ID. A LA HORA DE MOSTRARLAS EN PANTALLA
+        Sort.sortMachines(list, sortBy); //SIEMPRE SE TINENE QUE GUARDAR POR ID. A LA HORA DE MOSTRARLAS EN PANTALLA
         //SE PUEDEN ORDENAR POR ALGUN CRITERIO A ALECCION DEL USUARIO
         Bin.overwriteArchive(list);
     }
@@ -100,7 +75,7 @@ public class MachineryManager {
     public static void saveNewMachine(Machinery machinery){
         List<Machinery> list = Bin.readObjetsAndAddToList();
         list.add(machinery);
-        saveMachinesInOrder(list, "ID");
+        saveMachinesInOrder(list, SORT_CONSTANTS.ID);
     }
 
 
@@ -142,7 +117,7 @@ public class MachineryManager {
         List<Machinery> machineryList = Bin.readObjetsAndAddToList();
         machineryList.remove(binarySearch(machineryList, machinery.getId()));
         machineryList.add(machinery);
-        saveMachinesInOrder(machineryList,"ID");
+        saveMachinesInOrder(machineryList,SORT_CONSTANTS.ID);
     }
 
     public static void changeFeatures(Machinery machinery, String line){
@@ -171,9 +146,19 @@ public class MachineryManager {
         int pos = binarySearch(machineryList,id);
         if(pos>-1){
             machineryList.remove(pos);
-            saveMachinesInOrder(machineryList,"ID");
+            saveMachinesInOrder(machineryList,SORT_CONSTANTS.ID);
             return true;
         }
         return false;
+    }
+
+    public static void serService250(Machinery machinery){
+        machinery.setService_250(true);
+        replaceMachine(machinery);
+    }
+
+    public static void serService1000(Machinery machinery){
+        machinery.setService_1000(true);
+        replaceMachine(machinery);
     }
 }

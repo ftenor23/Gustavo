@@ -14,11 +14,11 @@ public class Program {
 
 
     public static void main(String[] args) {
-        List<Machinery> machineryList = Bin.readObjetsAndAddToList();
+        /*List<Machinery> machineryList = Bin.readObjetsAndAddToList();
         MachineryManager.saveMachinesInOrder(machineryList,"ID");
         int machinesNumber = MachineryCounter.getNumberOfMachines();
 
-        int numberOfLists = machinesNumber/MACHINES_PER_PAGE;
+        int numberOfLists = machinesNumber/MACHINES_PER_PAGE;*/
 
 
 

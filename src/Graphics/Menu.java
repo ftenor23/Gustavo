@@ -1,6 +1,7 @@
 package Graphics;
 
 import BinArchive.Bin;
+import Constants.SORT_CONSTANTS;
 import Manager.MachineryManager;
 
 import javax.swing.*;
@@ -20,6 +21,7 @@ public class Menu extends JMenuBar implements ActionListener{
     private JMenuItem sortByStatus;
     private JMenuItem sortByClient;
     private JMenuItem sortByHours;
+    private JMenuItem sortByZone;
     private TMMachinery model;
 
     public Menu() {
@@ -42,6 +44,8 @@ public class Menu extends JMenuBar implements ActionListener{
         showDevInfo = new JMenuItem("Acerca de");
         sortByHours = new JMenuItem("Ordenar por cantidad de horas sin mantenimiento");
         sortByStatus = new JMenuItem("Ordenar por estado");
+        sortByClient = new JMenuItem("Ordenar por cliente");
+        sortByZone = new JMenuItem("Ordenar por zona");
 
 
         searchMachinery.addActionListener((ActionListener) this);
@@ -51,6 +55,8 @@ public class Menu extends JMenuBar implements ActionListener{
         showDevInfo.addActionListener((ActionListener) this);
         sortByStatus.addActionListener((ActionListener) this);
         sortByHours.addActionListener((ActionListener) this);
+        sortByClient.addActionListener((ActionListener) this);
+        sortByZone.addActionListener((ActionListener) this);
 
 
         menuEdicion.add(addMachinery);
@@ -60,6 +66,8 @@ public class Menu extends JMenuBar implements ActionListener{
         menuEdicion.add(deleteMachinery);
         menuTabla.add(sortByHours);
         menuTabla.add(sortByStatus);
+        menuTabla.add(sortByClient);
+        menuTabla.add(sortByZone);
 
         menuInformacion.add(showDevInfo);
     }
@@ -155,15 +163,26 @@ public class Menu extends JMenuBar implements ActionListener{
             return;
         }
         if(e.getSource().equals(sortByStatus)){
-            Window.setSortMode(1);
+            Window.setSortMode(SORT_CONSTANTS.STATUS);
             Window.setUpdate(true);
             return;
         }
         if(e.getSource().equals(sortByHours)){
-            Window.setSortMode(2);
+            Window.setSortMode(SORT_CONSTANTS.HOURS_OF_USE);
             Window.setUpdate(true);
             return;
         }
+        if(e.getSource().equals(sortByClient)){
+            Window.setSortMode(SORT_CONSTANTS.CLIENT);
+            Window.setUpdate(true);
+            return;
+        }
+        if(e.getSource().equals(sortByZone)){
+            Window.setSortMode(SORT_CONSTANTS.ZONE);
+            Window.setUpdate(true);
+            return;
+        }
+
     }
 
     public TMMachinery getModel() {

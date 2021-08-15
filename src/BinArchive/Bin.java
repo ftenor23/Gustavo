@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Bin {
 
-    private static final String FILE_LOCATION = "C:/Users/Facundo/IdeaProjects/Gustavo/data/maquinaria.txt";
+    private static final String FILE_LOCATION = "maquinaria.txt";
 
 
     /*public static void writeMachineryInDisc(){
@@ -47,7 +47,18 @@ public class Bin {
         try {
             //hacer una copia de seguridad en otra carpeta cada vez que guardo el archivo
             int newMachineNumber = getNumberOfMachines()+1; //numero de maquinas registradas + 1 por la posicion de la nueva
+
+            try {
+                File file1 = new File(FILE_LOCATION, "r");
+
+                if (!file1.exists()) {
+                    file1.createNewFile();
+                }
+            }catch(Exception e){
+
+            }
             RandomAccessFile file = new RandomAccessFile(FILE_LOCATION,"rw");
+
 
             seekEndOfFile(file);
 
@@ -56,7 +67,7 @@ public class Bin {
             //se cierra archivo
             file.close();
         } catch (IOException ex) {
-            System.out.println(ex);
+
         }
     }
 

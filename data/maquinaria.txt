@@ -1,15 +1,4 @@
-{"id":"000000000000","status":3,"client":{"name":"Gero","zone":1,"isAssigned":false},"features":"Huawet","pending":" ","hoursOfUse":56}
-{"id":"111111","status":2,"client":{"name":"Romina","zone":1,"isAssigned":false},"features":"Rustico","pending":" ","hoursOfUse":4}
-{"id":"111111","status":3,"client":{"zone":0,"isAssigned":false},"pending":" ","hoursOfUse":0}
-{"id":"1254871","status":1,"client":{"name":"Ric","zone":2,"isAssigned":false},"features":"Ro","pending":" ","hoursOfUse":12}
-{"id":"44444444","status":3,"client":{"name":"Susana","zone":2,"isAssigned":false},"features":"Romano","pending":" ","hoursOfUse":4}
-{"id":"454548","status":1,"client":{"name":"4","zone":1,"isAssigned":false},"features":"5","pending":" ","hoursOfUse":122}
-{"id":"5454","status":2,"client":{"zone":0,"isAssigned":false},"pending":" ","hoursOfUse":5}
-{"id":"E32323","status":1,"client":{"name":"GERMAN","zone":4,"isAssigned":false},"features":"FFFF","pending":" ","hoursOfUse":45}
-{"id":"G78757","status":1,"client":{"name":"Kokumo","zone":1,"isAssigned":false},"features":"32342","pending":" ","hoursOfUse":12}
-{"id":"G8458","status":2,"client":{"name":"Claudia Martelli","zone":4,"isAssigned":false},"features":"Grua","pending":" ","hoursOfUse":988}
-{"id":"R34332","status":2,"client":{"zone":0,"isAssigned":false},"pending":" ","hoursOfUse":0}
-{"id":"a3432342","status":1,"client":{"name":"Julian Jarazo","zone":1,"isAssigned":false},"features":"Romanovich","pending":" ","hoursOfUse":24}
-{"id":"s2345","status":3,"client":{"name":"Federico","zone":4,"isAssigned":false},"features":"Mickey y wendy son perros quilomberos","pending":" ","hoursOfUse":1432}
-{"id":"w334242","status":1,"client":{"name":"Jose","zone":1,"isAssigned":false},"features":"Robusc","pending":" ","hoursOfUse":1888}
-{"id":"z133333333","status":1,"client":{"name":"gustavo","zone":1,"isAssigned":false},"features":"gustavo","pending":" ","hoursOfUse":12}
+{"id":"000000000000","status":3,"client":{"name":"Gero","zone":1,"isAssigned":false},"features":"Huawet","pending":" ","hoursOfUse":56,"service_250":false,"service_1000":false}
+{"id":"A123","status":2,"client":{"name":"Belen","zone":3,"isAssigned":false},"features":"Celular 4g","pending":" ","hoursOfUse":1198,"service_250":false,"service_1000":true}
+{"id":"R567","status":1,"client":{"name":"German","zone":1,"isAssigned":false},"features":"Riquelme","pending":" ","hoursOfUse":1300,"service_250":false,"service_1000":true}
+{"id":"RT434","status":3,"client":{"name":"Pepe","zone":2,"isAssigned":false},"features":"1987","pending":" ","hoursOfUse":715,"service_250":true,"service_1000":false}

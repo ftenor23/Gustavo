@@ -1,8 +1,10 @@
 package Graphics;
 
 import BinArchive.Bin;
+import Constants.SORT_CONSTANTS;
 import Entity.Machinery;
 import Manager.MachineryManager;
+import Manager.Sort;
 
 import javax.crypto.Mac;
 import javax.swing.*;
@@ -21,15 +23,15 @@ public class Window extends JFrame implements ActionListener {
     private final static String MACHINERY = "Maquinaria";
     private DTable table;
     private static boolean update;
-    private static int sortMode=-1;
+    private static String sortMode= SORT_CONSTANTS.ID;
     private final static String HOURS = "HOURS OF USE";
     private final static String STATUS = "STATUS";
 
-    public static int getSortMode() {
+    public static String getSortMode() {
         return sortMode;
     }
 
-    public static void setSortMode(int sortMode) {
+    public static void setSortMode(String sortMode) {
         Window.sortMode = sortMode;
     }
 
@@ -60,33 +62,17 @@ public class Window extends JFrame implements ActionListener {
 
             update=false;
             while (!update) ;
-            switch (sortMode){
-                case 1:
-                    sortByStatus();
-                    break;
-                case 2:
-                    sortByHours();
-                    break;
-                default:
-                    sortById();
-                    break;
-            }
-            sortMode=-1;
+            sortBy(sortMode);
+           setSortMode(SORT_CONSTANTS.ID);
         }
     }
 
-    private void sortByHours(){
-        List<Machinery> list = MachineryManager.sortMachines(Bin.readObjetsAndAddToList(),HOURS);
+
+    private void sortBy(String option){
+        List<Machinery> list = Sort.sortMachines(Bin.readObjetsAndAddToList(),option);
         table.setModel(new TMMachinery(list));
     }
 
-    private void sortById(){
-        table.setModel(new TMMachinery(Bin.readObjetsAndAddToList()));
-    }
-    private void sortByStatus(){
-        List<Machinery> list = MachineryManager.sortMachines(Bin.readObjetsAndAddToList(),STATUS);
-        table.setModel(new TMMachinery(list));
-    }
     public void setTable(DTable t) {
         this.table = t;
     }

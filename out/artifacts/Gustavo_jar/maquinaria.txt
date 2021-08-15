@@ -1,0 +1,3 @@
+{"id":"A123","status":1,"client":{"name":"Torino Fernanza","zone":1,"isAssigned":false},"features":"Celular","pending":" ","hoursOfUse":45,"service_250":false,"service_1000":false}
+{"id":"W345","status":1,"client":{"name":"Televisor LED","zone":1,"isAssigned":false},"features":"Ganso","pending":" ","hoursOfUse":567,"service_250":false,"service_1000":false}
+{"id":"f5699","status":1,"client":{"name":"Facundo Tenor","zone":1,"isAssigned":false},"features":"Decodificardor Coradir","pending":" ","hoursOfUse":678,"service_250":false,"service_1000":false}
