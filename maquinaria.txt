@@ -1,22 +1,24 @@
-{"id":"A0","status":1,"client":{"name":"Leandro","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A1","status":1,"client":{"name":"Claudia","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A10","status":1,"client":{"name":"Jonathan","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A100","status":1,"client":{"name":"Jonathan","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A101","status":1,"client":{"name":"Octavio","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A102","status":1,"client":{"name":"Gustavo","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A103","status":1,"client":{"name":"Pepe","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A104","status":1,"client":{"name":"Marcelo","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A105","status":1,"client":{"name":"Roman","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A106","status":1,"client":{"name":"Lionel","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A107","status":1,"client":{"name":"German","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A108","status":1,"client":{"name":"Geremias","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A109","status":1,"client":{"name":"Pepe","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A11","status":1,"client":{"name":"Pepe","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A110","status":1,"client":{"name":"Sofia","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A111","status":1,"client":{"name":"Leandro","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A112","status":1,"client":{"name":"Leandro","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A113","status":1,"client":{"name":"Javier","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A114","status":1,"client":{"name":"German","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A115","status":1,"client":{"name":"Enzo","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A116","status":1,"client":{"name":"Roman","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A343","status":1,"client":{"name":"Facundo Tenor","zone":1,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":188,"service_250":false,"service_1000":false}
+{"id":"A0","status":1,"client":{"name":"Leandro","zone":2,"isAssigned":false},"features":"Correa","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A1","status":2,"client":{"name":"Claudia","zone":1,"isAssigned":false},"features":"Cuchi","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A10","status":3,"client":{"name":"Jonathan","zone":3,"isAssigned":false},"features":"Esqueleto","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A100","status":4,"client":{"name":"Jonathan","zone":1,"isAssigned":false},"features":"Olla","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A101","status":1,"client":{"name":"Octavio","zone":4,"isAssigned":false},"features":"Botas de trabajo","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A102","status":1,"client":{"name":"Gustavo","zone":1,"isAssigned":false},"features":"Guitarra","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A103","status":4,"client":{"name":"Pepe","zone":2,"isAssigned":false},"features":"Pedalera","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A104","status":2,"client":{"name":"Marcelo","zone":2,"isAssigned":false},"features":"Vaso","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A105","status":1,"client":{"name":"Roman","zone":1,"isAssigned":false},"features":"Televisor led","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A106","status":3,"client":{"name":"Lionel","zone":1,"isAssigned":false},"features":"Televisor","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A107","status":1,"client":{"name":"German","zone":4,"isAssigned":false},"features":"Decodificiador","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A108","status":3,"client":{"name":"Geremias","zone":3,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A109","status":2,"client":{"name":"Pepe","zone":2,"isAssigned":false},"features":"Plomeria","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A11","status":4,"client":{"name":"Pepe","zone":1,"isAssigned":false},"features":"Maquinaria para casas","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A110","status":2,"client":{"name":"Sofia","zone":2,"isAssigned":false},"features":"Canilla","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A111","status":4,"client":{"name":"Leandro","zone":3,"isAssigned":false},"features":"Iphone","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A112","status":1,"client":{"name":"Leandro","zone":3,"isAssigned":false},"features":"Televisor","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A113","status":3,"client":{"name":"Javier","zone":3,"isAssigned":false},"features":"Stereo","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A114","status":2,"client":{"name":"German","zone":1,"isAssigned":false},"features":"Master","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A115","status":3,"client":{"name":"Enzo","zone":2,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A116","status":4,"client":{"name":"Roman","zone":1,"isAssigned":false},"features":"Celular","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A343","status":1,"client":{"name":"Facundo Tenor","zone":4,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":188,"service_250":false,"service_1000":false}
+{"id":"R456","status":3,"client":{"name":"Robert Gonzalves","zone":3,"isAssigned":false},"features":"Televisor Philco FullHD","pending":" ","hoursOfUse":980,"service_250":false,"service_1000":false}
+{"id":"T5665","status":2,"client":{"name":"Sara","zone":3,"isAssigned":false},"features":"Terminator","pending":" ","hoursOfUse":888,"service_250":false,"service_1000":false}

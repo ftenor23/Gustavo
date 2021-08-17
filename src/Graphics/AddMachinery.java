@@ -27,6 +27,7 @@ public abstract class AddMachinery {
             return;
         }
         MachineryManager.saveNewMachine(machinery);
+        Window.addMachineryToList(machinery);
         JOptionPane.showMessageDialog(null, NEW_MACHINE_SAVED);
     }
 

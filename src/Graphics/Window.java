@@ -25,7 +25,7 @@ public class Window extends JFrame implements ActionListener {
     private static String sortMode= SORT_CONSTANTS.ID;
     private final static String HOURS = "HOURS OF USE";
     private final static String STATUS = "STATUS";
-    private List<Machinery> machineryList;
+    private static List<Machinery> machineryList;
 
     public static String getSortMode() {
         return sortMode;
@@ -68,43 +68,42 @@ public class Window extends JFrame implements ActionListener {
         }
     }
 
+    public static void addMachineryToList(Machinery machinery){
+        machineryList.add(machinery);
+    }
 
     private void sortBy(String option){
+        final int REGISTROS_A_MOSTRAR = 3;
         Sort.sortMachines(machineryList,option);
+
+        //transformar listas en vetyores
         List<Machinery> list1= new ArrayList<>();
         List<Machinery> list2= new ArrayList<>();
 
-        for(int i = 0; i<machineryList.size()/2;i++){
-            list1.add(machineryList.get(i));
-        }
-
-        for(int i=machineryList.size()/2;i<machineryList.size();i++){
-            list2.add(machineryList.get(i));
-        }
-
+        int counter = 0;
         while(sortMode.equals(option)) {
-            System.out.println("Lista 1");
-            table.setModel(new TMMachinery(list1));
-            MachineryManager.printList(list1);
-
-            try {
-                Thread.sleep(2000);
-            } catch (Exception e) {
-
-            }
-            System.out.println("Lista 2");
-            table.setModel(new TMMachinery(list2));
-
-            MachineryManager.printList(list2);
-            try {
-                Thread.sleep(2000);
-            } catch (Exception e) {
-
+            for (int i = 0; i < machineryList.size(); i++) {
+                if (counter < REGISTROS_A_MOSTRAR) {
+                    list1.add(machineryList.get(i));
+                    counter++;
+                }
+                if (counter == REGISTROS_A_MOSTRAR) {
+                    table.setModel(new TMMachinery(list1));
+                    wait(2000);
+                    counter = 0;
+                    list1.clear();
+                }
             }
         }
 
+    }
 
+    private void wait(int time){
+        try {
+            Thread.sleep(time);
+        } catch (Exception e) {
 
+        }
     }
 
     public void setTable(DTable t) {
