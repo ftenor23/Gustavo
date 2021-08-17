@@ -1,11 +1,9 @@
 package Graphics;
 
-import BinArchive.Bin;
 import Constants.SORT_CONSTANTS;
 import Manager.MachineryManager;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

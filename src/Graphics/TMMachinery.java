@@ -100,18 +100,25 @@ public class TMMachinery implements TableModel {
         switch (columnIndex) {
             case 0:
                 machinery.setId(aValue.toString());
+                break;
             case 1:
                 machinery.setStatus((Integer) aValue);
+                break;
             case 2:
                 machinery.getClient().setName(aValue.toString());
+                break;
             case 3:
-                machinery.getClient().setZone((Integer) aValue); //verificar si le paso string o int
+                machinery.getClient().setZone((Integer) aValue);
+                break;//verificar si le paso string o int
             case 4:
                 machinery.setFeatures(aValue.toString());
+                break;
             case 5:
                 machinery.setPending(aValue.toString());
+                break;
             case 6:
                 machinery.setHoursOfUse((Integer) aValue);
+                break;
         }
 
     }

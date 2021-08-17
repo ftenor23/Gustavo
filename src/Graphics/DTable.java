@@ -1,6 +1,6 @@
 package Graphics;
 
-import BinArchive.Bin;
+import Mapper.Bin;
 import Entity.Machinery;
 import Manager.MachineryManager;
 
@@ -15,7 +15,7 @@ public class DTable extends JTable {
         Component component = super.prepareRenderer(renderer,rowIndex,colIndex);
         component.setBackground(Color.white);
         component.setForeground(Color.BLACK);
-        List<Machinery> list = Bin.readObjetsAndAddToList();
+        //List<Machinery> list = Bin.readObjetsAndAddToList();
 
         if(colIndex==HOURS_OF_USE_COLUMN){
             int value = Integer.parseInt(getValueAt(rowIndex,colIndex).toString());

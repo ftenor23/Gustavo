@@ -1,18 +1,14 @@
 package Manager;
 
-import BinArchive.Bin;
+import Mapper.Bin;
 import Constants.SORT_CONSTANTS;
 import EnterData.EnterData;
 import Entity.Client;
 import Entity.Machinery;
 import Graphics.MachineryGraphics;
-import com.sun.xml.internal.bind.v2.model.core.ID;
 
 import javax.crypto.Mac;
-import java.sql.Struct;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class MachineryManager {
@@ -55,11 +51,11 @@ public class MachineryManager {
     }
 
     public static void printList(List<Machinery> list){
-        Sort.sortMachinesById(list);
+
         for(int i=0; i<list.size();i++){
             int number=i+1;
             System.out.println("Maquinaria " + number + ":");
-            MachineryGraphics.printMachineryData(list.get(i));
+            System.out.println(MachineryGraphics.printMachineryData(list.get(i)));
             System.out.println(" ");
         }
     }
@@ -78,6 +74,9 @@ public class MachineryManager {
         saveMachinesInOrder(list, SORT_CONSTANTS.ID);
     }
 
+    public static void writeInDisc(Machinery machinery){
+        Bin.addNewMachinery(machinery);
+    }
 
 //funciona no tocar
     public static int binarySearch(List<Machinery> list, String idToSearch) {

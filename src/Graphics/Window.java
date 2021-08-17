@@ -1,17 +1,16 @@
 package Graphics;
 
-import BinArchive.Bin;
+import Mapper.Bin;
 import Constants.SORT_CONSTANTS;
 import Entity.Machinery;
 import Manager.MachineryManager;
 import Manager.Sort;
 
-import javax.crypto.Mac;
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Window extends JFrame implements ActionListener {
@@ -26,6 +25,7 @@ public class Window extends JFrame implements ActionListener {
     private static String sortMode= SORT_CONSTANTS.ID;
     private final static String HOURS = "HOURS OF USE";
     private final static String STATUS = "STATUS";
+    private List<Machinery> machineryList;
 
     public static String getSortMode() {
         return sortMode;
@@ -37,6 +37,7 @@ public class Window extends JFrame implements ActionListener {
 
     public void run(){
         update=true;
+        machineryList=Bin.readObjetsAndAddToList();
         setWindow();
         refreshPage();
     }
@@ -48,7 +49,7 @@ public class Window extends JFrame implements ActionListener {
 
         menuBar = new Menu();
         setJMenuBar(menuBar);
-        table = Table.getTable();
+        table = Table.getTable(machineryList);
         setLayout(new GridLayout(0, 1));
         setSize(1500, 1000);
         setLocationRelativeTo(null);
@@ -69,8 +70,41 @@ public class Window extends JFrame implements ActionListener {
 
 
     private void sortBy(String option){
-        List<Machinery> list = Sort.sortMachines(Bin.readObjetsAndAddToList(),option);
-        table.setModel(new TMMachinery(list));
+        Sort.sortMachines(machineryList,option);
+        List<Machinery> list1= new ArrayList<>();
+        List<Machinery> list2= new ArrayList<>();
+
+        for(int i = 0; i<machineryList.size()/2;i++){
+            list1.add(machineryList.get(i));
+        }
+
+        for(int i=machineryList.size()/2;i<machineryList.size();i++){
+            list2.add(machineryList.get(i));
+        }
+
+        while(sortMode.equals(option)) {
+            System.out.println("Lista 1");
+            table.setModel(new TMMachinery(list1));
+            MachineryManager.printList(list1);
+
+            try {
+                Thread.sleep(2000);
+            } catch (Exception e) {
+
+            }
+            System.out.println("Lista 2");
+            table.setModel(new TMMachinery(list2));
+
+            MachineryManager.printList(list2);
+            try {
+                Thread.sleep(2000);
+            } catch (Exception e) {
+
+            }
+        }
+
+
+
     }
 
     public void setTable(DTable t) {

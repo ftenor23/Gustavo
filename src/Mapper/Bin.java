@@ -1,9 +1,6 @@
-package BinArchive;
+package Mapper;
 
-import EnterData.EnterData;
-import Entity.Client;
 import Entity.Machinery;
-import Manager.MachineryManager;
 import com.google.gson.Gson;
 
 import java.io.*;
@@ -12,53 +9,17 @@ import java.util.List;
 
 public class Bin {
 
+    //private static final String FILE_LOCATION = "../Gustavo_jar/maquinaria.txt";
     private static final String FILE_LOCATION = "maquinaria.txt";
 
-
-    /*public static void writeMachineryInDisc(){
-        try {
-            //hacer una copia de seguridad en otra carpeta cada vez que guardo el archivo
-            int newMachineNumber = getNumberOfMachines()+1; //numero de maquinas registradas + 1 por la posicion de la nueva
-            RandomAccessFile file = new RandomAccessFile(FILE_LOCATION,"rw");
-
-            seekEndOfFile(file);
-            boolean saveMoreObjets =true;
-
-            while(saveMoreObjets){
-                System.out.println("Maquina numero " + newMachineNumber);
-                Machinery machinery = MachineryManager.enterData();
-                saveMachineInArchive(machinery,file); //se escribe objeto en archivo
-                System.out.println("Quiere guardar mas maquinaria en el archivo? S/N");
-                String answer= EnterData.nextLine();
-                if(answer.equalsIgnoreCase("N")){
-                    saveMoreObjets=false;
-                }
-                newMachineNumber++;
-            }
-
-            //se cierra archivo
-            file.close();
-        } catch (IOException ex) {
-            System.out.println(ex);
-        }
-    }*/
 
     public static void addNewMachinery(Machinery machinery){
         try {
             //hacer una copia de seguridad en otra carpeta cada vez que guardo el archivo
             int newMachineNumber = getNumberOfMachines()+1; //numero de maquinas registradas + 1 por la posicion de la nueva
 
-            try {
-                File file1 = new File(FILE_LOCATION, "r");
 
-                if (!file1.exists()) {
-                    file1.createNewFile();
-                }
-            }catch(Exception e){
-
-            }
             RandomAccessFile file = new RandomAccessFile(FILE_LOCATION,"rw");
-
 
             seekEndOfFile(file);
 

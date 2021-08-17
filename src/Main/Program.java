@@ -1,13 +1,7 @@
 package Main;
 
-import BinArchive.Bin;
-import Entity.Machinery;
 import Graphics.Window;
-import Manager.MachineryCounter;
-import Manager.MachineryManager;
-
-import java.util.ArrayList;
-import java.util.List;
+import Mapper.GenerateExamples;
 
 public class Program {
     private final static int MACHINES_PER_PAGE = 5;

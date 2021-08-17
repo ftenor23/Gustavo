@@ -1,10 +1,9 @@
 package Graphics;
 
-import BinArchive.Bin;
 import Entity.Machinery;
+import Mapper.Bin;
 
 import javax.swing.*;
-import java.awt.*;
 import java.util.List;
 
 public abstract class Table {
@@ -12,10 +11,10 @@ public abstract class Table {
     private TMMachinery model;
 
 
-    public static DTable getTable(){
+    public static DTable getTable(List<Machinery> list){
 
         DTable table = new DTable();
-        TMMachinery model = new TMMachinery(Bin.readObjetsAndAddToList());
+        TMMachinery model = new TMMachinery(list);
         table.setModel(model);
         //table.setFont(new Font("Arial",Font.PLAIN,16));
         //table.setBackground(new Color(192,192,192));

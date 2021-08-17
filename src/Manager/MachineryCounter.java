@@ -1,6 +1,6 @@
 package Manager;
 
-import BinArchive.Bin;
+import Mapper.Bin;
 
 public abstract class MachineryCounter {
     public static int getNumberOfMachines(){

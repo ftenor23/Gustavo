@@ -1,7 +1,6 @@
 package Main;
 
-import BinArchive.Bin;
-import Manager.MachineryManager;
+import Mapper.Bin;
 
 public class Main {
     //deberia leer el archivo de maquinaria y tenerlo siempre en memoria

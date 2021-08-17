@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Gustavo:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Gustavo_jar</output-path>
+    <root id="archive" name="Gustavo.jar">
+      <element id="module-output" name="Gustavo" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/Libraries/gson-2.8.7.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
