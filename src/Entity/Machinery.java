@@ -24,11 +24,13 @@ public class Machinery implements Serializable {
     }
 
     public String getClientName(){
-        String name = getClient().getName();
-        if(name==null){
-            return " ";
+        try{
+            return getClient().getName();
+        }catch(NullPointerException e){
+            return "Cliente no registrado";
+        }catch(Exception e){
+            return "Cliente no registrado";
         }
-        return name;
     }
 
     public boolean isService_250() {

@@ -28,9 +28,12 @@ public abstract class MachineryGraphics {
         return printId(machinery)+
         printStatus(machinery)+
         printFeatures(machinery)+
-        printClientInfo(machinery.getClient());
+        printClientInfo(machinery.getClient()) + printHoursOfUse(machinery);
     }
 
+    private static String printHoursOfUse(Machinery machinery){
+        return "Horas de uso: " + machinery.getHoursOfUse();
+    }
     private static String printId(Machinery machinery){
         return "Id: " + machinery.getId() + "\n";
     }

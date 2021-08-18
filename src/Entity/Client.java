@@ -23,7 +23,14 @@ public class Client implements Serializable {
     }
 
     public String getName() {
-        return name;
+        try{
+            return name;
+        }catch(NullPointerException e){
+
+            return "Nombre no registrado";
+        }catch(Exception e){
+            return "Nombre no registrado";
+        }
     }
 
     public void setName(String name) {

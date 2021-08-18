@@ -34,6 +34,38 @@ public class Menu extends JMenuBar implements ActionListener{
         addItems(menuEdicion,menuInformacion,menuTabla);
     }
 
+    public JMenuItem getSortByStatus() {
+        return sortByStatus;
+    }
+
+    public void setSortByStatus(JMenuItem sortByStatus) {
+        this.sortByStatus = sortByStatus;
+    }
+
+    public JMenuItem getSortByClient() {
+        return sortByClient;
+    }
+
+    public void setSortByClient(JMenuItem sortByClient) {
+        this.sortByClient = sortByClient;
+    }
+
+    public JMenuItem getSortByHours() {
+        return sortByHours;
+    }
+
+    public void setSortByHours(JMenuItem sortByHours) {
+        this.sortByHours = sortByHours;
+    }
+
+    public JMenuItem getSortByZone() {
+        return sortByZone;
+    }
+
+    public void setSortByZone(JMenuItem sortByZone) {
+        this.sortByZone = sortByZone;
+    }
+
     private void addItems(JMenu menuEdicion, JMenu menuInformacion, JMenu menuTabla){
         searchMachinery = new JMenuItem("Buscar por id");
         editMachinery = new JMenuItem("Editar");
@@ -160,22 +192,22 @@ public class Menu extends JMenuBar implements ActionListener{
            // Window.setTable(Table.getTable());
             return;
         }
-        if(e.getSource().equals(sortByStatus)){
+        if(e.getSource().equals(getSortByStatus())){
             Window.setSortMode(SORT_CONSTANTS.STATUS);
             Window.setUpdate(true);
             return;
         }
-        if(e.getSource().equals(sortByHours)){
+        if(e.getSource().equals(getSortByHours())){
             Window.setSortMode(SORT_CONSTANTS.HOURS_OF_USE);
             Window.setUpdate(true);
             return;
         }
-        if(e.getSource().equals(sortByClient)){
+        if(e.getSource().equals(getSortByClient())){
             Window.setSortMode(SORT_CONSTANTS.CLIENT);
             Window.setUpdate(true);
             return;
         }
-        if(e.getSource().equals(sortByZone)){
+        if(e.getSource().equals(getSortByZone())){
             Window.setSortMode(SORT_CONSTANTS.ZONE);
             Window.setUpdate(true);
             return;

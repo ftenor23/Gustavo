@@ -26,6 +26,7 @@ public class Window extends JFrame implements ActionListener {
     private final static String HOURS = "HOURS OF USE";
     private final static String STATUS = "STATUS";
     private static List<Machinery> machineryList;
+    private final static int WAITING_TIME = 2000; //2 segundos
 
     public static String getSortMode() {
         return sortMode;
@@ -59,12 +60,15 @@ public class Window extends JFrame implements ActionListener {
         setVisible(true);
     }
     private void refreshPage(){
+        sortBy(sortMode);
         while(update) {
 
-            update=false;
-            while (!update) ;
+            //update=false;
+            //while (!update) ;
             sortBy(sortMode);
-           setSortMode(SORT_CONSTANTS.ID);
+            System.out.println("Saliendo del WHILE");
+           //setSortMode(SORT_CONSTANTS.ID);
+
         }
     }
 
@@ -73,7 +77,7 @@ public class Window extends JFrame implements ActionListener {
     }
 
     private void sortBy(String option){
-        final int REGISTROS_A_MOSTRAR = 3;
+        final int MACHINERY_TO_SHOW_PER_PAGE = 3;
         Sort.sortMachines(machineryList,option);
 
         //transformar listas en vetyores
@@ -82,17 +86,26 @@ public class Window extends JFrame implements ActionListener {
 
         int counter = 0;
         while(sortMode.equals(option)) {
+            System.out.println("Entrando al while");
             for (int i = 0; i < machineryList.size(); i++) {
-                if (counter < REGISTROS_A_MOSTRAR) {
+
+                if(!sortMode.equals(option)){
+                    return;
+                }
+                if(MACHINERY_TO_SHOW_PER_PAGE>=machineryList.size()){
+                    list1=machineryList;
+                    i=machineryList.size();
+                } else if (counter < MACHINERY_TO_SHOW_PER_PAGE) {
                     list1.add(machineryList.get(i));
                     counter++;
                 }
-                if (counter == REGISTROS_A_MOSTRAR) {
+                if (counter == MACHINERY_TO_SHOW_PER_PAGE) {
                     table.setModel(new TMMachinery(list1));
-                    wait(2000);
+                    wait(WAITING_TIME);
                     counter = 0;
                     list1.clear();
                 }
+
             }
         }
 

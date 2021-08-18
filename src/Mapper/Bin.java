@@ -18,7 +18,6 @@ public class Bin {
             //hacer una copia de seguridad en otra carpeta cada vez que guardo el archivo
             int newMachineNumber = getNumberOfMachines()+1; //numero de maquinas registradas + 1 por la posicion de la nueva
 
-
             RandomAccessFile file = new RandomAccessFile(FILE_LOCATION,"rw");
 
             seekEndOfFile(file);
@@ -111,6 +110,7 @@ public class Bin {
             System.out.println(e);
         }
     }
+
 
     private static void eraseArchive(){
         try {

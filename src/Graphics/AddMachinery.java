@@ -19,6 +19,7 @@ public abstract class AddMachinery {
     private final static String ENTER_HOURS = "Ingrese las horas de uso hasta el momento. Recuerde que cada 250 se debe realizar un service.";
     private final static String NEW_MACHINE_SAVED = "Se guardo la nueva maquinaria correctamente.";
     private final static String[] OPTIONS = {"Casa central", "En viaje", "En comercio"};
+    private final static int EXIT = 0;
 
     public static void enterData(){
 
@@ -31,13 +32,10 @@ public abstract class AddMachinery {
         JOptionPane.showMessageDialog(null, NEW_MACHINE_SAVED);
     }
 
-    private static String enterId(){
-        return JOptionPane.showInputDialog(ENTER_ID);
-    }
 
-    public static int exit(){
-        return JOptionPane.showOptionDialog(null,"¿Esta seguro de que quiere dejar de cargar los datos?", "Cancelar", JOptionPane.YES_NO_OPTION, JOptionPane.DEFAULT_OPTION,null,new String[]{"Si","No"},"Si");
-    }
+
+
+
 
     private static String enterFeatures(){
         return JOptionPane.showInputDialog(ENTER_FEATURES);
@@ -50,51 +48,35 @@ public abstract class AddMachinery {
     private static Machinery enterMachinery(){
         String id=null;
         int status = 0;
-        int hoursOfUse=0;
+        int hoursOfUse=-1;
         String features = null;
         Client client= null;
         final int EXIT = 0;
 
-        while(id==null){
-            id=enterId();
-            if(id==null){
-                if(exit()==EXIT){
-                    return null;
-                }
-            }
+        id = DataIn.enterInfo(ENTER_ID);
+        if(id==null){
+            return null;
         }
 
-
-        while(status==0){
-            status = JOptionPane.showOptionDialog(null, "Seleccione el estado de la maquinaria", "Seleccion", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE,null,OPTIONS,OPTIONS[0]) + 1;
-            if(status==0){
-                if(exit()==EXIT){
-                    return null;
-                }
-            }
+        status = DataIn.enterStatus();
+        if(status==-1){
+            return null;
         }
 
-
-        while (features==null){
-            features=enterFeatures();
-            if(features==null){
-                if(exit()==EXIT){
-                    return null;
-                }
-            }
+        features=DataIn.enterInfo(ENTER_FEATURES);
+        if(features==null){
+            return null;
         }
 
-        while(client==null){
-            client=enterClient();
-            if(client==null){
-                if(exit()==EXIT){
-                    return null;
-                }
-            }
+        client=enterClient();
+        if(client==null){
+            return null;
         }
 
-        hoursOfUse = IntValidator.nextInt(ENTER_HOURS);
-
+        hoursOfUse=DataIn.enterHoursOfUse(ENTER_HOURS);
+        if(hoursOfUse==-1){
+            return null;
+        }
         return new Machinery(id,status,client,features,hoursOfUse);
     }
 }

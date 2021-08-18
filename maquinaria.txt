@@ -1,7 +1,6 @@
 {"id":"A0","status":1,"client":{"name":"Leandro","zone":2,"isAssigned":false},"features":"Correa","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
 {"id":"A1","status":2,"client":{"name":"Claudia","zone":1,"isAssigned":false},"features":"Cuchi","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
 {"id":"A10","status":3,"client":{"name":"Jonathan","zone":3,"isAssigned":false},"features":"Esqueleto","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A100","status":4,"client":{"name":"Jonathan","zone":1,"isAssigned":false},"features":"Olla","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
 {"id":"A101","status":1,"client":{"name":"Octavio","zone":4,"isAssigned":false},"features":"Botas de trabajo","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
 {"id":"A102","status":1,"client":{"name":"Gustavo","zone":1,"isAssigned":false},"features":"Guitarra","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
 {"id":"A103","status":4,"client":{"name":"Pepe","zone":2,"isAssigned":false},"features":"Pedalera","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
@@ -20,5 +19,14 @@
 {"id":"A115","status":3,"client":{"name":"Enzo","zone":2,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
 {"id":"A116","status":4,"client":{"name":"Roman","zone":1,"isAssigned":false},"features":"Celular","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
 {"id":"A343","status":1,"client":{"name":"Facundo Tenor","zone":4,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":188,"service_250":false,"service_1000":false}
+{"id":"DDASDA","status":2,"client":{"name":"Sosa","zone":3,"isAssigned":false},"features":"kEV","pending":" ","hoursOfUse":1888,"service_250":false,"service_1000":false}
+{"id":"F456","status":1,"client":{"name":"Claudio","zone":1,"isAssigned":false},"features":"Torino","pending":" ","hoursOfUse":988,"service_250":false,"service_1000":false}
+{"id":"F4564","status":2,"client":{"name":"Kevin","zone":3,"isAssigned":false},"features":"Yerba","pending":" ","hoursOfUse":56,"service_250":false,"service_1000":false}
 {"id":"R456","status":3,"client":{"name":"Robert Gonzalves","zone":3,"isAssigned":false},"features":"Televisor Philco FullHD","pending":" ","hoursOfUse":980,"service_250":false,"service_1000":false}
+{"id":"R456","status":3,"client":{"name":"Geraldine","zone":3,"isAssigned":false},"features":"Pava electrica","pending":" ","hoursOfUse":54,"service_250":false,"service_1000":false}
+{"id":"RTR","status":2,"client":{"name":"Gustavo Gustavez","zone":3,"isAssigned":false},"features":"Hoal","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"RTY34","status":1,"client":{"name":"Pipo ","zone":1,"isAssigned":false},"features":"Taza","pending":" ","hoursOfUse":16,"service_250":false,"service_1000":false}
 {"id":"T5665","status":2,"client":{"name":"Sara","zone":3,"isAssigned":false},"features":"Terminator","pending":" ","hoursOfUse":888,"service_250":false,"service_1000":false}
+{"id":"Z9000","status":1,"client":{"name":"Luis","zone":1,"isAssigned":false},"features":"LOS SIMULADORES","pending":" ","hoursOfUse":87,"service_250":false,"service_1000":false}
+{"id":"Z99999","status":3,"client":{"name":"Talking Heads","zone":4,"isAssigned":false},"features":"David Byrne","pending":" ","hoursOfUse":466,"service_250":false,"service_1000":false}
+{"id":"r4565","status":2,"client":{"name":"Ricardo Cerdeira","zone":3,"isAssigned":false},"features":"Lujo","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}

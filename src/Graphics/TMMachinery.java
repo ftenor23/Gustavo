@@ -80,7 +80,12 @@ public class TMMachinery implements TableModel {
                 int status = machinery.getStatus();
                 return StatusManager.getStatus(status);
             case 2:
-                return machinery.getClient().getName();
+                String name = machinery.getClientName();
+                if(name==null){
+                    return "";
+                }
+                return name;
+
             case 3:
                 int zone = machinery.getClient().getZone();
                 return ZoneManager.getZone(zone);

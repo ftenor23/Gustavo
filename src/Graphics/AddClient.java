@@ -20,23 +20,8 @@ public abstract class AddClient {
             message=CHANGE_CLIENT_NAME;
         }
 
-        return validateData(message);
+        return DataIn.validateData(message);
     }
 
-    private static Client validateData(String message){
-        String clientName = null;
-        final int EXIT=0;
 
-        while(clientName==null){
-            clientName=JOptionPane.showInputDialog(message);
-            if(clientName==null){
-                if(AddMachinery.exit()==EXIT){
-                    return null;
-                }
-            }
-        }
-        int clientZone = JOptionPane.showOptionDialog(null, ENTER_CLIENT_ZONE, "Zona", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE,null,OPTIONS,OPTIONS[0]) + 1;
-
-        return new Client(clientName,clientZone);
-    }
 }
