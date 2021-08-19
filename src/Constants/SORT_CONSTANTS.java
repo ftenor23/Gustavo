@@ -6,4 +6,5 @@ public abstract class SORT_CONSTANTS {
     public static final String HOURS_OF_USE = "HOURS OF USE";
     public static final String CLIENT = "CLIENT";
     public static final String ZONE = "ZONE";
+    public static final String PENDING = "PENDING";
 }

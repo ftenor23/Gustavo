@@ -38,4 +38,14 @@ public abstract class Table {
         return table;
     }
 
+    public static DTable getPendingTable(List<Machinery> list){
+
+        DTable table = new DTable();
+        TMPending model = new TMPending(list);
+        table.setModel(model);
+        //table.setFont(new Font("Arial",Font.PLAIN,16));
+        //table.setBackground(new Color(192,192,192));
+        return table;
+    }
+
 }

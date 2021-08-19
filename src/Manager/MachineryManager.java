@@ -20,22 +20,6 @@ public class MachineryManager {
         machinery.setStatus(status);
     }
 
-   /* public void changeClient(Machinery machinery){
-        MachineryGraphics.changeClient();
-        int clientNumber = EnterData.nextInt();
-
-        Client client = ClientManager.getClient(clientNumber);
-        machinery.setClient(client);
-    }*/
-
-    public List<Machinery> readArchive(){
-        List<Machinery> list = new ArrayList<>();
-
-        //leer archivo y cargarlo en lista
-
-        return list;
-    }
-
     public static Machinery enterData(){
         System.out.println("Ingrese el id de la maquinaria: ");
         String id = EnterData.nextLine();
@@ -68,8 +52,8 @@ public class MachineryManager {
         Bin.overwriteArchive(list);
     }
 
-    public static void saveNewMachine(Machinery machinery){
-        List<Machinery> list = Bin.readObjetsAndAddToList();
+    public static void saveNewMachine(Machinery machinery, List<Machinery> list){
+
         list.add(machinery);
         saveMachinesInOrder(list, SORT_CONSTANTS.ID);
     }

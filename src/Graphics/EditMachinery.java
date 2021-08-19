@@ -89,4 +89,9 @@ public abstract class EditMachinery {
             }
 
     }
+
+    public static void changePending(Machinery machinery){
+        String newPending = JOptionPane.showInputDialog(ENTER_NEW_PENDING);
+        MachineryManager.changePending(machinery, newPending);
+    }
 }

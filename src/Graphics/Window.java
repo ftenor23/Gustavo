@@ -43,6 +43,10 @@ public class Window extends JFrame implements ActionListener {
         refreshPage();
     }
 
+    public static List<Machinery> getMachineryList() {
+        return machineryList;
+    }
+
     private void setWindow(){
         setTitle(MACHINERY);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -139,7 +143,7 @@ public class Window extends JFrame implements ActionListener {
             return;
         }
         if(e.getSource().equals(menuBar.getAddMachinery())){
-            AddMachinery.enterData();
+            AddMachinery.enterData(Window.getMachineryList());
             return;
         }
         if(e.getSource().equals(menuBar.getEditMachinery())){

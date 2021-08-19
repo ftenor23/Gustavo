@@ -1,11 +1,15 @@
 package Graphics;
 
 import Constants.SORT_CONSTANTS;
+import Entity.Machinery;
 import Manager.MachineryManager;
+import Manager.PendingListManager;
+import Manager.Sort;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class Menu extends JMenuBar implements ActionListener{
     private final static String ARCHIVO = "Archivo";
@@ -20,6 +24,7 @@ public class Menu extends JMenuBar implements ActionListener{
     private JMenuItem sortByClient;
     private JMenuItem sortByHours;
     private JMenuItem sortByZone;
+    private JMenuItem checkPending;
     private TMMachinery model;
 
     public Menu() {
@@ -76,6 +81,7 @@ public class Menu extends JMenuBar implements ActionListener{
         sortByStatus = new JMenuItem("Ordenar por estado");
         sortByClient = new JMenuItem("Ordenar por cliente");
         sortByZone = new JMenuItem("Ordenar por zona");
+        checkPending = new JMenuItem("Consultar pendientes");
 
 
         searchMachinery.addActionListener((ActionListener) this);
@@ -87,6 +93,7 @@ public class Menu extends JMenuBar implements ActionListener{
         sortByHours.addActionListener((ActionListener) this);
         sortByClient.addActionListener((ActionListener) this);
         sortByZone.addActionListener((ActionListener) this);
+        checkPending.addActionListener((ActionListener) this);
 
 
         menuEdicion.add(addMachinery);
@@ -98,6 +105,7 @@ public class Menu extends JMenuBar implements ActionListener{
         menuTabla.add(sortByStatus);
         menuTabla.add(sortByClient);
         menuTabla.add(sortByZone);
+        menuTabla.add(checkPending);
 
         menuInformacion.add(showDevInfo);
     }
@@ -150,6 +158,14 @@ public class Menu extends JMenuBar implements ActionListener{
         this.addMachinery = addMachinery;
     }
 
+    public JMenuItem getCheckPending() {
+        return checkPending;
+    }
+
+    public void setCheckPending(JMenuItem checkPending) {
+        this.checkPending = checkPending;
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource().equals(getSearchMachinery())){
@@ -165,7 +181,7 @@ public class Menu extends JMenuBar implements ActionListener{
         }
         if(e.getSource().equals(getAddMachinery())){
             try {
-                AddMachinery.enterData();
+                AddMachinery.enterData(Window.getMachineryList());
                 Window.setUpdate(true);
             }catch(Exception ex){
 
@@ -210,6 +226,18 @@ public class Menu extends JMenuBar implements ActionListener{
         if(e.getSource().equals(getSortByZone())){
             Window.setSortMode(SORT_CONSTANTS.ZONE);
             Window.setUpdate(true);
+            return;
+        }
+        if(e.getSource().equals(getCheckPending())){
+            List<Machinery> machineryList = Sort.sortMachines(Window.getMachineryList(),SORT_CONSTANTS.PENDING);
+            MachineryManager.printList(machineryList);
+            List<Machinery> onlyPendingList = PendingListManager.getOnlyPendingList(machineryList);
+            if(onlyPendingList==null){
+                JOptionPane.showMessageDialog(null, "No hay lista de pendientes");
+                return;
+            }
+            PendingWindow pendingWindow = new PendingWindow(onlyPendingList);
+            pendingWindow.run();
             return;
         }
 

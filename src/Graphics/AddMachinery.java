@@ -10,6 +10,7 @@ import jdk.nashorn.internal.scripts.JO;
 import javax.swing.*;
 import java.util.Hashtable;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public abstract class AddMachinery {
@@ -21,13 +22,13 @@ public abstract class AddMachinery {
     private final static String[] OPTIONS = {"Casa central", "En viaje", "En comercio"};
     private final static int EXIT = 0;
 
-    public static void enterData(){
+    public static void enterData(List<Machinery> machineryList){
 
         Machinery machinery = enterMachinery();
         if(machinery==null){
             return;
         }
-        MachineryManager.saveNewMachine(machinery);
+        MachineryManager.saveNewMachine(machinery,machineryList);
         Window.addMachineryToList(machinery);
         JOptionPane.showMessageDialog(null, NEW_MACHINE_SAVED);
     }

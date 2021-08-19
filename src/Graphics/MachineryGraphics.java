@@ -28,11 +28,16 @@ public abstract class MachineryGraphics {
         return printId(machinery)+
         printStatus(machinery)+
         printFeatures(machinery)+
-        printClientInfo(machinery.getClient()) + printHoursOfUse(machinery);
+        printClientInfo(machinery.getClient())+printHoursOfUse(machinery)+
+                printPending(machinery);
+
     }
 
+    private static String printPending(Machinery machinery){
+        return "Pendientes: " + machinery.getPending() + "\n";
+    }
     private static String printHoursOfUse(Machinery machinery){
-        return "Horas de uso: " + machinery.getHoursOfUse();
+        return "Horas de uso: " + machinery.getHoursOfUse() + "\n";
     }
     private static String printId(Machinery machinery){
         return "Id: " + machinery.getId() + "\n";
@@ -96,5 +101,17 @@ public abstract class MachineryGraphics {
         }else{
             JOptionPane.showMessageDialog(null,"Maquinaria no encontrada en la base de datos");
         }
+    }
+
+    public static void showPending(Machinery machinery){
+        if(machinery!=null){
+            JOptionPane.showMessageDialog(null, pending(machinery));
+        }else{
+            JOptionPane.showMessageDialog(null,"Maquinaria no encontrada en la base de datos");
+        }
+    }
+
+    private static String pending(Machinery machinery){
+        return "ID: " + machinery.getId() + "\nPendiente: " + machinery.getPending();
     }
 }
