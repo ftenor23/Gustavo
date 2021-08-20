@@ -1,5 +1,6 @@
 package Graphics;
 
+import Entity.Machinery;
 import Manager.MachineryManager;
 
 import javax.swing.*;
@@ -35,7 +36,10 @@ public class MenuPendingWindow extends JMenuBar implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(getEditPending())) {
             String id = Graphics.showMessage(ENTER_ID);
-            EditMachinery.changePending(MachineryManager.search(id));
+            Machinery machinery = MachineryManager.search(id);
+            EditMachinery.changePending(machinery);
+            PendingWindow.addMachinery(machinery);
+            PendingWindow.setUpdate(true);
             //ACTUALIZAR EL ARCHIVO
             return;
         }

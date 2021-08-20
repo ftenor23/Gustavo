@@ -25,6 +25,7 @@ public class Menu extends JMenuBar implements ActionListener{
     private JMenuItem sortByHours;
     private JMenuItem sortByZone;
     private JMenuItem checkPending;
+    private JMenuItem changeWaitingTime;
     private TMMachinery model;
 
     public Menu() {
@@ -82,6 +83,7 @@ public class Menu extends JMenuBar implements ActionListener{
         sortByClient = new JMenuItem("Ordenar por cliente");
         sortByZone = new JMenuItem("Ordenar por zona");
         checkPending = new JMenuItem("Consultar pendientes");
+        changeWaitingTime = new JMenuItem("Cambiar el tiempo de actualizacion de pantalla");
 
 
         searchMachinery.addActionListener((ActionListener) this);
@@ -94,6 +96,7 @@ public class Menu extends JMenuBar implements ActionListener{
         sortByClient.addActionListener((ActionListener) this);
         sortByZone.addActionListener((ActionListener) this);
         checkPending.addActionListener((ActionListener) this);
+        changeWaitingTime.addActionListener((ActionListener) this);
 
 
         menuEdicion.add(addMachinery);
@@ -105,6 +108,7 @@ public class Menu extends JMenuBar implements ActionListener{
         menuTabla.add(sortByStatus);
         menuTabla.add(sortByClient);
         menuTabla.add(sortByZone);
+        menuTabla.add(changeWaitingTime);
         menuTabla.add(checkPending);
 
         menuInformacion.add(showDevInfo);
@@ -230,14 +234,22 @@ public class Menu extends JMenuBar implements ActionListener{
         }
         if(e.getSource().equals(getCheckPending())){
             List<Machinery> machineryList = Sort.sortMachines(Window.getMachineryList(),SORT_CONSTANTS.PENDING);
-            MachineryManager.printList(machineryList);
             List<Machinery> onlyPendingList = PendingListManager.getOnlyPendingList(machineryList);
             if(onlyPendingList==null){
                 JOptionPane.showMessageDialog(null, "No hay lista de pendientes");
                 return;
             }
+
             PendingWindow pendingWindow = new PendingWindow(onlyPendingList);
             pendingWindow.run();
+
+            return;
+        }
+        if(e.getSource().equals(getChangeWaitingTime())){
+            int time = Time.enterTime();
+            Window.setWaitingTime(time);
+            Window.setUpdate(true);
+            Time.confirmation(time);
             return;
         }
 
@@ -247,5 +259,7 @@ public class Menu extends JMenuBar implements ActionListener{
         return model;
     }
 
-
+    public JMenuItem getChangeWaitingTime() {
+        return changeWaitingTime;
+    }
 }

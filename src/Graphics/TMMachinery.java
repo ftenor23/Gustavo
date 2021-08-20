@@ -10,7 +10,7 @@ import java.util.List;
 
 public class TMMachinery implements TableModel {
     private List<Machinery> machineryList;
-    private static final int COLUMNS=7;
+    private static final int COLUMNS=6;
 
     public TMMachinery(List<Machinery> list){
         this.machineryList =list;
@@ -47,10 +47,10 @@ public class TMMachinery implements TableModel {
             case 4:
                 title="Caracteristicas";
                 break;
-            case 5:
+            case 5:/*
                 title="Pendientes";
                 break;
-            case 6:
+            case 6:*/
                 title="Horas de uso";
                 break;
         }
@@ -59,7 +59,7 @@ public class TMMachinery implements TableModel {
 
     @Override
     public Class<?> getColumnClass(int columnIndex) {
-        if(columnIndex!=6 && columnIndex!=1){
+        if(columnIndex!=5 && columnIndex!=1){
             return String.class;
         }
         return Integer.class;
@@ -91,9 +91,9 @@ public class TMMachinery implements TableModel {
                 return ZoneManager.getZone(zone);
             case 4:
                 return machinery.getFeatures();
-            case 5:
+            case 5:/*
                 return machinery.getPending();
-            case 6:
+            case 6:*/
                 return machinery.getHoursOfUse();
         }
         return null;
@@ -119,9 +119,9 @@ public class TMMachinery implements TableModel {
                 machinery.setFeatures(aValue.toString());
                 break;
             case 5:
-                machinery.setPending(aValue.toString());
+                /*machinery.setPending(aValue.toString());
                 break;
-            case 6:
+            case 6:*/
                 machinery.setHoursOfUse((Integer) aValue);
                 break;
         }

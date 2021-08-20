@@ -26,7 +26,11 @@ public class Window extends JFrame implements ActionListener {
     private final static String HOURS = "HOURS OF USE";
     private final static String STATUS = "STATUS";
     private static List<Machinery> machineryList;
-    private final static int WAITING_TIME = 2000; //2 segundos
+    private static int waitingTime = 2000; //2 segundos
+
+    public static void setWaitingTime(int waitingTime) {
+        Window.waitingTime = waitingTime;
+    }
 
     public static String getSortMode() {
         return sortMode;
@@ -86,7 +90,6 @@ public class Window extends JFrame implements ActionListener {
 
         //transformar listas en vetyores
         List<Machinery> list1= new ArrayList<>();
-        List<Machinery> list2= new ArrayList<>();
 
         int counter = 0;
         while(sortMode.equals(option)) {
@@ -105,7 +108,7 @@ public class Window extends JFrame implements ActionListener {
                 }
                 if (counter == MACHINERY_TO_SHOW_PER_PAGE) {
                     table.setModel(new TMMachinery(list1));
-                    wait(WAITING_TIME);
+                    wait(waitingTime);
                     counter = 0;
                     list1.clear();
                 }

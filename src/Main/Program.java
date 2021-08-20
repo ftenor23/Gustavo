@@ -1,7 +1,6 @@
 package Main;
 
 import Graphics.Window;
-import Mapper.GenerateExamples;
 
 public class Program {
     private final static int MACHINES_PER_PAGE = 5;

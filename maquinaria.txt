@@ -2,13 +2,13 @@
 {"id":"A1","status":2,"client":{"name":"Claudia","zone":1,"isAssigned":false},"features":"Cuchi","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
 {"id":"A10","status":3,"client":{"name":"Jonathan","zone":3,"isAssigned":false},"features":"Esqueleto","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
 {"id":"A101","status":1,"client":{"name":"Octavio","zone":4,"isAssigned":false},"features":"Botas de trabajo","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A102","status":1,"client":{"name":"Gustavo","zone":1,"isAssigned":false},"features":"Guitarra","pending":"Ver Netflix","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A102","status":1,"client":{"name":"Gustavo","zone":1,"isAssigned":false},"features":"Guitarra","pending":"GGGGGGGGGGGGG","hoursOfUse":0,"service_250":false,"service_1000":false}
 {"id":"A103","status":4,"client":{"name":"Pepe","zone":2,"isAssigned":false},"features":"Pedalera","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
 {"id":"A104","status":2,"client":{"name":"Marcelo","zone":2,"isAssigned":false},"features":"Vaso","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
 {"id":"A105","status":1,"client":{"name":"Roman","zone":1,"isAssigned":false},"features":"Televisor led","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A106","status":3,"client":{"name":"Lionel","zone":1,"isAssigned":false},"features":"Televisor","pending":"Relocalizar las plantas","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A106","status":3,"client":{"name":"Lionel","zone":1,"isAssigned":false},"features":"Televisor","pending":"Kinga Crimsonita","hoursOfUse":0,"service_250":false,"service_1000":false}
 {"id":"A107","status":1,"client":{"name":"German","zone":4,"isAssigned":false},"features":"Decodificiador","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
-{"id":"A108","status":3,"client":{"name":"Geremias","zone":3,"isAssigned":false},"features":"Tractor","pending":"Llamar al dueño","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"A108","status":3,"client":{"name":"Geremias","zone":3,"isAssigned":false},"features":"Tractor","pending":"HHHHHHHHHH","hoursOfUse":0,"service_250":false,"service_1000":false}
 {"id":"A109","status":2,"client":{"name":"Pepe","zone":2,"isAssigned":false},"features":"Plomeria","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
 {"id":"A11","status":4,"client":{"name":"Pepe","zone":1,"isAssigned":false},"features":"Maquinaria para casas","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
 {"id":"A110","status":2,"client":{"name":"Sofia","zone":2,"isAssigned":false},"features":"Canilla","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}
@@ -24,9 +24,9 @@
 {"id":"F4564","status":2,"client":{"name":"Kevin","zone":3,"isAssigned":false},"features":"Yerba","pending":"Clase de abogacia","hoursOfUse":56,"service_250":false,"service_1000":false}
 {"id":"R456","status":3,"client":{"name":"Robert Gonzalves","zone":3,"isAssigned":false},"features":"Televisor Philco FullHD","pending":" ","hoursOfUse":980,"service_250":false,"service_1000":false}
 {"id":"R456","status":3,"client":{"name":"Geraldine","zone":3,"isAssigned":false},"features":"Pava electrica","pending":" ","hoursOfUse":54,"service_250":false,"service_1000":false}
-{"id":"RTR","status":2,"client":{"name":"Gustavo Gustavez","zone":3,"isAssigned":false},"features":"Hoal","pending":"Grabar un album","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"RTR","status":2,"client":{"name":"Gustavo Gustavez","zone":3,"isAssigned":false},"features":"Hoal","pending":"VERBO CARNE","hoursOfUse":0,"service_250":false,"service_1000":false}
 {"id":"RTY34","status":1,"client":{"name":"Pipo ","zone":1,"isAssigned":false},"features":"Taza","pending":" ","hoursOfUse":16,"service_250":false,"service_1000":false}
 {"id":"T5665","status":2,"client":{"name":"Sara","zone":3,"isAssigned":false},"features":"Terminator","pending":" ","hoursOfUse":888,"service_250":false,"service_1000":false}
-{"id":"Z9000","status":1,"client":{"name":"Luis","zone":1,"isAssigned":false},"features":"LOS SIMULADORES","pending":"Llamar a pablo","hoursOfUse":87,"service_250":false,"service_1000":false}
+{"id":"Z9000","status":1,"client":{"name":"Luis","zone":1,"isAssigned":false},"features":"LOS SIMULADORES","pending":"KOLO SANTILI","hoursOfUse":87,"service_250":false,"service_1000":false}
 {"id":"Z99999","status":3,"client":{"name":"Talking Heads","zone":4,"isAssigned":false},"features":"David Byrne","pending":" ","hoursOfUse":466,"service_250":false,"service_1000":false}
-{"id":"r4565","status":2,"client":{"name":"Ricardo Cerdeira","zone":3,"isAssigned":false},"features":"Lujo","pending":"Cambiar aceite el 23/09","hoursOfUse":0,"service_250":false,"service_1000":false}
+{"id":"r4565","status":2,"client":{"name":"Ricardo Cerdeira","zone":3,"isAssigned":false},"features":"Lujo","pending":"KEVIN","hoursOfUse":0,"service_250":false,"service_1000":false}

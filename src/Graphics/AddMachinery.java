@@ -1,17 +1,11 @@
 package Graphics;
 
-import Constants.SORT_CONSTANTS;
 import Entity.Client;
 import Entity.Machinery;
 import Manager.MachineryManager;
-import Validator.IntValidator;
-import jdk.nashorn.internal.scripts.JO;
 
 import javax.swing.*;
-import java.util.Hashtable;
-import java.util.InputMismatchException;
 import java.util.List;
-import java.util.Scanner;
 
 public abstract class AddMachinery {
     private final static String ENTER_ID = "Ingrese el ID";
