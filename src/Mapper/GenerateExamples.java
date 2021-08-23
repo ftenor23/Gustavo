@@ -15,16 +15,19 @@ public class GenerateExamples {
 
     public static void generate(){
         List<Machinery> m = new ArrayList<>();
-        for(int i=0;i<1000;i++){
+        int featuresLenght=features.length;
+        System.out.println(featuresLenght);
+        for(int i=0;i<75;i++){
             Client client = generateClient();
-            int status = (int) Math.random()*4 + 1;
-            int hoursOfUse = (int) Math.random()*1150;
-            String feature=features[(int) Math.random()*features.length];
-            char c = chars[(int) Math.random()*chars.length];
+            int status = (int) Math.floor(Math.random()*4 + 1);
+            int hoursOfUse = (int) Math.floor(Math.random()*1150);
+            int n = (int) Math.floor(Math.random()*features.length);
+            String feature=features[n];
+            char c = chars[(int) Math.floor(Math.random()*chars.length)];
             String id = c + String.valueOf(i);
             Machinery machinery = new Machinery(id,status,client,feature,hoursOfUse);
             m.add(machinery);
-            System.out.println(i);
+            //System.out.println(i);
 
         }
         MachineryManager.saveMachinesInOrder(m,SORT_CONSTANTS.ID);
@@ -32,7 +35,7 @@ public class GenerateExamples {
 
     private static Client generateClient(){
         String name = names[(int) Math.floor(Math.random()*names.length)];
-        int zone = (int) Math.random()*4 + 1;
+        int zone = (int) Math.floor(Math.random()*4 + 1);
         return new Client(name,zone);
     }
 }

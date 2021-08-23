@@ -1,5 +1,6 @@
 package Manager;
 
+import Graphics.Window;
 import Mapper.Bin;
 import Constants.SORT_CONSTANTS;
 import EnterData.EnterData;
@@ -50,6 +51,7 @@ public class MachineryManager {
         Sort.sortMachines(list, sortBy); //SIEMPRE SE TINENE QUE GUARDAR POR ID. A LA HORA DE MOSTRARLAS EN PANTALLA
         //SE PUEDEN ORDENAR POR ALGUN CRITERIO A ALECCION DEL USUARIO
         Bin.overwriteArchive(list);
+        Window.setMachineryList(list);
     }
 
     public static void saveNewMachine(Machinery machinery, List<Machinery> list){

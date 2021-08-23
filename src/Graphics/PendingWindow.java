@@ -34,9 +34,6 @@ public class PendingWindow extends JFrame {
     public void run(){
         update=false;
         setWindow();
-        while(true){
-            refreshPage();
-        }
     }
     private void setWindow(){
         setTitle(PENDING_WINDOW);

@@ -1,1 +1,1 @@
-{"id":"a123","status":1,"client":{"name":"Felix","zone":1,"isAssigned":false},"features":"adadsda","pending":" ","hoursOfUse":123,"service_250":false,"service_1000":false}
+{"id":"A0","status":1,"client":{"name":"Leandro","zone":2,"isAssigned":false},"features":"Correa","pending":" ","hoursOfUse":0,"service_250":false,"service_1000":false}

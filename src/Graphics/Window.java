@@ -80,12 +80,16 @@ public class Window extends JFrame implements ActionListener {
         }
     }
 
+    public static void setMachineryList(List<Machinery> machineryList) {
+        Window.machineryList = machineryList;
+    }
+
     public static void addMachineryToList(Machinery machinery){
         machineryList.add(machinery);
     }
 
     private void sortBy(String option){
-        final int MACHINERY_TO_SHOW_PER_PAGE = 3;
+        final int MACHINERY_TO_SHOW_PER_PAGE = 10;
         Sort.sortMachines(machineryList,option);
 
         //transformar listas en vetyores

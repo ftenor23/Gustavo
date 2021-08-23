@@ -37,6 +37,7 @@ public abstract class EditMachinery {
             edit();
         }
         showOption(machinery);
+        //cambiar maquina en lista
         JOptionPane.showMessageDialog(null, CHANGES_SAVED);
     }
 

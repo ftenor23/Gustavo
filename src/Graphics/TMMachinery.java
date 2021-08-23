@@ -32,16 +32,16 @@ public class TMMachinery implements TableModel {
     public String getColumnName(int columnIndex) {
         String title=null;
         switch (columnIndex){
-            case 0:
+            case 1:
                 title="ID";
                 break;
-            case 1:
+            case 2:
                 title="Estado";
                 break;
-            case 2:
+            case 3:
                 title="Cliente";
                 break;
-            case 3:
+            case 0:
                 title="Zona";
                 break;
             case 4:
@@ -74,19 +74,19 @@ public class TMMachinery implements TableModel {
     public Object getValueAt(int rowIndex, int columnIndex) {
         Machinery machinery = machineryList.get(rowIndex);
         switch (columnIndex){
-            case 0:
-                return machinery.getId();
             case 1:
+                return machinery.getId();
+            case 2:
                 int status = machinery.getStatus();
                 return StatusManager.getStatus(status);
-            case 2:
+            case 3:
                 String name = machinery.getClientName();
                 if(name==null){
                     return "";
                 }
                 return name;
 
-            case 3:
+            case 0:
                 int zone = machinery.getClient().getZone();
                 return ZoneManager.getZone(zone);
             case 4:
@@ -103,16 +103,16 @@ public class TMMachinery implements TableModel {
     public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
         Machinery machinery = machineryList.get(rowIndex);
         switch (columnIndex) {
-            case 0:
+            case 1:
                 machinery.setId(aValue.toString());
                 break;
-            case 1:
+            case 2:
                 machinery.setStatus((Integer) aValue);
                 break;
-            case 2:
+            case 3:
                 machinery.getClient().setName(aValue.toString());
                 break;
-            case 3:
+            case 0:
                 machinery.getClient().setZone((Integer) aValue);
                 break;//verificar si le paso string o int
             case 4:

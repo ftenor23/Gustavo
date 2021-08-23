@@ -4,6 +4,7 @@ import Entity.Machinery;
 import Mapper.Bin;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,8 +18,8 @@ public abstract class Table {
         DTable table = new DTable();
         TMMachinery model = new TMMachinery(list);
         table.setModel(model);
-        //table.setFont(new Font("Arial",Font.PLAIN,16));
-        //table.setBackground(new Color(192,192,192));
+        table.setFont(new Font("Arial",Font.BOLD,20));
+        table.setBackground(new Color(192,192,192));
         return table;
     }
 
@@ -43,8 +44,8 @@ public abstract class Table {
         DTable table = new DTable();
         TMPending model = new TMPending(list);
         table.setModel(model);
-        //table.setFont(new Font("Arial",Font.PLAIN,16));
-        //table.setBackground(new Color(192,192,192));
+        table.setFont(new Font("Arial",Font.PLAIN,20));
+        table.setBackground(new Color(192,192,192));
         return table;
     }
 
