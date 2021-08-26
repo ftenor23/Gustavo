@@ -6,6 +6,7 @@ import Entity.Machinery;
 import Manager.MachineryManager;
 import Manager.Sort;
 
+import javax.crypto.Mac;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -26,7 +27,8 @@ public class Window extends JFrame implements ActionListener {
     private final static String HOURS = "HOURS OF USE";
     private final static String STATUS = "STATUS";
     private static List<Machinery> machineryList;
-    private static int waitingTime = 2000; //2 segundos
+    private static int waitingTime = 2000; //5 segundos
+    private final static int MACHINERY_TO_SHOW_PER_PAGE = 15;
 
     public static void setWaitingTime(int waitingTime) {
         Window.waitingTime = waitingTime;
@@ -86,10 +88,12 @@ public class Window extends JFrame implements ActionListener {
 
     public static void addMachineryToList(Machinery machinery){
         machineryList.add(machinery);
+        Sort.sortMachinesById(machineryList);
+        MachineryManager.printList(machineryList);
     }
 
-    private void sortBy(String option){
-        final int MACHINERY_TO_SHOW_PER_PAGE = 10;
+   /* private void sortBy(String option){
+        final int MACHINERY_TO_SHOW_PER_PAGE = 15;
         Sort.sortMachines(machineryList,option);
 
         //transformar listas en vetyores
@@ -104,8 +108,11 @@ public class Window extends JFrame implements ActionListener {
                     return;
                 }
                 if(MACHINERY_TO_SHOW_PER_PAGE>=machineryList.size()){
-                    list1=machineryList;
+                    List<Machinery> list2 = new ArrayList<>(machineryList);
                     i=machineryList.size();
+                    table.setModel(new TMMachinery(list2));
+                    while(i==machineryList.size());
+                    return;
                 } else if (counter < MACHINERY_TO_SHOW_PER_PAGE) {
                     list1.add(machineryList.get(i));
                     counter++;
@@ -120,7 +127,52 @@ public class Window extends JFrame implements ActionListener {
             }
         }
 
+    }*/
+
+
+    private void sortBy(String option){
+        //verificar cuando carga la utlima lista
+
+        Sort.sortMachines(machineryList,option);
+        final int machineryListSize = machineryList.size();
+        int totalPages = (machineryList.size()/MACHINERY_TO_SHOW_PER_PAGE);
+        if((machineryList.size()%MACHINERY_TO_SHOW_PER_PAGE)!=0){
+            totalPages++;
+        }
+        System.out.println("TOTAL PAGES " + totalPages);
+        //transformar listas en vetyores
+
+        List<Machinery> copyOfList = new ArrayList<>(machineryList);
+        List<Machinery>[] subList = new List[totalPages];
+        int counter = 0;
+        for(int page = 0; page<totalPages;page++){
+
+
+            if(page!=totalPages-1){
+                subList[page] = copyOfList.subList(counter, MACHINERY_TO_SHOW_PER_PAGE+counter);
+                counter+=MACHINERY_TO_SHOW_PER_PAGE;
+                System.out.println("TAMAÑO DE COPY OF LIST " + copyOfList.size() + "//COUNTER "+counter+"//SUBLIST SIZE " +copyOfList.size());
+            }else{
+                System.out.println("TAMAÑO DE LA SUBLISTA " + copyOfList.size());
+                int sublistSize = copyOfList.size();
+                subList[page] = copyOfList.subList(counter,sublistSize);
+            }
+        }
+        System.out.println("Tamaño del vector " + subList.length);
+        while(sortMode.equals(option) && machineryListSize == machineryList.size()){
+            for(int i = 0; i<totalPages; i++){
+                table.setVisible(false);
+                table.setModel(new TMMachinery(subList[i]));
+                table.setVisible(true);
+                wait(waitingTime);
+            }
+        }
+
     }
+
+
+
+
 
     private void wait(int time){
         try {

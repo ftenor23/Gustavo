@@ -16,62 +16,57 @@ public abstract class AddMachinery {
     private final static String[] OPTIONS = {"Casa central", "En viaje", "En comercio"};
     private final static int EXIT = 0;
 
-    public static void enterData(List<Machinery> machineryList){
+    public static void enterData(List<Machinery> machineryList) {
 
         Machinery machinery = enterMachinery();
-        if(machinery==null){
+        if (machinery == null) {
             return;
         }
-        MachineryManager.saveNewMachine(machinery,machineryList);
-        Window.addMachineryToList(machinery);
+        MachineryManager.saveNewMachine(machinery, machineryList);
         JOptionPane.showMessageDialog(null, NEW_MACHINE_SAVED);
     }
 
 
-
-
-
-
-    private static String enterFeatures(){
+    private static String enterFeatures() {
         return JOptionPane.showInputDialog(ENTER_FEATURES);
     }
 
-    private static Client enterClient(){
+    private static Client enterClient() {
         return AddClient.enterData(true);
     }
 
-    private static Machinery enterMachinery(){
-        String id=null;
+    private static Machinery enterMachinery() {
+        String id = null;
         int status = 0;
-        int hoursOfUse=-1;
+        int hoursOfUse = -1;
         String features = null;
-        Client client= null;
+        Client client = null;
         final int EXIT = 0;
 
         id = DataIn.enterInfo(ENTER_ID);
-        if(id==null){
+        if (id == null) {
             return null;
         }
 
         status = DataIn.enterStatus();
-        if(status==-1){
+        if (status == -1) {
             return null;
         }
 
-        features=DataIn.enterInfo(ENTER_FEATURES);
-        if(features==null){
+        features = DataIn.enterInfo(ENTER_FEATURES);
+        if (features == null) {
             return null;
         }
 
-        client=enterClient();
-        if(client==null){
+        client = enterClient();
+        if (client == null) {
             return null;
         }
 
-        hoursOfUse=DataIn.enterHoursOfUse(ENTER_HOURS);
-        if(hoursOfUse==-1){
+        hoursOfUse = DataIn.enterHoursOfUse(ENTER_HOURS);
+        if (hoursOfUse == -1) {
             return null;
         }
-        return new Machinery(id,status,client,features,hoursOfUse);
+        return new Machinery(id, status, client, features, hoursOfUse);
     }
 }

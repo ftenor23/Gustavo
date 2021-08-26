@@ -4,6 +4,7 @@ import Entity.Machinery;
 import Mapper.Bin;
 
 import javax.swing.*;
+import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,13 +14,15 @@ public abstract class Table {
     private TMMachinery model;
 
 
+
     public static DTable getTable(List<Machinery> list){
 
         DTable table = new DTable();
         TMMachinery model = new TMMachinery(list);
         table.setModel(model);
-        table.setFont(new Font("Arial",Font.BOLD,20));
+        table.setFont(new Font("Arial",Font.BOLD,30));
         table.setBackground(new Color(192,192,192));
+        table.setRowHeight(59);
         return table;
     }
 
@@ -34,6 +37,7 @@ public abstract class Table {
         DTable table = new DTable();
         TMMachinery model = new TMMachinery(list);
         table.setModel(model);
+
         //table.setFont(new Font("Arial",Font.PLAIN,16));
         //table.setBackground(new Color(192,192,192));
         return table;
@@ -44,7 +48,8 @@ public abstract class Table {
         DTable table = new DTable();
         TMPending model = new TMPending(list);
         table.setModel(model);
-        table.setFont(new Font("Arial",Font.PLAIN,20));
+        table.setRowHeight(59);
+        table.setFont(new Font("Arial",Font.PLAIN,30));
         table.setBackground(new Color(192,192,192));
         return table;
     }

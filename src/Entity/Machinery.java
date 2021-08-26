@@ -2,6 +2,7 @@ package Entity;
 
 import java.io.Serializable;
 
+
 public class Machinery implements Serializable {
     private String id;
     private int status; //1:en casa central, 2:en viaje, 3: en comercio; 4 pasado a ventas o dado de baja

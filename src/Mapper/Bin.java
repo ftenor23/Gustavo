@@ -5,7 +5,10 @@ import com.google.gson.Gson;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.sql.*;
+import java.util.Map;
 
 public class Bin {
 
@@ -69,6 +72,7 @@ public class Bin {
 
     public static List<Machinery> readObjetsAndAddToList(){
         List<Machinery> listOfMachinery = new ArrayList<>();
+
         try{
             RandomAccessFile file = new RandomAccessFile(FILE_LOCATION,"r");
             file.seek(0);
@@ -119,6 +123,23 @@ public class Bin {
             bw.close();
         }catch(Exception e){
             System.out.println(e);
+        }
+    }
+
+    public static void saveInDB(Machinery machinery){
+        try{
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/bd_maquinarias","root","");
+            PreparedStatement pst = cn.prepareStatement("insert into maquinarias values(?,?,?,?,?,?,?)");
+            pst.setString(1, machinery.getId().trim());
+            pst.setInt(2,machinery.getStatus());
+            pst.setString(3, machinery.getClientName());
+            pst.setInt(4,machinery.getClientZone());
+            pst.setString(5, machinery.getFeatures().trim());
+            pst.setString(6, machinery.getPending().trim());
+            pst.setInt(7,machinery.getHoursOfUse());
+            pst.executeUpdate();
+        }catch(Exception e){
+
         }
     }
 }
