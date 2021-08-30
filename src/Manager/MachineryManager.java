@@ -1,39 +1,18 @@
 package Manager;
 
-import Graphics.Window;
+import Enums.ServiceType;
+import Graphics.Windows.Window;
 import Mapper.Bin;
 import Constants.SORT_CONSTANTS;
-import EnterData.EnterData;
 import Entity.Client;
 import Entity.Machinery;
-import Graphics.MachineryGraphics;
+import Graphics.Windows.Messages.MachineryGraphics;
 
-import javax.crypto.Mac;
-import java.util.ArrayList;
 import java.util.List;
 
 public class MachineryManager {
     //no escribe datos al final del archivo
-    public void changeStatus(Machinery machinery){
-        MachineryGraphics.printActualStatus(machinery);
-        MachineryGraphics.printStatusOptions();
-        int status = EnterData.nextInt();
-        machinery.setStatus(status);
-    }
 
-    public static Machinery enterData(){
-        System.out.println("Ingrese el id de la maquinaria: ");
-        String id = EnterData.nextLine();
-        System.out.println("Ingrese el estado de la maquinaria");
-        System.out.println("1:en casa central\n2:en viaje\n3: en comercio");
-        int status=EnterData.nextInt(); //validar status
-        System.out.println("Ingrese la descripcion de la maquinaria: ");
-        String features=EnterData.nextLine();
-        Client client = ClientManager.enterData();
-        System.out.println("Ingrese las horas de uso:");
-        int hoursOfUse = EnterData.nextInt();
-        return new Machinery(id,status,client,features, hoursOfUse);
-    }
 
     public static void printList(List<Machinery> list){
 
@@ -60,9 +39,6 @@ public class MachineryManager {
         saveMachinesInOrder(list, SORT_CONSTANTS.ID);
     }
 
-    public static void writeInDisc(Machinery machinery){
-        Bin.addNewMachinery(machinery);
-    }
 
 //funciona no tocar
     public static int binarySearch(List<Machinery> list, String idToSearch) {
@@ -83,7 +59,16 @@ public class MachineryManager {
         }
 
 
-
+    public static void setService(Enum e, Machinery machinery){
+        if(e.equals(ServiceType.SERVICE_250)){
+            machinery.setHoursOfUse(0);
+        }
+        if(e.equals(ServiceType.SERVICE_1000)){
+            machinery.setHoursOfUse(0);
+            machinery.setHsSinceLast1000hsService(0);
+        }
+        replaceMachine(machinery,Window.getMachineryList());
+    }
 
     public static Machinery search(String id){
         int pos = binarySearch(Bin.readObjetsAndAddToList(),id);
@@ -98,32 +83,33 @@ public class MachineryManager {
     }
 
 
-    private static void replaceMachine(Machinery machinery){
-        List<Machinery> machineryList = Bin.readObjetsAndAddToList();
+    private static void replaceMachine(Machinery machinery, List<Machinery> machineryList){
+
         machineryList.remove(binarySearch(machineryList, machinery.getId()));
         machineryList.add(machinery);
         saveMachinesInOrder(machineryList,SORT_CONSTANTS.ID);
+        Window.setMachineryUpdate(true);
     }
 
     public static void changeFeatures(Machinery machinery, String line){
         machinery.setFeatures(line);
-        replaceMachine(machinery);
+        replaceMachine(machinery,Window.getMachineryList());
     }
 
     public static void changeClient(Machinery machinery, Client client){
         machinery.setClient(client);
-        replaceMachine(machinery);
+        replaceMachine(machinery,Window.getMachineryList());
     }
 
     public static void changePending(Machinery machinery, String line){
         machinery.setPending(line);
-        replaceMachine(machinery);
+        replaceMachine(machinery,Window.getMachineryList());
     }
 
     public static void changeHours(Machinery machinery, int hours){
         machinery.setHoursOfUse(machinery.getHoursOfUse() + hours);
         //preguntar a gus si quiere que cuando nos pasamos de 1000 lo cambiemos automatico
-        replaceMachine(machinery);
+        replaceMachine(machinery,Window.getMachineryList());
     }
 
     public static boolean deleteMachine(String id){
@@ -137,13 +123,4 @@ public class MachineryManager {
         return false;
     }
 
-    public static void serService250(Machinery machinery){
-        machinery.setService_250(true);
-        replaceMachine(machinery);
-    }
-
-    public static void serService1000(Machinery machinery){
-        machinery.setService_1000(true);
-        replaceMachine(machinery);
-    }
 }

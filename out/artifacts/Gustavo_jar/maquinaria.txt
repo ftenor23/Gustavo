@@ -1,75 +1,75 @@
-{"id":"A17","status":1,"client":{"name":"Enzo","zone":2,"isAssigned":false},"features":"Tractor","pending":"Revisar el 3/09","hoursOfUse":1113,"service_250":false,"service_1000":false}
-{"id":"A37","status":2,"client":{"name":"Lionel","zone":2,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":881,"service_250":false,"service_1000":false}
-{"id":"A57","status":4,"client":{"name":"Octavio","zone":3,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":468,"service_250":false,"service_1000":false}
-{"id":"B28","status":3,"client":{"name":"Roman","zone":4,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":368,"service_250":false,"service_1000":false}
-{"id":"B36","status":2,"client":{"name":"Claudia","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":679,"service_250":false,"service_1000":false}
-{"id":"B60","status":1,"client":{"name":"Leandro","zone":4,"isAssigned":false},"features":"Elevador","pending":" ","hoursOfUse":398,"service_250":false,"service_1000":false}
-{"id":"C4","status":1,"client":{"name":"Marcelo","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":"Supervision 5/09","hoursOfUse":968,"service_250":false,"service_1000":false}
-{"id":"E30","status":3,"client":{"name":"Marcelo","zone":1,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":821,"service_250":false,"service_1000":false}
-{"id":"E59","status":3,"client":{"name":"Javier","zone":4,"isAssigned":false},"features":"Escalera","pending":" ","hoursOfUse":173,"service_250":false,"service_1000":false}
-{"id":"E68","status":1,"client":{"name":"Sofia","zone":2,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":801,"service_250":false,"service_1000":false}
-{"id":"F47","status":4,"client":{"name":"Roman","zone":3,"isAssigned":false},"features":"Escalera","pending":" ","hoursOfUse":673,"service_250":false,"service_1000":false}
-{"id":"F48","status":4,"client":{"name":"Enzo","zone":3,"isAssigned":false},"features":"Elevador","pending":" ","hoursOfUse":601,"service_250":false,"service_1000":false}
-{"id":"F58","status":3,"client":{"name":"Leandro","zone":4,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":117,"service_250":false,"service_1000":false}
-{"id":"F74","status":1,"client":{"name":"Gustavo","zone":3,"isAssigned":false},"features":"Escalera","pending":" ","hoursOfUse":1006,"service_250":false,"service_1000":false}
-{"id":"G16","status":1,"client":{"name":"Maria","zone":2,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":666,"service_250":false,"service_1000":false}
-{"id":"G42","status":1,"client":{"name":"German","zone":2,"isAssigned":false},"features":"Agujereador","pending":" ","hoursOfUse":912,"service_250":false,"service_1000":false}
-{"id":"G63","status":4,"client":{"name":"Octavio","zone":2,"isAssigned":false},"features":"Escalera","pending":" ","hoursOfUse":623,"service_250":false,"service_1000":false}
-{"id":"G70","status":4,"client":{"name":"German","zone":1,"isAssigned":false},"features":"Escalera","pending":" ","hoursOfUse":758,"service_250":false,"service_1000":false}
-{"id":"H61","status":2,"client":{"name":"Octavio","zone":3,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":11,"service_250":false,"service_1000":false}
-{"id":"I1","status":3,"client":{"name":"Ricardo","zone":1,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":831,"service_250":false,"service_1000":false}
-{"id":"I18","status":2,"client":{"name":"Sofia","zone":3,"isAssigned":false},"features":"Agujereador","pending":" ","hoursOfUse":1056,"service_250":false,"service_1000":false}
-{"id":"I3","status":3,"client":{"name":"Enzo","zone":2,"isAssigned":false},"features":"Escalera","pending":" ","hoursOfUse":563,"service_250":false,"service_1000":false}
-{"id":"I33","status":4,"client":{"name":"Gustavo","zone":4,"isAssigned":false},"features":"Agujereador","pending":" ","hoursOfUse":17,"service_250":false,"service_1000":false}
-{"id":"J34","status":3,"client":{"name":"Sofia","zone":3,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":1014,"service_250":false,"service_1000":false}
-{"id":"J67","status":2,"client":{"name":"Jonathan","zone":3,"isAssigned":false},"features":"Agujereador","pending":" ","hoursOfUse":37,"service_250":false,"service_1000":false}
-{"id":"K14","status":4,"client":{"name":"Claudia","zone":1,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":412,"service_250":false,"service_1000":false}
-{"id":"L20","status":4,"client":{"name":"Gustavo","zone":4,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":799,"service_250":false,"service_1000":false}
-{"id":"L6","status":3,"client":{"name":"Maria","zone":1,"isAssigned":false},"features":"Elevador","pending":" ","hoursOfUse":1016,"service_250":false,"service_1000":false}
-{"id":"L66","status":3,"client":{"name":"Gustavo","zone":1,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":677,"service_250":false,"service_1000":false}
-{"id":"M8","status":4,"client":{"name":"Maria","zone":3,"isAssigned":false},"features":"Escalera","pending":" ","hoursOfUse":851,"service_250":false,"service_1000":false}
-{"id":"N32","status":3,"client":{"name":"Ricardo","zone":3,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":1137,"service_250":false,"service_1000":false}
-{"id":"N39","status":4,"client":{"name":"German","zone":2,"isAssigned":false},"features":"Elevador","pending":" ","hoursOfUse":578,"service_250":false,"service_1000":false}
-{"id":"N69","status":3,"client":{"name":"Ricardo","zone":1,"isAssigned":false},"features":"Escalera","pending":" ","hoursOfUse":373,"service_250":false,"service_1000":false}
-{"id":"O11","status":4,"client":{"name":"Lionel","zone":3,"isAssigned":false},"features":"Elevador","pending":" ","hoursOfUse":908,"service_250":false,"service_1000":false}
-{"id":"O51","status":4,"client":{"name":"Sofia","zone":1,"isAssigned":false},"features":"Agujereador","pending":" ","hoursOfUse":492,"service_250":false,"service_1000":false}
-{"id":"O56","status":1,"client":{"name":"Gustavo","zone":2,"isAssigned":false},"features":"Escalera","pending":" ","hoursOfUse":136,"service_250":false,"service_1000":false}
-{"id":"P2","status":1,"client":{"name":"Pepe","zone":2,"isAssigned":false},"features":"Escalera","pending":" ","hoursOfUse":609,"service_250":false,"service_1000":false}
-{"id":"P38","status":2,"client":{"name":"Roman","zone":3,"isAssigned":false},"features":"Agujereador","pending":" ","hoursOfUse":556,"service_250":false,"service_1000":false}
-{"id":"Q10","status":1,"client":{"name":"Marcelo","zone":2,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":663,"service_250":false,"service_1000":false}
-{"id":"Q15","status":4,"client":{"name":"Geremias","zone":4,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":357,"service_250":false,"service_1000":false}
-{"id":"R0","status":3,"client":{"name":"Pepe","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":1095,"service_250":false,"service_1000":false}
-{"id":"R27","status":3,"client":{"name":"German","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":1003,"service_250":false,"service_1000":false}
-{"id":"R29","status":4,"client":{"name":"Marcelo","zone":3,"isAssigned":false},"features":"Elevador","pending":" ","hoursOfUse":373,"service_250":false,"service_1000":false}
-{"id":"R46","status":3,"client":{"name":"Ricardo","zone":1,"isAssigned":false},"features":"Agujereador","pending":"Mantenimiento el 15/08","hoursOfUse":11,"service_250":false,"service_1000":false}
-{"id":"R49","status":4,"client":{"name":"Roman","zone":3,"isAssigned":false},"features":"Elevador","pending":" ","hoursOfUse":314,"service_250":false,"service_1000":false}
-{"id":"R52","status":3,"client":{"name":"Pepe","zone":4,"isAssigned":false},"features":"Elevador","pending":" ","hoursOfUse":1062,"service_250":false,"service_1000":false}
-{"id":"R9","status":1,"client":{"name":"Sofia","zone":2,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":633,"service_250":false,"service_1000":false}
-{"id":"S31","status":4,"client":{"name":"Octavio","zone":2,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":489,"service_250":false,"service_1000":false}
-{"id":"S45","status":3,"client":{"name":"Enzo","zone":2,"isAssigned":false},"features":"Escalera","pending":" ","hoursOfUse":807,"service_250":false,"service_1000":false}
-{"id":"S55","status":3,"client":{"name":"Lionel","zone":4,"isAssigned":false},"features":"Escalera","pending":" ","hoursOfUse":840,"service_250":false,"service_1000":false}
-{"id":"S7","status":4,"client":{"name":"Geremias","zone":4,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":538,"service_250":false,"service_1000":false}
-{"id":"T21","status":2,"client":{"name":"Geremias","zone":4,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":704,"service_250":false,"service_1000":false}
-{"id":"T5","status":2,"client":{"name":"Enzo","zone":3,"isAssigned":false},"features":"Elevador","pending":" ","hoursOfUse":698,"service_250":false,"service_1000":false}
-{"id":"U13","status":3,"client":{"name":"Marcelo","zone":1,"isAssigned":false},"features":"Escalera","pending":" ","hoursOfUse":30,"service_250":false,"service_1000":false}
-{"id":"U53","status":3,"client":{"name":"Enzo","zone":4,"isAssigned":false},"features":"Agujereador","pending":" ","hoursOfUse":742,"service_250":false,"service_1000":false}
-{"id":"U65","status":2,"client":{"name":"Ricardo","zone":4,"isAssigned":false},"features":"Elevador","pending":" ","hoursOfUse":386,"service_250":false,"service_1000":false}
-{"id":"V24","status":3,"client":{"name":"Gustavo","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":79,"service_250":false,"service_1000":false}
-{"id":"V64","status":3,"client":{"name":"Maria","zone":1,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":190,"service_250":false,"service_1000":false}
-{"id":"W22","status":1,"client":{"name":"Claudia","zone":1,"isAssigned":false},"features":"Escalera","pending":" ","hoursOfUse":41,"service_250":false,"service_1000":false}
-{"id":"W26","status":1,"client":{"name":"Leandro","zone":1,"isAssigned":false},"features":"Elevador","pending":" ","hoursOfUse":135,"service_250":false,"service_1000":false}
-{"id":"W50","status":3,"client":{"name":"Javier","zone":1,"isAssigned":false},"features":"Escalera","pending":" ","hoursOfUse":609,"service_250":false,"service_1000":false}
-{"id":"W54","status":1,"client":{"name":"Lionel","zone":1,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":95,"service_250":false,"service_1000":false}
-{"id":"W62","status":2,"client":{"name":"Pepe","zone":3,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":1044,"service_250":false,"service_1000":false}
-{"id":"W72","status":3,"client":{"name":"Leandro","zone":4,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":51,"service_250":false,"service_1000":false}
-{"id":"X35","status":4,"client":{"name":"Javier","zone":3,"isAssigned":false},"features":"Agujereador","pending":" ","hoursOfUse":550,"service_250":false,"service_1000":false}
-{"id":"X40","status":3,"client":{"name":"German","zone":2,"isAssigned":false},"features":"Maquinaria para edificio","pending":" ","hoursOfUse":9,"service_250":false,"service_1000":false}
-{"id":"X41","status":1,"client":{"name":"Enzo","zone":3,"isAssigned":false},"features":"Tractor","pending":" ","hoursOfUse":741,"service_250":false,"service_1000":false}
-{"id":"X43","status":2,"client":{"name":"Octavio","zone":4,"isAssigned":false},"features":"Agujereador","pending":" ","hoursOfUse":476,"service_250":false,"service_1000":false}
-{"id":"X44","status":2,"client":{"name":"Jonathan","zone":1,"isAssigned":false},"features":"Elevador","pending":" ","hoursOfUse":818,"service_250":false,"service_1000":false}
-{"id":"Y19","status":3,"client":{"name":"Javier","zone":4,"isAssigned":false},"features":"Escalera","pending":" ","hoursOfUse":556,"service_250":false,"service_1000":false}
-{"id":"Y23","status":1,"client":{"name":"Geremias","zone":4,"isAssigned":false},"features":"Elevador","pending":" ","hoursOfUse":505,"service_250":false,"service_1000":false}
-{"id":"Y71","status":1,"client":{"name":"Lionel","zone":2,"isAssigned":false},"features":"Escalera","pending":" ","hoursOfUse":14,"service_250":false,"service_1000":false}
-{"id":"Z12","status":1,"client":{"name":"Ricardo","zone":3,"isAssigned":false},"features":"Elevador","pending":" ","hoursOfUse":96,"service_250":false,"service_1000":false}
-{"id":"Z25","status":1,"client":{"name":"Octavio","zone":2,"isAssigned":false},"features":"Escalera","pending":" ","hoursOfUse":761,"service_250":false,"service_1000":false}
-{"id":"Z73","status":1,"client":{"name":"Ricardo","zone":1,"isAssigned":false},"features":"Elevador","pending":" ","hoursOfUse":1080,"service_250":false,"service_1000":false}
+{"id":"A12","status":1,"client":{"name":"Gallo","zone":1},"features":"Maquinaria para edificio","pending":"","hsSinceLast250hsService":192,"hsSinceLast1000hsService":1052,"totalHours":4406}
+{"id":"A54","status":1,"client":{"name":"Maria","zone":4},"features":"Escalera","pending":"","hsSinceLast250hsService":132,"hsSinceLast1000hsService":739,"totalHours":4694}
+{"id":"A66","status":1,"client":{"name":"Claudia","zone":3},"features":"Grua especial","pending":"","hsSinceLast250hsService":363,"hsSinceLast1000hsService":1171,"totalHours":8244}
+{"id":"A69","status":4,"client":{"name":"Octavio","zone":1},"features":"Agujereador","pending":"","hsSinceLast250hsService":349,"hsSinceLast1000hsService":1299,"totalHours":5824}
+{"id":"B26","status":1,"client":{"name":"Pedro Ramonez","zone":1},"features":"Computadora","pending":"","hsSinceLast250hsService":132,"hsSinceLast1000hsService":749,"totalHours":3735}
+{"id":"B72","status":4,"client":{"name":"Lionel","zone":3},"features":"Agujereador","pending":"","hsSinceLast250hsService":366,"hsSinceLast1000hsService":859,"totalHours":509}
+{"id":"C4","status":4,"client":{"name":"Jonathan","zone":1},"features":"Elevador","pending":"","hsSinceLast250hsService":281,"hsSinceLast1000hsService":114,"totalHours":7695}
+{"id":"D29","status":3,"client":{"name":"Ocativo","zone":4},"features":"Elevador","pending":"","hsSinceLast250hsService":173,"hsSinceLast1000hsService":706,"totalHours":5326}
+{"id":"D30","status":1,"client":{"name":"Pepe","zone":4},"features":"Maquinaria para edificio","pending":"","hsSinceLast250hsService":168,"hsSinceLast1000hsService":1252,"totalHours":1132}
+{"id":"D44","status":2,"client":{"name":"Marcelo","zone":3},"features":"Tractor","pending":"","hsSinceLast250hsService":371,"hsSinceLast1000hsService":940,"totalHours":4864}
+{"id":"D46","status":2,"client":{"name":"Sofia","zone":1},"features":"Maquinaria especial","pending":"","hsSinceLast250hsService":288,"hsSinceLast1000hsService":42,"totalHours":6653}
+{"id":"D61","status":4,"client":{"name":"Enzo","zone":4},"features":"Tractor","pending":"","hsSinceLast250hsService":120,"hsSinceLast1000hsService":1178,"totalHours":3058}
+{"id":"D63","status":4,"client":{"name":"Javier","zone":3},"features":"Grua especial","pending":"","hsSinceLast250hsService":60,"hsSinceLast1000hsService":302,"totalHours":457}
+{"id":"E14","status":2,"client":{"name":"Octavio","zone":4},"features":"Computadora","pending":"","hsSinceLast250hsService":227,"hsSinceLast1000hsService":242,"totalHours":1882}
+{"id":"F48","status":1,"client":{"name":"Leandro","zone":4},"features":"Computadora","pending":"","hsSinceLast250hsService":352,"hsSinceLast1000hsService":393,"totalHours":7497}
+{"id":"F6","status":4,"client":{"name":"Ocativo","zone":2},"features":"Tractor","pending":"","hsSinceLast250hsService":149,"hsSinceLast1000hsService":1070,"totalHours":5384}
+{"id":"G25","status":2,"client":{"name":"Claudia","zone":1},"features":"Elevador","pending":"","hsSinceLast250hsService":226,"hsSinceLast1000hsService":959,"totalHours":6832}
+{"id":"G58","status":3,"client":{"name":"Jonathan","zone":4},"features":"Maquinaria especial","pending":"","hsSinceLast250hsService":286,"hsSinceLast1000hsService":238,"totalHours":5358}
+{"id":"H41","status":2,"client":{"name":"Sofia","zone":3},"features":"Computadora","pending":"","hsSinceLast250hsService":133,"hsSinceLast1000hsService":361,"totalHours":7866}
+{"id":"I37","status":2,"client":{"name":"Jonathan","zone":3},"features":"Grua","pending":"","hsSinceLast250hsService":174,"hsSinceLast1000hsService":480,"totalHours":2010}
+{"id":"I5","status":1,"client":{"name":"Javier","zone":2},"features":"Maquinaria especial","pending":"","hsSinceLast250hsService":322,"hsSinceLast1000hsService":815,"totalHours":8148}
+{"id":"J36","status":1,"client":{"name":"Ricardo","zone":1},"features":"Computadora","pending":"","hsSinceLast250hsService":272,"hsSinceLast1000hsService":680,"totalHours":8079}
+{"id":"J73","status":1,"client":{"name":"Claudia","zone":4},"features":"Maquinaria para edificio","pending":"","hsSinceLast250hsService":329,"hsSinceLast1000hsService":334,"totalHours":6142}
+{"id":"K0","status":2,"client":{"name":"Jonathan","zone":2},"features":"Escalera","pending":"","hsSinceLast250hsService":90,"hsSinceLast1000hsService":88,"totalHours":740}
+{"id":"K20","status":1,"client":{"name":"Gallo","zone":1},"features":"Elevador","pending":"","hsSinceLast250hsService":338,"hsSinceLast1000hsService":1127,"totalHours":1732}
+{"id":"K68","status":3,"client":{"name":"German","zone":4},"features":"Grua especial","pending":"","hsSinceLast250hsService":169,"hsSinceLast1000hsService":394,"totalHours":5862}
+{"id":"L13","status":1,"client":{"name":"Gustavo","zone":2},"features":"Computadora","pending":"","hsSinceLast250hsService":207,"hsSinceLast1000hsService":291,"totalHours":1300}
+{"id":"L32","status":2,"client":{"name":"Jimena","zone":4},"features":"Grua especial","pending":"","hsSinceLast250hsService":173,"hsSinceLast1000hsService":822,"totalHours":8317}
+{"id":"L33","status":2,"client":{"name":"Geremias","zone":1},"features":"Grua","pending":"","hsSinceLast250hsService":214,"hsSinceLast1000hsService":1243,"totalHours":230}
+{"id":"L51","status":2,"client":{"name":"Ricardo","zone":4},"features":"Escalera","pending":"","hsSinceLast250hsService":378,"hsSinceLast1000hsService":823,"totalHours":4934}
+{"id":"L59","status":1,"client":{"name":"Octavio","zone":1},"features":"Computadora","pending":"","hsSinceLast250hsService":236,"hsSinceLast1000hsService":85,"totalHours":7677}
+{"id":"L71","status":2,"client":{"name":"Lionel","zone":1},"features":"Tractor","pending":"","hsSinceLast250hsService":271,"hsSinceLast1000hsService":957,"totalHours":1116}
+{"id":"L74","status":4,"client":{"name":"Ricardo","zone":1},"features":"Maquinaria para edificio","pending":"","hsSinceLast250hsService":88,"hsSinceLast1000hsService":1104,"totalHours":3638}
+{"id":"M31","status":1,"client":{"name":"Geremias","zone":3},"features":"Grua","pending":"","hsSinceLast250hsService":6,"hsSinceLast1000hsService":654,"totalHours":7}
+{"id":"M8","status":4,"client":{"name":"Gustavo","zone":3},"features":"Grua especial","pending":"","hsSinceLast250hsService":63,"hsSinceLast1000hsService":527,"totalHours":7837}
+{"id":"N10","status":2,"client":{"name":"Jonathan","zone":1},"features":"Grua especial","pending":"","hsSinceLast250hsService":280,"hsSinceLast1000hsService":659,"totalHours":5132}
+{"id":"N16","status":2,"client":{"name":"Gustavo","zone":3},"features":"Grua","pending":"","hsSinceLast250hsService":253,"hsSinceLast1000hsService":348,"totalHours":4057}
+{"id":"O3","status":3,"client":{"name":"Gustavo","zone":3},"features":"Maquinaria especial","pending":"","hsSinceLast250hsService":279,"hsSinceLast1000hsService":1157,"totalHours":2905}
+{"id":"O39","status":3,"client":{"name":"Octavio","zone":3},"features":"Escalera","pending":"","hsSinceLast250hsService":301,"hsSinceLast1000hsService":152,"totalHours":837}
+{"id":"O40","status":1,"client":{"name":"Lionel","zone":3},"features":"Maquinaria para edificio","pending":"","hsSinceLast250hsService":321,"hsSinceLast1000hsService":1014,"totalHours":1969}
+{"id":"O49","status":4,"client":{"name":"German","zone":2},"features":"Maquinaria especial","pending":"","hsSinceLast250hsService":360,"hsSinceLast1000hsService":369,"totalHours":4807}
+{"id":"O65","status":2,"client":{"name":"Ricardo","zone":3},"features":"Grua especial","pending":"","hsSinceLast250hsService":256,"hsSinceLast1000hsService":744,"totalHours":5777}
+{"id":"O9","status":4,"client":{"name":"Maria","zone":4},"features":"Maquinaria para edificio","pending":"","hsSinceLast250hsService":64,"hsSinceLast1000hsService":928,"totalHours":2027}
+{"id":"P11","status":4,"client":{"name":"Pepe","zone":2},"features":"Computadora","pending":"","hsSinceLast250hsService":380,"hsSinceLast1000hsService":539,"totalHours":333}
+{"id":"P21","status":1,"client":{"name":"Marcelo","zone":2},"features":"Computadora","pending":"","hsSinceLast250hsService":389,"hsSinceLast1000hsService":9,"totalHours":6244}
+{"id":"P28","status":1,"client":{"name":"Marcelo","zone":2},"features":"Computadora","pending":"","hsSinceLast250hsService":270,"hsSinceLast1000hsService":960,"totalHours":6428}
+{"id":"Q18","status":2,"client":{"name":"Marcelo","zone":3},"features":"Grua","pending":"","hsSinceLast250hsService":260,"hsSinceLast1000hsService":1145,"totalHours":318}
+{"id":"Q2","status":1,"client":{"name":"Roman","zone":4},"features":"Computadora","pending":"","hsSinceLast250hsService":115,"hsSinceLast1000hsService":301,"totalHours":4166}
+{"id":"Q22","status":2,"client":{"name":"Gustavo","zone":2},"features":"Escalera","pending":"","hsSinceLast250hsService":137,"hsSinceLast1000hsService":1021,"totalHours":5762}
+{"id":"Q24","status":1,"client":{"name":"Marcelo","zone":3},"features":"Maquinaria para edificio","pending":"","hsSinceLast250hsService":26,"hsSinceLast1000hsService":1284,"totalHours":1651}
+{"id":"Q53","status":4,"client":{"name":"Javier","zone":2},"features":"Elevador","pending":"","hsSinceLast250hsService":304,"hsSinceLast1000hsService":746,"totalHours":7185}
+{"id":"R15","status":4,"client":{"name":"Enzo","zone":1},"features":"Agujereador","pending":"","hsSinceLast250hsService":257,"hsSinceLast1000hsService":162,"totalHours":3056}
+{"id":"R34","status":2,"client":{"name":"Pepe","zone":3},"features":"Maquinaria para edificio","pending":"","hsSinceLast250hsService":250,"hsSinceLast1000hsService":646,"totalHours":1532}
+{"id":"R45","status":1,"client":{"name":"German","zone":2},"features":"Elevador","pending":"","hsSinceLast250hsService":128,"hsSinceLast1000hsService":1004,"totalHours":4134}
+{"id":"S19","status":4,"client":{"name":"Enzo","zone":4},"features":"Tractor","pending":"","hsSinceLast250hsService":277,"hsSinceLast1000hsService":808,"totalHours":1561}
+{"id":"S52","status":3,"client":{"name":"Jonathan","zone":3},"features":"Computadora","pending":"","hsSinceLast250hsService":153,"hsSinceLast1000hsService":34,"totalHours":3828}
+{"id":"S56","status":2,"client":{"name":"Geremias","zone":4},"features":"Grua especial","pending":"","hsSinceLast250hsService":209,"hsSinceLast1000hsService":191,"totalHours":3537}
+{"id":"T50","status":1,"client":{"name":"Enzo","zone":2},"features":"Elevador","pending":"","hsSinceLast250hsService":117,"hsSinceLast1000hsService":898,"totalHours":8151}
+{"id":"T57","status":4,"client":{"name":"Eustaquio","zone":3},"features":"Elevador","pending":"","hsSinceLast250hsService":312,"hsSinceLast1000hsService":1273,"totalHours":648}
+{"id":"T60","status":3,"client":{"name":"Lionel","zone":2},"features":"Tractor","pending":"","hsSinceLast250hsService":174,"hsSinceLast1000hsService":112,"totalHours":4140}
+{"id":"T67","status":4,"client":{"name":"Claudia","zone":3},"features":"Tractor","pending":"","hsSinceLast250hsService":248,"hsSinceLast1000hsService":1189,"totalHours":8249}
+{"id":"U35","status":2,"client":{"name":"Octavio","zone":4},"features":"Escalera","pending":"","hsSinceLast250hsService":164,"hsSinceLast1000hsService":997,"totalHours":3346}
+{"id":"U55","status":4,"client":{"name":"Sofia","zone":3},"features":"Maquinaria especial","pending":"","hsSinceLast250hsService":292,"hsSinceLast1000hsService":238,"totalHours":7995}
+{"id":"V27","status":1,"client":{"name":"Leandro","zone":4},"features":"Maquinaria especial","pending":"","hsSinceLast250hsService":283,"hsSinceLast1000hsService":716,"totalHours":2028}
+{"id":"V38","status":1,"client":{"name":"Maria","zone":3},"features":"Escalera","pending":"","hsSinceLast250hsService":194,"hsSinceLast1000hsService":814,"totalHours":8123}
+{"id":"V42","status":4,"client":{"name":"German","zone":3},"features":"Computadora","pending":"","hsSinceLast250hsService":261,"hsSinceLast1000hsService":2,"totalHours":3262}
+{"id":"V47","status":4,"client":{"name":"Jonathan","zone":2},"features":"Grua","pending":"","hsSinceLast250hsService":218,"hsSinceLast1000hsService":1132,"totalHours":4869}
+{"id":"V70","status":4,"client":{"name":"Ocativo","zone":3},"features":"Computadora","pending":"","hsSinceLast250hsService":331,"hsSinceLast1000hsService":1190,"totalHours":3052}
+{"id":"W43","status":3,"client":{"name":"Gustavo","zone":2},"features":"Elevador","pending":"","hsSinceLast250hsService":157,"hsSinceLast1000hsService":185,"totalHours":5064}
+{"id":"X62","status":4,"client":{"name":"Gustavo","zone":3},"features":"Computadora","pending":"","hsSinceLast250hsService":33,"hsSinceLast1000hsService":692,"totalHours":4536}
+{"id":"X7","status":4,"client":{"name":"Maria","zone":1},"features":"Escalera","pending":"","hsSinceLast250hsService":14,"hsSinceLast1000hsService":371,"totalHours":1521}
+{"id":"Y64","status":3,"client":{"name":"German","zone":3},"features":"Agujereador","pending":"","hsSinceLast250hsService":111,"hsSinceLast1000hsService":155,"totalHours":7734}
+{"id":"Z1","status":1,"client":{"name":"Ocativo","zone":4},"features":"Maquinaria especial","pending":"","hsSinceLast250hsService":25,"hsSinceLast1000hsService":1077,"totalHours":6732}
+{"id":"Z17","status":4,"client":{"name":"Maria","zone":1},"features":"Elevador","pending":"","hsSinceLast250hsService":220,"hsSinceLast1000hsService":889,"totalHours":1868}
+{"id":"Z23","status":3,"client":{"name":"Jimena","zone":3},"features":"Grua especial","pending":"","hsSinceLast250hsService":383,"hsSinceLast1000hsService":763,"totalHours":575}

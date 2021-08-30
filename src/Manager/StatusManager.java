@@ -1,7 +1,7 @@
 package Manager;
 
 public abstract class StatusManager{
-    private int status; //1:en casa central, 2:en viaje, 3: en comercio; 4 pasado a ventas o dado de baja
+    //1:en casa central, 2:en viaje, 3: en comercio; 4 pasado a ventas o dado de baja
     private static final String CASA_CENTRAL = "Casa central";
     private static final String EN_VIAJE = "En viaje";
     private static final String EN_COMERCIO = "En comercio";

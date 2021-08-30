@@ -1,7 +1,7 @@
 package EnterData;
 
 
-import Graphics.Graphics;
+import Graphics.Windows.Messages.Graphics;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

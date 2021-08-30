@@ -9,15 +9,21 @@ public class Machinery implements Serializable {
     private Client client;
     private String features;
     private String pending;
-    private int hoursOfUse;
-    private boolean service_250;
-    private boolean service_1000;
+    private int hsSinceLast250hsService;
+    private int hsSinceLast1000hsService;
+    private int totalHours;
     //agregar variable que indique si se le hicieron los service cada 250 horas
     //caracteristicas
-
-    public Machinery() {
-        service_250=false;
-        service_1000=false;
+    public Machinery(String id, int status, Client client, String features, int hsSinceLast250hsService, int hsSinceLast1000hsService, int totalHours) {
+        this.id = id;
+        this.status = status;
+        this.client = client;
+        this.features = features;
+        this.pending = "";
+        this.hsSinceLast250hsService = hsSinceLast250hsService;
+        this.hsSinceLast1000hsService = hsSinceLast1000hsService;
+        //preguntar a gus
+        this.totalHours = totalHours;
     }
 
     public String getPending() {
@@ -25,29 +31,25 @@ public class Machinery implements Serializable {
     }
 
     public String getClientName(){
-        try{
-            return getClient().getName();
-        }catch(NullPointerException e){
-            return "Cliente no registrado";
-        }catch(Exception e){
-            return "Cliente no registrado";
-        }
+
+        return getClient().getName();
+
     }
 
-    public boolean isService_250() {
-        return service_250;
+    public int getHsSinceLast1000hsService() {
+        return hsSinceLast1000hsService;
     }
 
-    public void setService_250(boolean service_250) {
-        this.service_250 = service_250;
+    public int getTotalHours() {
+        return totalHours;
     }
 
-    public boolean isService_1000() {
-        return service_1000;
+    public int getHsSinceLast250hsService() {
+        return hsSinceLast250hsService;
     }
 
-    public void setService_1000(boolean service_1000) {
-        this.service_1000 = service_1000;
+    public void setHsSinceLast1000hsService(int totalHours) {
+        this.hsSinceLast1000hsService = totalHours;
     }
 
     public int getClientZone(){
@@ -59,25 +61,21 @@ public class Machinery implements Serializable {
     }
 
     public int getHoursOfUse() {
-        return hoursOfUse;
+        return hsSinceLast250hsService;
     }
 
     public void setHoursOfUse(int hoursOfUse) {
-        this.hoursOfUse = hoursOfUse;
+
+        this.hsSinceLast250hsService = hoursOfUse;
+        this.hsSinceLast1000hsService+=hoursOfUse;
+        this.totalHours+=hoursOfUse;
     }
     //agregar String pendientes;
 //agregar variable horas de uso y calcular horas para ver si hay que hace service
     //filtro 250 cambio de aceite, etc filtro
 
 
-    public Machinery(String id, int status, Client client, String features, int hoursOfUse) {
-        this.id = id;
-        this.status = status;
-        this.client = client;
-        this.features = features;
-        this.pending = " ";
-        this.hoursOfUse = hoursOfUse;
-    }
+
 
     public String getId() {
         return id;

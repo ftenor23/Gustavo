@@ -5,10 +5,9 @@ import com.google.gson.Gson;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.List;
 import java.sql.*;
-import java.util.Map;
 
 public class Bin {
 
@@ -16,65 +15,15 @@ public class Bin {
     private static final String FILE_LOCATION = "maquinaria.txt";
 
 
-    public static void addNewMachinery(Machinery machinery){
-        try {
-            //hacer una copia de seguridad en otra carpeta cada vez que guardo el archivo
-            int newMachineNumber = getNumberOfMachines()+1; //numero de maquinas registradas + 1 por la posicion de la nueva
 
-            RandomAccessFile file = new RandomAccessFile(FILE_LOCATION,"rw");
 
-            seekEndOfFile(file);
-
-            saveMachineInArchive(machinery,file); //se escribe objeto en archivo
-
-            //se cierra archivo
-            file.close();
-        } catch (IOException ex) {
-
-        }
-    }
-
-    private static void seekEndOfFile(RandomAccessFile file) throws IOException{
-        long fileLenght = file.length();
-        file.seek(fileLenght);
-    }
-
-    private static void saveMachineInArchive(Machinery machinery, RandomAccessFile file){
-        Gson gson=new Gson();
-        try {
-            String line = gson.toJson(machinery);
-            file.writeBytes(line + "\n");
-        }catch (IOException e){
-            System.out.println("Exception: " + e);
-        }catch (Exception e){
-            System.out.println("Exception: " + e);
-        }
-
-    }
-
-    public static int getNumberOfMachines(){
-        int counter=0;
-        try {
-            RandomAccessFile file = new RandomAccessFile(FILE_LOCATION, "r");
-            String line = file.readLine();
-            while(line!=null) {
-                counter++;
-                line = file.readLine();
-            }
-
-            file.close();
-        }catch(Exception e){
-            System.out.println(e);
-        }
-        return counter;
-    }
 
 
     public static List<Machinery> readObjetsAndAddToList(){
         List<Machinery> listOfMachinery = new ArrayList<>();
-
+        RandomAccessFile file;
         try{
-            RandomAccessFile file = new RandomAccessFile(FILE_LOCATION,"r");
+            file = new RandomAccessFile(FILE_LOCATION,"r");
             file.seek(0);
 
             String line = file.readLine();
@@ -83,10 +32,8 @@ public class Bin {
                 line = file.readLine();
             }
             file.close();
-        }catch(IOException e){
-            System.out.println(e);
-        }catch(Exception e){
-            System.out.println(e);
+        } catch(Exception e){
+            System.out.println("Exception: " +e);
         }
         return listOfMachinery;
     }
@@ -103,15 +50,13 @@ public class Bin {
             RandomAccessFile file = new RandomAccessFile(FILE_LOCATION,"rw");
             file.seek(0);
             String line;
-            for(int i=0;i<list.size();i++){
-                line = gson.toJson(list.get(i));
+            for (Machinery machinery : list) {
+                line = gson.toJson(machinery);
                 file.writeBytes(line + "\n");
             }
         file.close();
-        }catch(IOException e){
-            System.out.println(e);
-        }catch(Exception e){
-            System.out.println(e);
+        } catch(Exception e){
+            System.out.println("Exception " +e);
         }
     }
 
@@ -122,7 +67,7 @@ public class Bin {
             bw.write("");
             bw.close();
         }catch(Exception e){
-            System.out.println(e);
+            System.out.println("Exception: " +e);
         }
     }
 

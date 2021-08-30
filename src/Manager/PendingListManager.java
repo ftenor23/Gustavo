@@ -9,10 +9,13 @@ public abstract class PendingListManager {
 
     public static List<Machinery> getOnlyPendingList(List<Machinery> machineryList){
         List<Machinery> pendingList = new ArrayList<>();
-        for(int i = 0; i<machineryList.size();i++){
-            if(!machineryList.get(i).getPending().equals(" ")){
-                pendingList.add(machineryList.get(i));
+        for (Machinery machinery : machineryList) {
+            if (!machinery.getPending().equals("")) {
+                pendingList.add(machinery);
             }
+        }
+        if (pendingList.size()==0){
+            return null;
         }
         return pendingList;
     }

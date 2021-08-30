@@ -1,7 +1,6 @@
 package Manager;
 
 public abstract class ZoneManager {
-    private int zone; //1)norte, 2)oeste, 3)sur, 4)capital
     private static final String NORTE= "Norte";
     private static final String OESTE = "Oeste";
     private static final String SUR = "Sur";
@@ -9,7 +8,7 @@ public abstract class ZoneManager {
     private static final String NOT_FOUND = "No encontrado";
 
     public static String getZone(int zone){
-        String response = null;
+        String response;
         switch (zone){
             case 1:
                 response = NORTE;
