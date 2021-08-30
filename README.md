@@ -1,4 +1,4 @@
-# Gustavo
+# Sistema de organizacion de maquinas
 
 Programa que se encarga de ordenar y archivar distintas maquinarias en un archivo txt en formato JSon.
 El programa permite agregar, modificar y eliminar maquinaria del archivo. Permite tambien ordenar las mismas
