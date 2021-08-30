@@ -1,4 +1,4 @@
-{"id":"A12","status":1,"client":{"name":"Gallo","zone":1},"features":"GRUA","pending":"Gustavo el 5/09","hsSinceLast250hsService":192,"hsSinceLast1000hsService":1052,"totalHours":4406}
+{"id":"A12","status":1,"client":{"name":"Gallo","zone":1},"features":"GRUA","pending":"Gustavo el 5/09","hsSinceLast250hsService":0,"hsSinceLast1000hsService":0,"totalHours":4406}
 {"id":"A54","status":1,"client":{"name":"Maria","zone":4},"features":"Escalera","pending":"","hsSinceLast250hsService":132,"hsSinceLast1000hsService":739,"totalHours":4694}
 {"id":"A66","status":1,"client":{"name":"Claudia","zone":3},"features":"Grua especial","pending":"","hsSinceLast250hsService":363,"hsSinceLast1000hsService":1171,"totalHours":8244}
 {"id":"A69","status":4,"client":{"name":"Octavio","zone":1},"features":"Agujereador","pending":"","hsSinceLast250hsService":349,"hsSinceLast1000hsService":1299,"totalHours":5824}

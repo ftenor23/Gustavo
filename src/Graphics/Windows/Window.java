@@ -29,7 +29,7 @@ public class Window extends JFrame implements ActionListener {
     private Menu menuBar;
     private DTable table;
     private static List<Machinery> machineryList;
-    private static int waitingTime = 2000; //5 segundos
+    private static int waitingTime = 10000; //10 segundos
     private final static int MACHINERY_TO_SHOW_PER_PAGE = 14;
     private final static String MACHINERY = "Maquinaria";
     private static boolean update;

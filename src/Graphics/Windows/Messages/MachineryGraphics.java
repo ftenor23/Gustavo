@@ -9,109 +9,128 @@ import javax.swing.*;
 import java.util.List;
 
 public abstract class MachineryGraphics {
-    public static void printActualStatus(Machinery machinery){
+
+    public static void printActualStatus(Machinery machinery) {
         System.out.println("El estado actual es " + machinery.getStatus());
     }
 
-    public static void printStatusOptions(){
+    public static void printStatusOptions() {
         System.out.println("Ingrese el nuevo estado de la maquina");
         System.out.println("1) en casa central\n" +
                 "2)en viaje\n3) en comercio");
     }
 
-    public static void changeClient(){
+    public static void changeClient() {
         //deberia leer el archivo completo de clientes y elegir uno
         System.out.println("Seleccione el numero de cliente a asignar: ");
     }
 
-    public static String printMachineryData(Machinery machinery){
-        return printId(machinery)+
-        printStatus(machinery)+
-        printFeatures(machinery)+
-        printClientInfo(machinery.getClient())+printHoursOfUse(machinery)+
-                printPending(machinery);
+    public static String printMachineryData(Machinery machinery) {
+        return printId(machinery) +
+                printStatus(machinery) +
+                printFeatures(machinery) +
+                printClientInfo(machinery.getClient()) +
+                printPending(machinery) +
+                printHoursOfUseSince250Service(machinery) +
+                printHoursOfUseSince1000Service(machinery) +
+                printTotalHours(machinery);
 
     }
 
-    private static String printPending(Machinery machinery){
-        return "Pendientes: " + machinery.getPending() + "\n";
+    private static String printPending(Machinery machinery) {
+        String pending = machinery.getPending();
+        if(pending.equals("")){
+            pending = "sin pendientes";
+        }
+        return "Pendientes: " + pending + "\n";
     }
-    private static String printHoursOfUse(Machinery machinery){
-        return "Horas de uso: " + machinery.getHoursOfUse() + "\n";
+
+    private static String printHoursOfUseSince250Service(Machinery machinery) {
+        return "Ultimo service de 250hs hace " + machinery.getHsSinceLast250hsService() + "hs\n";
     }
-    private static String printId(Machinery machinery){
+
+    private static String printHoursOfUseSince1000Service(Machinery machinery) {
+        return "Ultimo service de 1000hs hace " + machinery.getHsSinceLast1000hsService() + "hs\n";
+    }
+
+    private static String printTotalHours(Machinery machinery) {
+        return "Total de horas de trabajo: " + machinery.getTotalHours() + "hs\n";
+    }
+
+    private static String printId(Machinery machinery) {
         return "Id: " + machinery.getId() + "\n";
     }
 
-    public static String printStatus(Machinery machinery){
+    public static String printStatus(Machinery machinery) {
+
         String response = "Estado de la maquinaria: ";
-        switch (machinery.getStatus()){
+        switch (machinery.getStatus()) {
             case 1:
-                response+="Se encuentra en casa central";
+                response += "Se encuentra en casa central";
                 break;
             case 2:
-                response+="Se encuentra en viaje";
+                response += "Se encuentra en viaje";
                 break;
             case 3:
-                response+="Se encuentra en comercio";
+                response += "Se encuentra en comercio";
                 break;
             default:
-                response+="Error en el estado";
+                response += "Error en el estado";
                 break;
         }
         return response + "\n";
     }
 
-    public static String printFeatures(Machinery machinery){
+    public static String printFeatures(Machinery machinery) {
         return "Descripcion: " + machinery.getFeatures() + "\n";
     }
 
-    public static String printClientInfo(Client client){
-        return ClientGraphics.printName(client)+ ClientGraphics.printZone(client);
+    public static String printClientInfo(Client client) {
+        return ClientGraphics.printName(client) + ClientGraphics.printZone(client);
     }
 
-    public static void showMachinery(List<Machinery> list){
-        int counter=0;
-        int limit=3;
-        boolean exit=false;
-        while(!exit){
-            for(int i=0;i<limit;i++){
-                if(i+counter<list.size()) {
+    public static void showMachinery(List<Machinery> list) {
+        int counter = 0;
+        int limit = 3;
+        boolean exit = false;
+        while (!exit) {
+            for (int i = 0; i < limit; i++) {
+                if (i + counter < list.size()) {
                     printMachineryData(list.get(i + counter));
                 }
             }
 
 
-            try{
+            try {
                 Thread.sleep(3000);
-            }catch(Exception e){
+            } catch (Exception e) {
 
             }
-            counter+=limit;
-            if(counter> list.size()){
-                counter=0;
+            counter += limit;
+            if (counter > list.size()) {
+                counter = 0;
             }
             Graphics.cleanConsole();
         }
     }
 
-    public static void showInfo(Machinery machinery){
-        if(machinery!=null) {
+    public static void showInfo(Machinery machinery) {
+        if (machinery != null) {
             JOptionPane.showMessageDialog(null, printMachineryData(machinery));
-        }else{
-            JOptionPane.showMessageDialog(null,"Maquinaria no encontrada en la base de datos");
+        } else {
+            JOptionPane.showMessageDialog(null, "Maquinaria no encontrada en la base de datos");
         }
     }
 
-    public static void showPending(Machinery machinery){
-        if(machinery!=null){
+    public static void showPending(Machinery machinery) {
+        if (machinery != null) {
             JOptionPane.showMessageDialog(null, pending(machinery));
-        }else{
-            JOptionPane.showMessageDialog(null,"Maquinaria no encontrada en la base de datos");
+        } else {
+            JOptionPane.showMessageDialog(null, "Maquinaria no encontrada en la base de datos");
         }
     }
 
-    private static String pending(Machinery machinery){
+    private static String pending(Machinery machinery) {
         return "ID: " + machinery.getId() + "\nPendiente: " + machinery.getPending();
     }
 }

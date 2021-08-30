@@ -1,12 +1,14 @@
 package Manager;
 
+import Constants.STATUS;
+
 public abstract class StatusManager{
     //1:en casa central, 2:en viaje, 3: en comercio; 4 pasado a ventas o dado de baja
-    private static final String CASA_CENTRAL = "Casa central";
-    private static final String EN_VIAJE = "En viaje";
-    private static final String EN_COMERCIO = "En comercio";
-    private static final String PASADO_A_VENTAS = "Pasado a ventas";
-    private static final String DADO_DE_BAJA = "Dado de baja";
+    private static final String CASA_CENTRAL = STATUS.CASA_CENTRAL;
+    private static final String EN_VIAJE = STATUS.EN_VIAJE;
+    private static final String EN_COMERCIO = STATUS.EN_COMERCIO;
+    private static final String PASADO_A_VENTAS = STATUS.PASADO_A_VENTAS;
+    private static final String DADO_DE_BAJA = STATUS.DADO_DE_BAJA;
 
     public static String getStatus(int status){
         String response = null;
