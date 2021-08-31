@@ -71,7 +71,7 @@ public class Bin {
         }
     }
 
-    public static void saveInDB(Machinery machinery){
+    /*public static void saveInDB(Machinery machinery){
         try{
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/bd_maquinarias","root","");
             PreparedStatement pst = cn.prepareStatement("insert into maquinarias values(?,?,?,?,?,?,?)");
@@ -86,5 +86,5 @@ public class Bin {
         }catch(Exception e){
 
         }
-    }
+    }*/
 }

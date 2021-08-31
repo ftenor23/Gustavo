@@ -12,6 +12,7 @@ public class Machinery implements Serializable {
     private int hsSinceLast250hsService;
     private int hsSinceLast1000hsService;
     private int totalHours;
+
     //agregar variable que indique si se le hicieron los service cada 250 horas
     //caracteristicas
     public Machinery(String id, int status, Client client, String features, int hsSinceLast250hsService, int hsSinceLast1000hsService, int totalHours) {
@@ -30,7 +31,7 @@ public class Machinery implements Serializable {
         return pending;
     }
 
-    public String getClientName(){
+    public String getClientName() {
 
         return getClient().getName();
 
@@ -52,7 +53,7 @@ public class Machinery implements Serializable {
         this.hsSinceLast1000hsService = totalHours;
     }
 
-    public int getClientZone(){
+    public int getClientZone() {
         return getClient().getZone();
     }
 
@@ -67,14 +68,12 @@ public class Machinery implements Serializable {
     public void setHoursOfUse(int hoursOfUse) {
 
         this.hsSinceLast250hsService = hoursOfUse;
-        this.hsSinceLast1000hsService+=hoursOfUse;
-        this.totalHours+=hoursOfUse;
+        this.hsSinceLast1000hsService += hoursOfUse;
+        this.totalHours += hoursOfUse;
     }
     //agregar String pendientes;
 //agregar variable horas de uso y calcular horas para ver si hay que hace service
     //filtro 250 cambio de aceite, etc filtro
-
-
 
 
     public String getId() {

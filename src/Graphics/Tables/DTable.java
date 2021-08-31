@@ -16,36 +16,41 @@ public class DTable extends JTable {
 
     public Component prepareRenderer(TableCellRenderer renderer, int rowIndex, int colIndex) {
         Component component = super.prepareRenderer(renderer, rowIndex, colIndex);
-        component.setBackground(Color.white);
-        component.setForeground(Color.BLACK);
+        try {
 
-        if (colIndex == HOURS_OF_USE_COLUMN) {
-            int hoursSince250hsService = Integer.parseInt(getValueAt(rowIndex, colIndex).toString());
-            String id = getValueAt(rowIndex, ID_COLUMN).toString();
-            Machinery machinery = MachineryManager.search(id);
-            if (machinery == null) {
-                return component;
+            component.setBackground(Color.white);
+            component.setForeground(Color.BLACK);
+
+            if (colIndex == HOURS_OF_USE_COLUMN) {
+                int hoursSince250hsService = Integer.parseInt(getValueAt(rowIndex, colIndex).toString());
+                String id = getValueAt(rowIndex, ID_COLUMN).toString();
+                Machinery machinery = MachineryManager.search(id);
+                if (machinery == null) {
+                    return component;
+                }
+                //obtiene la cantidad de horas desde el ultimo service e imprime color segun el caso
+                int hsSinceLast1000hsService = machinery.getHsSinceLast1000hsService();
+
+                int totalHours = machinery.getTotalHours();
+
+
+                if (totalOf8000hs(totalHours)) {
+                    component.setBackground(Color.RED);
+                    component.setForeground(Color.WHITE);
+                }
+
+                if (service1000(hsSinceLast1000hsService)) {
+                    component.setBackground(Color.YELLOW);
+                    component.setForeground(Color.RED);
+                } else if (service250(hoursSince250hsService)) {
+                    component.setBackground(Color.GREEN);
+                    component.setForeground(Color.BLACK);
+                }
+
+
             }
-            //obtiene la cantidad de horas desde el ultimo service e imprime color segun el caso
-            int hsSinceLast1000hsService = machinery.getHsSinceLast1000hsService();
-
-            int totalHours = machinery.getTotalHours();
-
-
-            if (totalOf8000hs(totalHours)) {
-                component.setBackground(Color.RED);
-                component.setForeground(Color.WHITE);
-            }
-
-            if (service1000(hsSinceLast1000hsService)) {
-                component.setBackground(Color.YELLOW);
-                component.setForeground(Color.RED);
-            } else if (service250(hoursSince250hsService)) {
-                component.setBackground(Color.GREEN);
-                component.setForeground(Color.BLACK);
-            }
-
-
+        }catch(Exception e){
+            System.out.println("Exception: " + e);
         }
 
         return component;

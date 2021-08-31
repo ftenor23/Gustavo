@@ -1,4 +1,4 @@
-{"id":"A12","status":1,"client":{"name":"Gallo","zone":1},"features":"GRUA","pending":"Gustavo el 5/09","hsSinceLast250hsService":0,"hsSinceLast1000hsService":0,"totalHours":4406}
+{"id":"A12","status":1,"client":{"name":"Gallo","zone":1},"features":"GRUA","pending":"Gustavo el 5/09","hsSinceLast250hsService":300,"hsSinceLast1000hsService":300,"totalHours":4706}
 {"id":"A54","status":1,"client":{"name":"Maria","zone":4},"features":"Escalera","pending":"","hsSinceLast250hsService":132,"hsSinceLast1000hsService":739,"totalHours":4694}
 {"id":"A66","status":1,"client":{"name":"Claudia","zone":3},"features":"Grua especial","pending":"","hsSinceLast250hsService":363,"hsSinceLast1000hsService":1171,"totalHours":8244}
 {"id":"A69","status":4,"client":{"name":"Octavio","zone":1},"features":"Agujereador","pending":"","hsSinceLast250hsService":349,"hsSinceLast1000hsService":1299,"totalHours":5824}
@@ -13,7 +13,7 @@
 {"id":"D63","status":4,"client":{"name":"Javier","zone":3},"features":"Grua especial","pending":"","hsSinceLast250hsService":60,"hsSinceLast1000hsService":302,"totalHours":457}
 {"id":"E14","status":2,"client":{"name":"Octavio","zone":4},"features":"Computadora","pending":"","hsSinceLast250hsService":227,"hsSinceLast1000hsService":242,"totalHours":1882}
 {"id":"F48","status":1,"client":{"name":"Leandro","zone":4},"features":"Computadora","pending":"","hsSinceLast250hsService":352,"hsSinceLast1000hsService":393,"totalHours":7497}
-{"id":"F6","status":4,"client":{"name":"Ocativo","zone":2},"features":"Tractor","pending":"","hsSinceLast250hsService":149,"hsSinceLast1000hsService":1070,"totalHours":5384}
+{"id":"F6","status":4,"client":{"name":"Ocativo","zone":2},"features":"Tractor","pending":"","hsSinceLast250hsService":164,"hsSinceLast1000hsService":1234,"totalHours":5548}
 {"id":"G25","status":2,"client":{"name":"Claudia","zone":1},"features":"Elevador","pending":"","hsSinceLast250hsService":226,"hsSinceLast1000hsService":959,"totalHours":6832}
 {"id":"G58","status":3,"client":{"name":"Jonathan","zone":4},"features":"Maquinaria especial","pending":"","hsSinceLast250hsService":286,"hsSinceLast1000hsService":238,"totalHours":5358}
 {"id":"H41","status":2,"client":{"name":"Sofia","zone":3},"features":"Computadora","pending":"","hsSinceLast250hsService":133,"hsSinceLast1000hsService":361,"totalHours":7866}
@@ -43,7 +43,7 @@
 {"id":"O65","status":2,"client":{"name":"Ricardo","zone":3},"features":"Grua especial","pending":"","hsSinceLast250hsService":256,"hsSinceLast1000hsService":744,"totalHours":5777}
 {"id":"O9","status":4,"client":{"name":"Maria","zone":4},"features":"Maquinaria para edificio","pending":"","hsSinceLast250hsService":64,"hsSinceLast1000hsService":928,"totalHours":2027}
 {"id":"P11","status":4,"client":{"name":"Calcio","zone":2},"features":"Computadora","pending":"","hsSinceLast250hsService":380,"hsSinceLast1000hsService":539,"totalHours":333}
-{"id":"P21","status":1,"client":{"name":"Marcelo","zone":2},"features":"Computadora","pending":"","hsSinceLast250hsService":389,"hsSinceLast1000hsService":9,"totalHours":6244}
+{"id":"P21","status":1,"client":{"name":"Marcelo","zone":2},"features":"Computadora","pending":"","hsSinceLast250hsService":0,"hsSinceLast1000hsService":9,"totalHours":6244}
 {"id":"P28","status":1,"client":{"name":"Marcelo","zone":2},"features":"Computadora","pending":"","hsSinceLast250hsService":270,"hsSinceLast1000hsService":960,"totalHours":6428}
 {"id":"Q18","status":2,"client":{"name":"Marcelo","zone":3},"features":"Grua","pending":"","hsSinceLast250hsService":260,"hsSinceLast1000hsService":1145,"totalHours":318}
 {"id":"Q2","status":1,"client":{"name":"Roman","zone":4},"features":"Computadora","pending":"","hsSinceLast250hsService":115,"hsSinceLast1000hsService":301,"totalHours":4166}
@@ -68,7 +68,7 @@
 {"id":"V42","status":4,"client":{"name":"German","zone":3},"features":"Computadora","pending":"","hsSinceLast250hsService":261,"hsSinceLast1000hsService":2,"totalHours":3262}
 {"id":"V47","status":4,"client":{"name":"Jonathan","zone":2},"features":"Grua","pending":"","hsSinceLast250hsService":218,"hsSinceLast1000hsService":1132,"totalHours":4869}
 {"id":"V70","status":4,"client":{"name":"Ocativo","zone":3},"features":"Computadora","pending":"","hsSinceLast250hsService":331,"hsSinceLast1000hsService":1190,"totalHours":3052}
-{"id":"W43","status":3,"client":{"name":"Gustavo","zone":2},"features":"Elevador","pending":"","hsSinceLast250hsService":157,"hsSinceLast1000hsService":185,"totalHours":5064}
+{"id":"W43","status":3,"client":{"name":"Gustavo","zone":2},"features":"Elevador","pending":"Revisar 4/09","hsSinceLast250hsService":157,"hsSinceLast1000hsService":185,"totalHours":5064}
 {"id":"X7","status":4,"client":{"name":"Maria","zone":1},"features":"Escalera","pending":"","hsSinceLast250hsService":14,"hsSinceLast1000hsService":371,"totalHours":1521}
 {"id":"Y64","status":3,"client":{"name":"German","zone":3},"features":"Agujereador","pending":"","hsSinceLast250hsService":111,"hsSinceLast1000hsService":155,"totalHours":7734}
 {"id":"Z1","status":1,"client":{"name":"Ocativo","zone":4},"features":"Maquinaria especial","pending":"","hsSinceLast250hsService":25,"hsSinceLast1000hsService":1077,"totalHours":6732}
